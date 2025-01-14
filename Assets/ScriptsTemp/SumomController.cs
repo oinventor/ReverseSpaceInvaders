@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SumomController : MonoBehaviour
 {
     private float movimentColldownTime;
     private float direction;
+    public ScrbSummon summonStats;
     // Start is called before the first frame update
     void Start()
     {
+
         switch (this.transform.position.x >0)
         {
             case true:
@@ -24,7 +27,7 @@ public class SumomController : MonoBehaviour
     void Update()
     {
         movimentColldownTime += Time.deltaTime;
-        switch (movimentColldownTime >= 0.5f)
+        switch (movimentColldownTime >= summonStats.coolDownMovimento)
         {
             case true:
                 HorizontalMovement();
@@ -32,12 +35,12 @@ public class SumomController : MonoBehaviour
             default:
             break;
         }
-        if (this.transform.position.x < -13 && direction == -1)
+        if (this.transform.position.x < -summonStats.distanciaMaxEsquerda && direction == -1)
         {
             StartCoroutine(VerticalMovement());
             direction *=-1f;
         }
-        else if (this.transform.position.x > 13 && direction == 1)
+        else if (this.transform.position.x > summonStats.distanciaMaxDireita && direction == 1)
         {
             StartCoroutine(VerticalMovement());
             direction *=-1f;
@@ -50,13 +53,13 @@ public class SumomController : MonoBehaviour
     void HorizontalMovement()
     {
         movimentColldownTime = 0;
-        this.transform.position += new Vector3(2f*direction,0,0);
+        this.transform.position += new Vector3(summonStats.moveinetoHorizontal*direction,0,0);
     }
     IEnumerator VerticalMovement()
     {
-        movimentColldownTime = -0.5f;
-        yield return new WaitForSeconds(0.5f);
-        this.transform.position += new Vector3(0,-2f,0);
+        movimentColldownTime -= summonStats.coolDownMovimento;
+        yield return new WaitForSeconds(summonStats.coolDownMovimento);
+        this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
     }
 }
 

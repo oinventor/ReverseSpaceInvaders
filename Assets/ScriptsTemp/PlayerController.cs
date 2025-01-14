@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRig;
     public GameObject summon;
     private float summonColldown;
+    public ScrbPlayer playerStats;
 
     // Start is called before the first frame update
     void Start()
@@ -42,12 +43,12 @@ public class PlayerController : MonoBehaviour
         {
             case true:
                 Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
-                summonColldown = 2f;
+                summonColldown = playerStats.coolDownSummoning;
             break;
             default:
             break;
         }
-        
+
         if (summonColldown > 0)
         {
             summonColldown -= Time.deltaTime;
