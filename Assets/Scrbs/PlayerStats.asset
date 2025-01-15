@@ -16,3 +16,4 @@ MonoBehaviour:
   holdToSummonTime: 1
   laneMaxDistance: 10
   coyoteTime: 0.2
+  movementBuffer: 0.2

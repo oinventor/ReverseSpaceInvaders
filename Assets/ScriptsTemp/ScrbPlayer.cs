@@ -9,4 +9,5 @@ public class ScrbPlayer : ScriptableObject
     public float holdToSummonTime;
     public float laneMaxDistance;
     public float coyoteTime;
+    public float movementBuffer;
 }

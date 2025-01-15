@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private float countDownToSummon;
     public ScrbPlayer playerStats;
     private float coyoteTime;
+    private float movementBufferRight;
+    private float movementBufferLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +22,44 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Movement inputs
-        if (Input.GetKeyDown(KeyCode.D) && coyoteTime >= 0)
+        //Player imputs
+        switch (Input.GetKeyDown(KeyCode.D))
         {
-            MoveToRight();
+            //If player presses the key it sets the buffer to time
+            case true:
+                movementBufferRight = playerStats.movementBuffer;
+            break;
+            //After the press the buffer will slowly decrese
+            default:
+                movementBufferRight -= Time.deltaTime;
+            break;
         }
-        else if(Input.GetKeyDown(KeyCode.A) && coyoteTime >= 0)
+        //Same here
+        switch (Input.GetKeyDown(KeyCode.A))
+        {
+            case true:
+                movementBufferLeft = playerStats.movementBuffer;
+            break;
+            default:
+                movementBufferLeft -= Time.deltaTime;
+            break;
+        }
+
+        //Movement inputs. Player can only move if buffer is >= then 0, same goes for coyote time
+        if (movementBufferRight >= 0 && coyoteTime >= 0)
+        {
+            //Sets the buffer to 0 to avoid errors
+            MoveToRight();
+            movementBufferRight = 0;
+        }
+        else if(movementBufferLeft >= 0 && coyoteTime >= 0)
         {
             MoveToLeft();
+            movementBufferLeft = 0;
+        }
+        else
+        {
+
         }
 
         //Summoning imputs
