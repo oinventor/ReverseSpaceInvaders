@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float coyoteTime;
     private float movementBufferRight;
     private float movementBufferLeft;
+    public static float curentMana;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +97,16 @@ public class PlayerController : MonoBehaviour
             break;
         }
 
+        //Checs if the mana is surpassing the maximum mana
+        if (curentMana > playerStats.maxMana)
+        {
+            curentMana = playerStats.maxMana;
+        }
+        else
+        {
+
+        }
+
         //Resets the cooldown to 0
         if (summonColldown > 0)
         {
@@ -117,12 +129,25 @@ public class PlayerController : MonoBehaviour
         //After the delay
         if (countDownToSummon < 0)
         {
-            //Resets the delay
-            countDownToSummon = playerStats.holdToSummonTime;
-            //Instantiates the summon
-            Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
-            //Starts the summon cooldown
-            summonColldown = playerStats.coolDownSummoning;
+            //if there is mana
+            if (curentMana > 0)
+            {
+                //Resets the delay
+                countDownToSummon = playerStats.holdToSummonTime;
+                //Instantiates the summon
+                Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                //Starts the summon cooldown
+                summonColldown = playerStats.coolDownSummoning;
+                curentMana -= playerStats.manaPerSummon;
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
         }
     }
 
@@ -162,6 +187,26 @@ public class PlayerController : MonoBehaviour
         else
         {
 
+        }
+    }
+
+    //Adds mana when colecting mana balls
+    void OnTriggerEnter2D(Collider2D manaColl)
+    {
+        switch (manaColl.gameObject.tag == "ManaBall")
+        {
+            case true:
+                if (curentMana <= playerStats.maxMana)
+                {
+                    curentMana += playerStats.manaPerManaBall;
+                }
+                else
+                {
+
+                }
+            break;
+            default:
+            break;
         }
     }
 }

@@ -10,4 +10,7 @@ public class ScrbPlayer : ScriptableObject
     public float laneMaxDistance;
     public float coyoteTime;
     public float movementBuffer;
+    public int maxMana;
+    public int manaPerManaBall;
+    public int manaPerSummon;
 }
