@@ -6,4 +6,7 @@ using UnityEngine;
 public class ScrbPlayer : ScriptableObject
 {
     public float coolDownSummoning;
+    public float holdToSummonTime;
+    public float laneMaxDistance;
+    public float coyoteTime;
 }

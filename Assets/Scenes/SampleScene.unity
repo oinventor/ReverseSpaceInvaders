@@ -1182,6 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   summon: {fileID: 8352907226429474862, guid: 9dca42fea9c9a9244a61041f99b77b04, type: 3}
+  playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
 --- !u!212 &2083018392
 SpriteRenderer:
   m_ObjectHideFlags: 0

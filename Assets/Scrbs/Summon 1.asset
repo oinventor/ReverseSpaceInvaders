@@ -15,5 +15,5 @@ MonoBehaviour:
   coolDownMovimento: 0.5
   moveinetoHorizontal: 2
   movimentoVertical: 2
-  distanciaMaxDireita: 13
-  distanciaMaxEsquerda: 13
+  distanciaMaxDireita: 5
+  distanciaMaxEsquerda: 5
