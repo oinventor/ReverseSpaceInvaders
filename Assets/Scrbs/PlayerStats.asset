@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   coolDownSummoning: 2
-  holdToSummonTime: 1
+  holdToSuperSummonTime: 2
+  holdToSummonTime: 0.5
+  manaPerSummon: 5
+  manaPerSuperSummon: 25
+  maxMana: 50
+  manaPerManaBall: 25
+  manaPerShield: 5
+  shieldManaDrainTime: 0.5
   laneMaxDistance: 10
   coyoteTime: 0.2
   movementBuffer: 0.2

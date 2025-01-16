@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject summon;
+    public GameObject superSummon;
     private float summonColldown;
     private float countDownToSummon;
     public ScrbPlayer playerStats;
@@ -13,12 +14,15 @@ public class PlayerController : MonoBehaviour
     private float movementBufferRight;
     private float movementBufferLeft;
     public static float curentMana;
+    private float curantShiledActiveTime;
+    private bool canSummon;
+    public GameObject shield;
 
     // Start is called before the first frame update
     void Start()
     {
-        countDownToSummon = playerStats.holdToSummonTime;
-        this.gameObject.transform.position = new Vector3(0, 10f, 0);
+        countDownToSummon = 0;
+        this.gameObject.transform.position = new Vector3(0, 5.2f, 0);
     }
 
     // Update is called once per frame
@@ -64,37 +68,51 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        //Summoning imputs
-        switch (Input.GetKey(KeyCode.Space))
+        //Input handller
+        if (Input.GetKey(KeyCode.Space))
         {
-            case true:
-                //Summon cooldown (I wrote Colldown, sry :|)
-                if(summonColldown <= 0)
-                {
-                    Summon();
-                }
-                else
-                {
-
-                }
-                //Coyete time subtraction
-                coyoteTime -= Time.deltaTime;
-            break;
-            default:
-                //If no space press, coyote time won't go down
-                coyoteTime = playerStats.coyoteTime;
-            break;
+            //Summon cooldown (I wrote Colldown, sry :|)
+            if(summonColldown <= 0)
+            {
+                Summon();
+            }
+            //Coyete time subtraction
+            coyoteTime -= Time.deltaTime;
         }
-        switch (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            case true:
-                //Sets coyote time to 0 to prevent any errors or bugs
-                coyoteTime = 0f;
-                //Resets the summoning delay time
-                countDownToSummon = playerStats.holdToSummonTime;
-            break;
-            default:
-            break;
+            if (curentMana >= playerStats.manaPerShield)
+            {
+                curentMana -= playerStats.manaPerShield;
+            }
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            ActivateShield();
+            coyoteTime -= Time.deltaTime;
+
+        }
+        if (Input.anyKey == false)
+        {
+            Debug.Log("curantShiledActiveTime");
+            //If no key press, coyote time won't go down
+            coyoteTime = playerStats.coyoteTime;
+        }
+
+        //Input Up handller
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            //Sets coyote time to 0 to prevent any errors or bugs
+            coyoteTime = 0f;
+            //Resets the summoning delay time
+            Summon();
+            countDownToSummon = 0;
+        }
+        else if (Input.GetKeyUp(KeyCode.S) && shield.activeSelf == true || curentMana < playerStats.manaPerShield)
+        {
+            shield.SetActive(false);
+            canSummon = true;
+            curantShiledActiveTime = 0;
         }
 
         //Checs if the mana is surpassing the maximum mana
@@ -117,24 +135,34 @@ public class PlayerController : MonoBehaviour
     //Summoning process
     void Summon()
     {
-        switch (countDownToSummon > 0)
-        {
-            //Summoning delay
-            case true:
-                countDownToSummon -= Time.deltaTime;
-            break;
-            default:
-            break;
-        }
+        countDownToSummon += Time.deltaTime;
         //After the delay
-        if (countDownToSummon < 0)
+        if (countDownToSummon >= playerStats.holdToSuperSummonTime && canSummon == true)
         {
             //if there is mana
-            if (curentMana > 0)
+            if (curentMana >= playerStats.manaPerSuperSummon)
             {
                 //Resets the delay
-                countDownToSummon = playerStats.holdToSummonTime;
-                //Instantiates the summon
+                countDownToSummon = 0;
+                //Instantiates the super summon
+                Instantiate(superSummon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                //Starts the summon cooldown
+                summonColldown = playerStats.coolDownSummoning;
+                curentMana -= playerStats.manaPerSuperSummon;
+            }
+            else
+            {
+
+            }
+        }
+        else if(countDownToSummon >= playerStats.holdToSummonTime && countDownToSummon < playerStats.holdToSuperSummonTime && coyoteTime == 0 && canSummon == true)
+        {
+            //if there is mana
+            if (curentMana >= playerStats.manaPerSummon)
+            {
+                //Resets the delay
+                countDownToSummon = 0;
+                //Instantiates the super summon
                 Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
@@ -156,16 +184,16 @@ public class PlayerController : MonoBehaviour
     {
         //On movement, a ray is cast to the side that the player wants to move
         //This way, it makes it eazy to create lanes and tp the player to them
-        RaycastHit2D rightLane = Physics2D.Raycast(new Vector2(transform.position.x + 3, transform.position.y), transform.TransformDirection(Vector2.right), playerStats.laneMaxDistance);
+        RaycastHit2D rightLane = Physics2D.Raycast(new Vector2(transform.position.x + 7, transform.position.y + 4.8f), transform.TransformDirection(Vector2.right), playerStats.laneMaxDistance);
         //This if is to prevent errors of no hit
         if (rightLane.collider == null)
         {
-            Debug.Log("No collider");
+            Debug.Log("No collider " + rightLane.transform);
         }
         else if (rightLane.collider.gameObject.tag == "Lane")
         {
             //With hit the lane collider, it tps self to it
-            transform.position = rightLane.collider.gameObject.transform.position;
+            transform.position = new Vector3(rightLane.collider.gameObject.transform.position.x, transform.position.y, 0);
         }
         else
         {
@@ -175,14 +203,14 @@ public class PlayerController : MonoBehaviour
     }
     void MoveToLeft()
     {
-        RaycastHit2D leftLane = Physics2D.Raycast(new Vector2(transform.position.x - 3, transform.position.y), transform.TransformDirection(Vector2.left), playerStats.laneMaxDistance);
+        RaycastHit2D leftLane = Physics2D.Raycast(new Vector2(transform.position.x - 7, transform.position.y + 4.8f), transform.TransformDirection(Vector2.left), playerStats.laneMaxDistance);
         if (leftLane.collider == null)
         {
-            Debug.Log("No collider");
+            Debug.Log("No collider" + leftLane.transform);
         }
         else if (leftLane.collider.gameObject.tag == "Lane")
         {
-            transform.position = leftLane.collider.gameObject.transform.position;
+            transform.position = new Vector3(leftLane.collider.gameObject.transform.position.x, transform.position.y, 0);
         }
         else
         {
@@ -190,6 +218,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Shield
+    void ActivateShield()
+    {
+        if (curentMana >= playerStats.manaPerShield)
+        {
+            shield.SetActive(true);
+            if (shield.activeSelf == true)
+            {
+                canSummon = false;
+                curantShiledActiveTime += Time.deltaTime;
+            }
+            if (curantShiledActiveTime >= playerStats.shieldManaDrainTime)
+            {
+                curentMana -= playerStats.manaPerShield;
+                curantShiledActiveTime = 0;
+            }
+        }
+    }
     //Adds mana when colecting mana balls
     void OnTriggerEnter2D(Collider2D manaColl)
     {

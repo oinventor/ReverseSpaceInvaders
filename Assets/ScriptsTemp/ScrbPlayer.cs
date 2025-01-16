@@ -6,11 +6,15 @@ using UnityEngine;
 public class ScrbPlayer : ScriptableObject
 {
     public float coolDownSummoning;
+    public float holdToSuperSummonTime;
     public float holdToSummonTime;
+    public int manaPerSummon;
+    public int manaPerSuperSummon;
+    public int maxMana;
+    public int manaPerManaBall;
+    public float manaPerShield;
+    public float shieldManaDrainTime;
     public float laneMaxDistance;
     public float coyoteTime;
     public float movementBuffer;
-    public int maxMana;
-    public int manaPerManaBall;
-    public int manaPerSummon;
 }
