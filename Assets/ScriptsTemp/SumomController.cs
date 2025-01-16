@@ -6,11 +6,13 @@ using UnityEngine;
 public class SumomController : MonoBehaviour
 {
     private float movimentCooldownTime;
+    public int damege;
     private float direction;
     public ScrbSummon summonStats;
     // Start is called before the first frame update
     void Start()
     {
+        damege = summonStats.damegeDelt;
         //This here will change the direction that the summon will go depending on where it spawns
         switch (this.transform.position.x >0)
         {
@@ -75,6 +77,13 @@ public class SumomController : MonoBehaviour
         yield return new WaitForSeconds(summonStats.coolDownMovimento);
         //Then it moves
         this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
+    }
+    void OnTriggerEnter2D(Collider2D collWithTank)
+    {
+        if (collWithTank.gameObject.tag == "Tank")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
 

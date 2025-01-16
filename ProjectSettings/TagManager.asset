@@ -8,6 +8,10 @@ TagManager:
   - Lane
   - ManaBall
   - Shield
+  - Projectile
+  - DestroyBarier
+  - SupperSummon
+  - Tank
   layers:
   - Default
   - TransparentFX

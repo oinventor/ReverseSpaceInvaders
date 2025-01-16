@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public GameObject summon;
     public GameObject superSummon;
     private float summonColldown;
-    private float countDownToSummon;
+    public static int curantHealth;
+    public static float countDownToSummon;
     public ScrbPlayer playerStats;
     private float coyoteTime;
     private float movementBufferRight;
@@ -21,14 +23,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        curantHealth = playerStats.maxHealth;
         countDownToSummon = 0;
-        this.gameObject.transform.position = new Vector3(0, 5.2f, 0);
+        this.gameObject.transform.position = new Vector3(0, 10.1f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Player imputs
+        //Player keyboard imputs
         switch (Input.GetKeyDown(KeyCode.D))
         {
             //If player presses the key it sets the buffer to time
@@ -40,7 +43,6 @@ public class PlayerController : MonoBehaviour
                 movementBufferRight -= Time.deltaTime;
             break;
         }
-        //Same here
         switch (Input.GetKeyDown(KeyCode.A))
         {
             case true:
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
             break;
         }
 
-        //Movement inputs. Player can only move if buffer is >= then 0, same goes for coyote time
+        //Movement requests. Player can only move if buffer is >= then 0, same goes for coyote time
         if (movementBufferRight >= 0 && coyoteTime >= 0)
         {
             //Sets the buffer to 0 to avoid errors
@@ -63,12 +65,8 @@ public class PlayerController : MonoBehaviour
             MoveToLeft();
             movementBufferLeft = 0;
         }
-        else
-        {
 
-        }
-
-        //Input handller
+        //Shield and summoning handller
         if (Input.GetKey(KeyCode.Space))
         {
             //Summon cooldown (I wrote Colldown, sry :|)
@@ -99,7 +97,7 @@ public class PlayerController : MonoBehaviour
             coyoteTime = playerStats.coyoteTime;
         }
 
-        //Input Up handller
+        //Shield and summoning input Up handller
         if (Input.GetKeyUp(KeyCode.Space))
         {
             //Sets coyote time to 0 to prevent any errors or bugs
@@ -115,14 +113,15 @@ public class PlayerController : MonoBehaviour
             curantShiledActiveTime = 0;
         }
 
+        //Checs if player is dead and executes death if true
+        if (curantHealth <= 0)
+        {
+            Death();
+        }
         //Checs if the mana is surpassing the maximum mana
         if (curentMana > playerStats.maxMana)
         {
             curentMana = playerStats.maxMana;
-        }
-        else
-        {
-
         }
 
         //Resets the cooldown to 0
@@ -130,6 +129,13 @@ public class PlayerController : MonoBehaviour
         {
             summonColldown -= Time.deltaTime;
         }
+    }
+
+    //Death
+    void Death()
+    {
+        Time.timeScale = 0;
+        this.GetComponent<PlayerController>().enabled = false;
     }
 
     //Summoning process
@@ -184,7 +190,7 @@ public class PlayerController : MonoBehaviour
     {
         //On movement, a ray is cast to the side that the player wants to move
         //This way, it makes it eazy to create lanes and tp the player to them
-        RaycastHit2D rightLane = Physics2D.Raycast(new Vector2(transform.position.x + 7, transform.position.y + 4.8f), transform.TransformDirection(Vector2.right), playerStats.laneMaxDistance);
+        RaycastHit2D rightLane = Physics2D.Raycast(new Vector2(transform.position.x + 7, transform.position.y), transform.TransformDirection(Vector2.right), playerStats.laneMaxDistance);
         //This if is to prevent errors of no hit
         if (rightLane.collider == null)
         {
@@ -203,7 +209,7 @@ public class PlayerController : MonoBehaviour
     }
     void MoveToLeft()
     {
-        RaycastHit2D leftLane = Physics2D.Raycast(new Vector2(transform.position.x - 7, transform.position.y + 4.8f), transform.TransformDirection(Vector2.left), playerStats.laneMaxDistance);
+        RaycastHit2D leftLane = Physics2D.Raycast(new Vector2(transform.position.x - 7, transform.position.y), transform.TransformDirection(Vector2.left), playerStats.laneMaxDistance);
         if (leftLane.collider == null)
         {
             Debug.Log("No collider" + leftLane.transform);
@@ -236,12 +242,13 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    //Adds mana when colecting mana balls
-    void OnTriggerEnter2D(Collider2D manaColl)
+
+    //Collisions
+    void OnTriggerEnter2D(Collider2D objColls)
     {
-        switch (manaColl.gameObject.tag == "ManaBall")
+        switch (objColls.gameObject.tag)
         {
-            case true:
+            case "ManaBall":
                 if (curentMana <= playerStats.maxMana)
                 {
                     curentMana += playerStats.manaPerManaBall;
@@ -250,6 +257,9 @@ public class PlayerController : MonoBehaviour
                 {
 
                 }
+            break;
+            case "Projectile":
+                curantHealth -= objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
             break;
             default:
             break;

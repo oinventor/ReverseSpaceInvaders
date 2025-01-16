@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
+  maxHealth: 100
   coolDownSummoning: 2
   holdToSuperSummonTime: 2
   holdToSummonTime: 0.5

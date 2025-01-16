@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scrbs/Player")]
 public class ScrbPlayer : ScriptableObject
 {
+    public int maxHealth;
     public float coolDownSummoning;
     public float holdToSuperSummonTime;
     public float holdToSummonTime;
