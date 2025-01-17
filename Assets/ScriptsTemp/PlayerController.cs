@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    public UnityEvent onDeath;
+
     public GameObject summon;
     public GameObject superSummon;
     private float summonColldown;
@@ -23,9 +26,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         curantHealth = playerStats.maxHealth;
         countDownToSummon = 0;
-        this.gameObject.transform.position = new Vector3(0, 10.1f, 0);
+        this.gameObject.transform.position = new Vector3(0, 14.3f, 0);
     }
 
     // Update is called once per frame
@@ -92,7 +96,6 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.anyKey == false)
         {
-            Debug.Log("curantShiledActiveTime");
             //If no key press, coyote time won't go down
             coyoteTime = playerStats.coyoteTime;
         }
@@ -136,6 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 0;
         this.GetComponent<PlayerController>().enabled = false;
+        onDeath.Invoke();
     }
 
     //Summoning process

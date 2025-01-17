@@ -15,7 +15,7 @@ MonoBehaviour:
   projectileTank: {fileID: 5018502367730268849, guid: 5e8598d967dd4f043b6dc84730c1ef25, type: 3}
   maxHealth: 15
   damegeDelt: 0
-  shootingTime: 3
+  shootingTime: 10
   coolDownMovimento: 0
   moveinetoHorizontal: 0
   movimentoVertical: 0

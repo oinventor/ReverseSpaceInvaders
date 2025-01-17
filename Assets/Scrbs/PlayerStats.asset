@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   maxHealth: 100
-  coolDownSummoning: 2
-  holdToSuperSummonTime: 2
+  coolDownSummoning: 1
+  holdToSuperSummonTime: 1
   holdToSummonTime: 0.5
   manaPerSummon: 5
-  manaPerSuperSummon: 25
+  manaPerSuperSummon: 15
   maxMana: 50
-  manaPerManaBall: 25
+  manaPerManaBall: 5
   manaPerShield: 5
   shieldManaDrainTime: 0.5
   laneMaxDistance: 10

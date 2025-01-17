@@ -17,7 +17,7 @@ MonoBehaviour:
   damegeDelt: 5
   shootingTime: 0
   coolDownMovimento: 0.5
-  moveinetoHorizontal: 2
+  moveinetoHorizontal: 3
   movimentoVertical: 2
-  distanciaMaxDireita: 5
-  distanciaMaxEsquerda: 5
+  distanciaMaxDireita: 15
+  distanciaMaxEsquerda: 15

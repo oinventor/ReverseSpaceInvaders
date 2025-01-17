@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EarthController : MonoBehaviour
 {
+    public UnityEvent onVictory;
+
     public ScrbCountry countryStats;
     public GameObject spawnPlataform1;
     public GameObject spawnPlataform2;
     public GameObject spawnPlataform3;
     public GameObject spawnPlataform4;
     public GameObject spawnPlataform5;
-    private int curantHealth;
+    public static int curantHealth;
     private int chosenPlataform;
     private int nextPlataform;
     private float spawnCountTime;
@@ -23,13 +26,28 @@ public class EarthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(nextPlataform);
         spawnCountTime += Time.deltaTime;
         if (curantHealth > 0 && spawnCountTime >= countryStats.spawnTime || nextPlataform > 0)
         {
             spawnCountTime = 0;
-            chosenPlataform = nextPlataform <= 0? Random.Range(1, 5): nextPlataform;
+            chosenPlataform = nextPlataform <= 0? Random.Range(1, 5 + 1): nextPlataform;
             SpawnTank(chosenPlataform);
+        }
+        else if(curantHealth <= 0)
+        {
+            RaycastHit2D plataformChec1 = Physics2D.Raycast(spawnPlataform1.transform.position, transform.TransformDirection(Vector2.up), 2f);
+            RaycastHit2D plataformChec2 = Physics2D.Raycast(spawnPlataform2.transform.position, transform.TransformDirection(Vector2.up), 2f);
+            RaycastHit2D plataformChec3 = Physics2D.Raycast(spawnPlataform3.transform.position, transform.TransformDirection(Vector2.up), 2f);
+            RaycastHit2D plataformChec4 = Physics2D.Raycast(spawnPlataform4.transform.position, transform.TransformDirection(Vector2.up), 2f);
+            RaycastHit2D plataformChec5 = Physics2D.Raycast(spawnPlataform5.transform.position, transform.TransformDirection(Vector2.up), 2f);
+
+            if (plataformChec1.collider == null && plataformChec2.collider == null && plataformChec3.collider == null &&
+                plataformChec4.collider == null && plataformChec5.collider == null)
+            {
+                Time.timeScale = 0;
+                Destroy(GameObject.FindWithTag("Player").GetComponent<PlayerController>());
+                onVictory.Invoke();
+            }
         }
     }
     void SpawnTank(int chosenPlataform)

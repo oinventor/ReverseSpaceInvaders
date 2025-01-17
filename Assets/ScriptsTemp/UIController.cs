@@ -7,9 +7,12 @@ public class UIController : MonoBehaviour
     public Slider chargeBar;
     public Slider manaBar;
     public Slider healthBar;
+    public Slider countryHealthBar;
     private GameObject player;
     private int maxHealth;
     private int curantHealth;
+    private int countryMaxHealth;
+    private int countryCurantHealth;
     private float curantCharge;
     private float maxCharge;
     private float newMana;
@@ -21,10 +24,11 @@ public class UIController : MonoBehaviour
         maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
         maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
         maxCharge = player.GetComponent<PlayerController>().playerStats.holdToSuperSummonTime;
+        countryMaxHealth = GameObject.Find("Earth Controller").GetComponent<EarthController>().countryStats.maxHealth;
         chargeBar.maxValue = maxCharge;
         manaBar.maxValue = maxMana;
         healthBar.maxValue = maxHealth;
-
+        countryHealthBar.maxValue = countryMaxHealth;
     }
     void Update()
     {
@@ -35,5 +39,7 @@ public class UIController : MonoBehaviour
         chargeBar.value = curantCharge;
         curantHealth = PlayerController.curantHealth;
         healthBar.value = curantHealth;
+        countryCurantHealth = EarthController.curantHealth;
+        countryHealthBar.value = countryCurantHealth;
     }
 }
