@@ -7,6 +7,7 @@ public class ManaSpawn : MonoBehaviour
     private int spawnChanceRand;
     private float spawnTimeCount;
     public ScrbSpawns manaSpawn;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
     private float curantShiledActiveTime;
     private bool canSummon;
     public GameObject shield;
+    private bool isPaused;
+
+    [Header("Paineis e Menus")]
+    public GameObject pausePanel;
+    public GameObject uiPanel;
+    public string cena;
 
     // Start is called before the first frame update
     void Start()
@@ -35,102 +42,112 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Player keyboard imputs
-        switch (Input.GetKeyDown(KeyCode.D))
+        //If game paused action in game don't run
+        if(!isPaused)
         {
-            //If player presses the key it sets the buffer to time
-            case true:
-                movementBufferRight = playerStats.movementBuffer;
-            break;
-            //After the press the buffer will slowly decrese
-            default:
-                movementBufferRight -= Time.deltaTime;
-            break;
-        }
-        switch (Input.GetKeyDown(KeyCode.A))
-        {
-            case true:
-                movementBufferLeft = playerStats.movementBuffer;
-            break;
-            default:
-                movementBufferLeft -= Time.deltaTime;
-            break;
-        }
-
-        //Movement requests. Player can only move if buffer is >= then 0, same goes for coyote time
-        if (movementBufferRight >= 0 && coyoteTime >= 0)
-        {
-            //Sets the buffer to 0 to avoid errors
-            MoveToRight();
-            movementBufferRight = 0;
-        }
-        else if(movementBufferLeft >= 0 && coyoteTime >= 0)
-        {
-            MoveToLeft();
-            movementBufferLeft = 0;
-        }
-
-        //Shield and summoning handller
-        if (Input.GetKey(KeyCode.Space))
-        {
-            //Summon cooldown (I wrote Colldown, sry :|)
-            if(summonColldown <= 0)
+            //Player keyboard imputs
+            switch (Input.GetKeyDown(KeyCode.D))
             {
+                //If player presses the key it sets the buffer to time
+                case true:
+                    movementBufferRight = playerStats.movementBuffer;
+                    break;
+                //After the press the buffer will slowly decrese
+                default:
+                    movementBufferRight -= Time.deltaTime;
+                    break;
+            }
+            switch (Input.GetKeyDown(KeyCode.A))
+            {
+                case true:
+                    movementBufferLeft = playerStats.movementBuffer;
+                    break;
+                default:
+                    movementBufferLeft -= Time.deltaTime;
+                    break;
+            }
+
+            //Movement requests. Player can only move if buffer is >= then 0, same goes for coyote time
+            if (movementBufferRight >= 0 && coyoteTime >= 0)
+            {
+                //Sets the buffer to 0 to avoid errors
+                MoveToRight();
+                movementBufferRight = 0;
+            }
+            else if (movementBufferLeft >= 0 && coyoteTime >= 0)
+            {
+                MoveToLeft();
+                movementBufferLeft = 0;
+            }
+
+            //Shield and summoning handller
+            if (Input.GetKey(KeyCode.Space))
+            {
+                //Summon cooldown (I wrote Colldown, sry :|)
+                if (summonColldown <= 0)
+                {
+                    Summon();
+                }
+                //Coyete time subtraction
+                coyoteTime -= Time.deltaTime;
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (curentMana >= playerStats.manaPerShield)
+                {
+                    curentMana -= playerStats.manaPerShield;
+                }
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                ActivateShield();
+                coyoteTime -= Time.deltaTime;
+
+            }
+            if (Input.anyKey == false)
+            {
+                //If no key press, coyote time won't go down
+                coyoteTime = playerStats.coyoteTime;
+            }
+
+            //Shield and summoning input Up handller
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                //Sets coyote time to 0 to prevent any errors or bugs
+                coyoteTime = 0f;
+                //Resets the summoning delay time
                 Summon();
+                countDownToSummon = 0;
             }
-            //Coyete time subtraction
-            coyoteTime -= Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (curentMana >= playerStats.manaPerShield)
+            else if (Input.GetKeyUp(KeyCode.S) && shield.activeSelf == true || curentMana < playerStats.manaPerShield)
             {
-                curentMana -= playerStats.manaPerShield;
+                shield.SetActive(false);
+                canSummon = true;
+                curantShiledActiveTime = 0;
+            }
+
+            //Checs if player is dead and executes death if true
+            if (curantHealth <= 0)
+            {
+                Death();
+            }
+            //Checs if the mana is surpassing the maximum mana
+            if (curentMana > playerStats.maxMana)
+            {
+                curentMana = playerStats.maxMana;
+            }
+
+            //Resets the cooldown to 0
+            if (summonColldown > 0)
+            {
+                summonColldown -= Time.deltaTime;
             }
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            ActivateShield();
-            coyoteTime -= Time.deltaTime;
 
-        }
-        if (Input.anyKey == false)
+        //Pauser jogo
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            //If no key press, coyote time won't go down
-            coyoteTime = playerStats.coyoteTime;
-        }
-
-        //Shield and summoning input Up handller
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            //Sets coyote time to 0 to prevent any errors or bugs
-            coyoteTime = 0f;
-            //Resets the summoning delay time
-            Summon();
-            countDownToSummon = 0;
-        }
-        else if (Input.GetKeyUp(KeyCode.S) && shield.activeSelf == true || curentMana < playerStats.manaPerShield)
-        {
-            shield.SetActive(false);
-            canSummon = true;
-            curantShiledActiveTime = 0;
-        }
-
-        //Checs if player is dead and executes death if true
-        if (curantHealth <= 0)
-        {
-            Death();
-        }
-        //Checs if the mana is surpassing the maximum mana
-        if (curentMana > playerStats.maxMana)
-        {
-            curentMana = playerStats.maxMana;
-        }
-
-        //Resets the cooldown to 0
-        if (summonColldown > 0)
-        {
-            summonColldown -= Time.deltaTime;
+            PauseScreen();
         }
     }
 
@@ -268,5 +285,34 @@ public class PlayerController : MonoBehaviour
             default:
             break;
         }
+    }
+
+    //Pause
+    void PauseScreen()
+    {
+        if(isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1;
+            pausePanel.SetActive(false);
+            uiPanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            isPaused = true;
+            Time.timeScale = 0;
+            pausePanel.SetActive(true);
+            uiPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    //Back to Menu
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(cena);
     }
 }
