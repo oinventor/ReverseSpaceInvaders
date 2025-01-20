@@ -603,7 +603,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.055802763, g: 0.0833934, b: 0.6226415, a: 1}
   m_FlipX: 0
@@ -1103,7 +1103,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 27.04
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1736,7 +1736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &916790184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3748,6 +3748,9 @@ MonoBehaviour:
   superSummon: {fileID: 2854873896457048217, guid: 03afb7d1830d324479aded1dfa29187b, type: 3}
   playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
   shield: {fileID: 674604268}
+  pausePanel: {fileID: 916790183}
+  uiPanel: {fileID: 342539330}
+  cena: 
 --- !u!212 &2083018392
 SpriteRenderer:
   m_ObjectHideFlags: 0

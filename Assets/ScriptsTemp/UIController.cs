@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        chargeBar.transform.position = Camera.main.WorldToScreenPoint(new Vector3(player.transform.position.x, player.transform.position.y - 3));
+        chargeBar.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(player.transform.position.x, player.transform.position.y));
         newMana = PlayerController.curentMana;
         manaBar.value = newMana;
         curantCharge = PlayerController.countDownToSummon;

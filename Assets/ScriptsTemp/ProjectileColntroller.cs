@@ -47,12 +47,11 @@ public class ProjectileColntroller : MonoBehaviour
             break;
             case "Summon":
                 Destroy(objColls.gameObject);
+                Destroy(this.gameObject);
             break;
             case "SupperSummon":
                 Destroy(objColls.gameObject);
-            break;
-            case "ManaBall":
-                Destroy(objColls.gameObject);
+                Destroy(this.gameObject);
             break;
             default:
             break;

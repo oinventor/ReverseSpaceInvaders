@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool canSummon;
     public GameObject shield;
     private bool isPaused;
+    private bool canMove;
 
     [Header("Paineis e Menus")]
     public GameObject pausePanel;
@@ -33,9 +34,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canMove = true;
         Time.timeScale = 1;
         curantHealth = playerStats.maxHealth;
+        curentMana = 0f;
         countDownToSummon = 0;
+        coyoteTime = -1f;
+        movementBufferLeft = -1;
+        movementBufferRight = -1;
         this.gameObject.transform.position = new Vector3(0, 14.3f, 0);
     }
 
@@ -46,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if(!isPaused)
         {
             //Player keyboard imputs
-            switch (Input.GetKeyDown(KeyCode.D))
+            switch (Input.GetKeyDown(KeyCode.D) && canMove == true)
             {
                 //If player presses the key it sets the buffer to time
                 case true:
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour
                     movementBufferRight -= Time.deltaTime;
                     break;
             }
-            switch (Input.GetKeyDown(KeyCode.A))
+            switch (Input.GetKeyDown(KeyCode.A) && canMove == true)
             {
                 case true:
                     movementBufferLeft = playerStats.movementBuffer;
@@ -155,7 +161,7 @@ public class PlayerController : MonoBehaviour
     void Death()
     {
         Time.timeScale = 0;
-        this.GetComponent<PlayerController>().enabled = false;
+        canMove = false;
         onDeath.Invoke();
     }
 
