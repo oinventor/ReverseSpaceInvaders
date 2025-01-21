@@ -15,4 +15,5 @@ MonoBehaviour:
   spawnTime: 15
   maxHealth: 100
   healthPerSummon: 10
-  tank: {fileID: 2016230141594238315, guid: 4441dbea40e1b79409a690bc15e4203d, type: 3}
+  spawnable1: {fileID: 2016230141594238315, guid: 4441dbea40e1b79409a690bc15e4203d, type: 3}
+  spawnable2: {fileID: 7071268658602506392, guid: 766e5eef08ee8554f9ed49b01c90552d, type: 3}

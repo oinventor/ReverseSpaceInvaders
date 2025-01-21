@@ -8,6 +8,8 @@ public class ScrbCountry : ScriptableObject
     public float spawnTime;
     public int maxHealth;
     public int healthPerSummon;
-    public GameObject tank;
+    public GameObject spawnable1;
+    public GameObject spawnable2;
+
 
 }

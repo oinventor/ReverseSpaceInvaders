@@ -8,10 +8,12 @@ public class SumomController : MonoBehaviour
     private float movimentCooldownTime;
     public int damege;
     private float direction;
+    private int curantHealth;
     public ScrbSummon summonStats;
     // Start is called before the first frame update
     void Start()
     {
+        curantHealth = summonStats.maxHealth;
         damege = summonStats.damegeDelt;
         //This here will change the direction that the summon will go depending on where it spawns
         switch (this.transform.position.x >0)
@@ -28,6 +30,10 @@ public class SumomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (curantHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         //Increases the cooldown time
         movimentCooldownTime += Time.deltaTime;
         //So then when the cooldown reaches the trashold set by the Scrb
@@ -80,10 +86,14 @@ public class SumomController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collWithTank)
     {
-        if (collWithTank.gameObject.tag == "Tank")
+        if (collWithTank.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
+    }
+    public void TakeDamege(int damege)
+    {
+        curantHealth -= damege;
     }
 }
 

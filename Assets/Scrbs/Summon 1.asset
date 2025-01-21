@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Summon 1
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 0}
-  maxHealth: 0
+  maxHealth: 3
   damegeDelt: 5
   shootingTime: 0
   coolDownMovimento: 0.5

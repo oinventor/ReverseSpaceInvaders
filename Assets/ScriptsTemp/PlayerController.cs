@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool canSummon;
     public GameObject shield;
     private bool isPaused;
-    private bool canMove;
+    public bool canMove;
 
     [Header("Paineis e Menus")]
     public GameObject pausePanel;
@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
         movementBufferLeft = -1;
         movementBufferRight = -1;
         this.gameObject.transform.position = new Vector3(0, 14.3f, 0);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -162,6 +164,8 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 0;
         canMove = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         onDeath.Invoke();
     }
 

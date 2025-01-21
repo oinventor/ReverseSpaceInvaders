@@ -11,7 +11,7 @@ TagManager:
   - Projectile
   - DestroyBarier
   - SupperSummon
-  - Tank
+  - Enemy
   layers:
   - Default
   - TransparentFX

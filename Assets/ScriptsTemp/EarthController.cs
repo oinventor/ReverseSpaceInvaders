@@ -13,6 +13,7 @@ public class EarthController : MonoBehaviour
     public GameObject spawnPlataform3;
     public GameObject spawnPlataform4;
     public GameObject spawnPlataform5;
+    private GameObject spawnable;
     public static int curantHealth;
     private int chosenPlataform;
     private int nextPlataform;
@@ -31,6 +32,16 @@ public class EarthController : MonoBehaviour
         {
             spawnCountTime = 0;
             chosenPlataform = nextPlataform <= 0? Random.Range(1, 5 + 1): nextPlataform;
+            int whatSpawnable = Random.Range(1, 2 + 1);
+            switch (whatSpawnable)
+            {
+                case 1:
+                spawnable = countryStats.spawnable1;
+                break;
+                default:
+                spawnable = countryStats.spawnable2;
+                break;
+            }
             SpawnTank(chosenPlataform);
         }
         else if(curantHealth <= 0)
@@ -45,7 +56,9 @@ public class EarthController : MonoBehaviour
                 plataformChec4.collider == null && plataformChec5.collider == null)
             {
                 Time.timeScale = 0;
-                Destroy(GameObject.FindWithTag("Player").GetComponent<PlayerController>());
+                GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 onVictory.Invoke();
             }
         }
@@ -64,7 +77,7 @@ public class EarthController : MonoBehaviour
                 else
                 {
                     curantHealth -= countryStats.healthPerSummon;
-                    Instantiate(countryStats.tank, spawnPlataform1.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, spawnPlataform1.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -79,7 +92,7 @@ public class EarthController : MonoBehaviour
                 else
                 {
                     curantHealth -= countryStats.healthPerSummon;
-                    Instantiate(countryStats.tank, spawnPlataform2.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, spawnPlataform2.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -94,7 +107,7 @@ public class EarthController : MonoBehaviour
                 else
                 {
                     curantHealth -= countryStats.healthPerSummon;
-                    Instantiate(countryStats.tank, spawnPlataform3.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, spawnPlataform3.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 };
@@ -109,7 +122,7 @@ public class EarthController : MonoBehaviour
                 else
                 {
                     curantHealth -= countryStats.healthPerSummon;
-                    Instantiate(countryStats.tank, spawnPlataform4.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, spawnPlataform4.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -124,7 +137,7 @@ public class EarthController : MonoBehaviour
                 else
                 {
                     curantHealth -= countryStats.healthPerSummon;
-                    Instantiate(countryStats.tank, spawnPlataform5.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, spawnPlataform5.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }

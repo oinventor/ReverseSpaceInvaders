@@ -46,11 +46,11 @@ public class ProjectileColntroller : MonoBehaviour
                 Destroy(this.gameObject);
             break;
             case "Summon":
-                Destroy(objColls.gameObject);
+                objColls.gameObject.GetComponent<SumomController>().TakeDamege(damege);
                 Destroy(this.gameObject);
             break;
             case "SupperSummon":
-                Destroy(objColls.gameObject);
+                objColls.gameObject.GetComponent<SuperSummonController>().TakeDamege(damege);
                 Destroy(this.gameObject);
             break;
             default:
