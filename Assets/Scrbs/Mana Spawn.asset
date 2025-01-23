@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mana Spawn
   m_EditorClassIdentifier: 
   spawn: {fileID: 3721383624786979510, guid: a7bf638654fbeda4380b52555e98b1dc, type: 3}
-  tempoDeSpawn: 2
+  tempoDeSpawn: 4
   randMin: 1
-  randMax: 3
+  randMax: 5

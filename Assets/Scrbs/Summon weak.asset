@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Summon weak
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 0}
-  maxHealth: 3
-  damegeDelt: 5
+  maxHealth: 18
+  damegeDelt: 8
+  dmgOnCountry: 8
   shootingTime: 0
+  rotationSpeed: 0
   coolDownMovimento: 0.5
-  moveinetoHorizontal: 3
+  moveinetoHorizontal: 5
   movimentoVertical: 2
-  distanciaMaxDireita: 15
-  distanciaMaxEsquerda: 15
+  distanciaMaxDireita: 8
+  distanciaMaxEsquerda: 8
+  shootSpeed: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 0}
   maxHealth: 0
-  damegeDelt: 10
+  damegeDelt: 8
   dmgOnCountry: 0
   shootingTime: 0
   rotationSpeed: 0

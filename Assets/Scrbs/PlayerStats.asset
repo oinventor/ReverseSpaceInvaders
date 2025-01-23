@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 25
   coolDownSummoning: 1
   shieldCooldown: 5
   shieldUptime: 5
   holdToSuperSummonTime: 1
   holdToSummonTime: 0.5
   manaPerSummon: 5
-  manaPerSuperSummon: 15
+  manaPerSuperSummon: 25
   maxMana: 50
   manaPerManaBall: 5
   manaPerShield: 5

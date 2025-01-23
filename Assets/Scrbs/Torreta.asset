@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Torreta
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 5018502367730268849, guid: 749a4a732cacb8c41ae73d62e932df5e, type: 3}
-  maxHealth: 10
+  maxHealth: 12
   damegeDelt: 0
-  shootingTime: 3
+  dmgOnCountry: 0
+  shootingTime: 2
+  rotationSpeed: 0
   coolDownMovimento: 0
   moveinetoHorizontal: 0
   movimentoVertical: 0
   distanciaMaxDireita: 0
   distanciaMaxEsquerda: 0
+  shootSpeed: 0
