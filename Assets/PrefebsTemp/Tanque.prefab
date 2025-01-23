@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 842290581897682282}
   - component: {fileID: 6261690557947589047}
   - component: {fileID: 9154748646930456997}
+  - component: {fileID: 1364213715328577547}
   m_Layer: 0
   m_Name: Tanque
   m_TagString: Tank
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1349289486720182929, guid: 4fac1d5d08e00f142a73fd7da1bef281, type: 3}
+  m_Sprite: {fileID: 1702523881, guid: 45104c2589376124fb74c991130228fe, type: 3}
   m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankStats: {fileID: 11400000, guid: f363ad37bb7426f468f7603285a18bf6, type: 2}
+  animator: {fileID: 1364213715328577547}
 --- !u!61 &9154748646930456997
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,16 +133,37 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014785945, y: 0.16264503}
+  m_Offset: {x: -0.001888305, y: 0.034347575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5217391, y: -0.15384616}
-    oldSize: {x: 0.23, y: 0.26}
+    pivot: {x: 0.494636, y: 0.39719078}
+    oldSize: {x: 0.23, y: 0.24}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2843619, y: 0.34350547}
+  m_Size: {x: 0.25856662, y: 0.2878419}
   m_EdgeRadius: 0
+--- !u!95 &1364213715328577547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016230141594238315}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad9ef4299ac06b74faab64a301916052, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

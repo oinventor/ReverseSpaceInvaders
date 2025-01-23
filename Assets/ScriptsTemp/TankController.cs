@@ -7,10 +7,14 @@ public class TankController : MonoBehaviour
     public ScrbSummon tankStats;
     private int curentHealth;
     private float countdownToShoot;
+    private bool tankFire = false;
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         curentHealth = tankStats.maxHealth;
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,6 +28,8 @@ public class TankController : MonoBehaviour
         countdownToShoot += Time.deltaTime;
         if (countdownToShoot >= tankStats.shootingTime)
         {
+            StartCoroutine(animationFire());
+
             Instantiate(tankStats.projectileTank, new Vector3(transform.position.x,transform.position.y + 3, 0), Quaternion.identity);
             countdownToShoot = 0;
         }
@@ -45,5 +51,16 @@ public class TankController : MonoBehaviour
             default:
             break;
         }
+    }
+
+    IEnumerator animationFire()
+    {
+        tankFire = true;
+        animator.SetBool("Atirando", tankFire);
+
+        yield return new WaitForSeconds(1.0f);
+
+        tankFire = false;
+        animator.SetBool("Atirando", tankFire);
     }
 }
