@@ -18,9 +18,11 @@ public class EarthController : MonoBehaviour
     private int chosenPlataform;
     private int nextPlataform;
     private float spawnCountTime;
+    private bool firstSpawn;
     // Start is called before the first frame update
     void Start()
     {
+        firstSpawn = true;
         curantHealth = countryStats.maxHealth;
     }
 
@@ -28,6 +30,11 @@ public class EarthController : MonoBehaviour
     void Update()
     {
         spawnCountTime += Time.deltaTime;
+        if (firstSpawn == true && spawnCountTime >= countryStats.startSpawnTime)
+        {
+            firstSpawn = false;
+            spawnCountTime = countryStats.spawnTime;
+        }
         if (curantHealth > 0 && spawnCountTime >= countryStats.spawnTime || nextPlataform > 0)
         {
             spawnCountTime = 0;

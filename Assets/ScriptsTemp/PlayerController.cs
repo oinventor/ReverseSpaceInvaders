@@ -159,7 +159,6 @@ public class PlayerController : MonoBehaviour
             if (shieldUptime <= 0 && shield.activeSelf == true)
             {
                 shield.SetActive(false);
-                canMove = true;
                 shieldCooldown = playerStats.shieldCooldown;
             }
         }
@@ -275,7 +274,6 @@ public class PlayerController : MonoBehaviour
             shield.SetActive(true);
             shieldUptime = playerStats.shieldUptime;
             curentMana -= playerStats.manaPerShield;
-            canMove = false;
         }
     }
 
@@ -295,7 +293,10 @@ public class PlayerController : MonoBehaviour
                 }
             break;
             case "Projectile":
-                curantHealth -= objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
+                if (shield.activeSelf != true)
+                {
+                    curantHealth -= objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
+                }
             break;
             default:
             break;

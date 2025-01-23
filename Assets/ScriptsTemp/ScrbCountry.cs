@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Country Stats", menuName = "Scrbs/Contry")]
 public class ScrbCountry : ScriptableObject
 {
+    public float startSpawnTime;
     public float spawnTime;
     public int maxHealth;
     public int healthPerSummon;
