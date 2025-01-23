@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 20
   damegeDelt: 0
   dmgOnCountry: 0
-  shootingTime: 4
+  shootingTime: 5
   rotationSpeed: 0
   coolDownMovimento: 0
   moveinetoHorizontal: 0
