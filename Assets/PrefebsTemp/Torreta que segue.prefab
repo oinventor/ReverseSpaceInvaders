@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3607ab4efe1ca22438f791e7f2881c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretaQueSegue: {fileID: 0}
+  turretaQueSegue: {fileID: 11400000, guid: c5f340fd2a7981041950724afe3a1934, type: 2}

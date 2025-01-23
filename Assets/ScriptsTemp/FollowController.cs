@@ -6,12 +6,13 @@ public class FollowController : MonoBehaviour
 {
     public ScrbSummon turretaQueSegue;
     private Transform target;
-    private float enemyAimSpeed = 5.0f;
+    private float enemyAimSpeed;
     Quaternion newRotation;
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        enemyAimSpeed = turretaQueSegue.rotationSpeed;
     }
 
     // Update is called once per frame
