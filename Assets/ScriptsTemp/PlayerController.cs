@@ -20,13 +20,15 @@ public class PlayerController : MonoBehaviour
     private float movementBufferRight;
     private float movementBufferLeft;
     public static float curentMana;
-    private float curantShiledActiveTime;
+    private float shieldCooldown;
+    private float shieldUptime;
     private bool canSummon;
     public GameObject shield;
     private bool isPaused;
     public bool canMove;
 
     [Header("Paineis e Menus")]
+    public GameObject chargeBar;
     public GameObject pausePanel;
     public GameObject uiPanel;
     public string cena;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canSummon = true;
         canMove = true;
         Time.timeScale = 1;
         curantHealth = playerStats.maxHealth;
@@ -42,7 +45,7 @@ public class PlayerController : MonoBehaviour
         coyoteTime = -1f;
         movementBufferLeft = -1;
         movementBufferRight = -1;
-        this.gameObject.transform.position = new Vector3(0, 14.3f, 0);
+        this.gameObject.transform.position = new Vector3(1.1f, 14.3f, 0);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -91,6 +94,7 @@ public class PlayerController : MonoBehaviour
             //Shield and summoning handller
             if (Input.GetKey(KeyCode.Space))
             {
+                chargeBar.SetActive(true);
                 //Summon cooldown (I wrote Colldown, sry :|)
                 if (summonColldown <= 0)
                 {
@@ -103,14 +107,10 @@ public class PlayerController : MonoBehaviour
             {
                 if (curentMana >= playerStats.manaPerShield)
                 {
-                    curentMana -= playerStats.manaPerShield;
+                    ActivateShield();
                 }
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                ActivateShield();
+                //Coyete time subtraction
                 coyoteTime -= Time.deltaTime;
-
             }
             if (Input.anyKey == false)
             {
@@ -121,17 +121,12 @@ public class PlayerController : MonoBehaviour
             //Shield and summoning input Up handller
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                chargeBar.SetActive(false);
                 //Sets coyote time to 0 to prevent any errors or bugs
                 coyoteTime = 0f;
                 //Resets the summoning delay time
                 Summon();
                 countDownToSummon = 0;
-            }
-            else if (Input.GetKeyUp(KeyCode.S) && shield.activeSelf == true || curentMana < playerStats.manaPerShield)
-            {
-                shield.SetActive(false);
-                canSummon = true;
-                curantShiledActiveTime = 0;
             }
 
             //Checs if player is dead and executes death if true
@@ -145,10 +140,27 @@ public class PlayerController : MonoBehaviour
                 curentMana = playerStats.maxMana;
             }
 
-            //Resets the cooldown to 0
+            //Resets summon the cooldown to 0
             if (summonColldown > 0)
             {
                 summonColldown -= Time.deltaTime;
+            }
+            //Resets shield cooldown to 0
+            if (shieldCooldown > 0)
+            {
+                shieldCooldown -= Time.deltaTime;
+            }
+
+            //Resets shield uptime to 0
+            if (shieldUptime > 0)
+            {
+                shieldUptime -= Time.deltaTime;
+            }
+            if (shieldUptime <= 0 && shield.activeSelf == true)
+            {
+                shield.SetActive(false);
+                canMove = true;
+                shieldCooldown = playerStats.shieldCooldown;
             }
         }
 
@@ -258,19 +270,12 @@ public class PlayerController : MonoBehaviour
     //Shield
     void ActivateShield()
     {
-        if (curentMana >= playerStats.manaPerShield)
+        if (shieldCooldown <= 0 && shieldUptime <= 0)
         {
             shield.SetActive(true);
-            if (shield.activeSelf == true)
-            {
-                canSummon = false;
-                curantShiledActiveTime += Time.deltaTime;
-            }
-            if (curantShiledActiveTime >= playerStats.shieldManaDrainTime)
-            {
-                curentMana -= playerStats.manaPerShield;
-                curantShiledActiveTime = 0;
-            }
+            shieldUptime = playerStats.shieldUptime;
+            curentMana -= playerStats.manaPerShield;
+            canMove = false;
         }
     }
 

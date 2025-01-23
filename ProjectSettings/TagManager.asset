@@ -12,6 +12,8 @@ TagManager:
   - DestroyBarier
   - SupperSummon
   - Enemy
+  - Tank
+  - Country
   layers:
   - Default
   - TransparentFX

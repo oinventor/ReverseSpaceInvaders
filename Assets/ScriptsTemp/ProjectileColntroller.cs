@@ -25,7 +25,7 @@ public class ProjectileColntroller : MonoBehaviour
         {
             //It will move to a certan horizontal direction
             case true:
-                this.transform.position += new Vector3(0, projectileStats.movimentoVertical,0);
+                this.transform.position += transform.up * projectileStats.shootSpeed;
                 movimentCooldownTime = 0;
             break;
             default:

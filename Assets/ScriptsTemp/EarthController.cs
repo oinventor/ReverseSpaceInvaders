@@ -32,14 +32,17 @@ public class EarthController : MonoBehaviour
         {
             spawnCountTime = 0;
             chosenPlataform = nextPlataform <= 0? Random.Range(1, 5 + 1): nextPlataform;
-            int whatSpawnable = Random.Range(1, 2 + 1);
+            int whatSpawnable = Random.Range(1, 3 + 1);
             switch (whatSpawnable)
             {
                 case 1:
                 spawnable = countryStats.spawnable1;
                 break;
-                default:
+                case 2:
                 spawnable = countryStats.spawnable2;
+                break;
+                default:
+                spawnable = countryStats.spawnable3;
                 break;
             }
             SpawnTank(chosenPlataform);
@@ -150,5 +153,10 @@ public class EarthController : MonoBehaviour
             default:
             break;
         }
+    }
+
+    public static void TakeDamege(int dmgTaken)
+    {
+        curantHealth -= dmgTaken;
     }
 }

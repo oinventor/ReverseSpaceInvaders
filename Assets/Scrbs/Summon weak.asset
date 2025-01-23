@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
-  m_Name: Projetile 1
+  m_Name: Summon weak
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 0}
-  maxHealth: 0
-  damegeDelt: 10
+  maxHealth: 3
+  damegeDelt: 5
   shootingTime: 0
-  coolDownMovimento: 0.05
-  moveinetoHorizontal: 0
-  movimentoVertical: 0.5
-  distanciaMaxDireita: 0
-  distanciaMaxEsquerda: 0
+  coolDownMovimento: 0.5
+  moveinetoHorizontal: 3
+  movimentoVertical: 2
+  distanciaMaxDireita: 15
+  distanciaMaxEsquerda: 15

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SuperSummonController : MonoBehaviour
 {
     public int damege;
+    private static int dgmOnCountry;
     private float movimentCooldownTime;
     private int curantHealth;
     public ScrbSummon summonStats;
@@ -13,6 +14,7 @@ public class SuperSummonController : MonoBehaviour
     {
         damege = summonStats.damegeDelt;
         curantHealth = summonStats.maxHealth;
+        dgmOnCountry = summonStats.dmgOnCountry;
     }
 
     // Update is called once per frame
@@ -36,11 +38,19 @@ public class SuperSummonController : MonoBehaviour
             break;
         }
     }
-    void OnTriggerEnter2D(Collider2D collWithTank)
+    void OnTriggerEnter2D(Collider2D collWithObj)
     {
-        if (collWithTank.gameObject.tag == "Enemy")
+        switch (collWithObj.tag)
         {
+            case "Enemy":
             Destroy(this.gameObject);
+            break;
+            case "Country":
+            EarthController.TakeDamege(dgmOnCountry);
+            Destroy(this.gameObject);
+            break;
+            default:
+            break;
         }
     }
     public void TakeDamege(int damege)

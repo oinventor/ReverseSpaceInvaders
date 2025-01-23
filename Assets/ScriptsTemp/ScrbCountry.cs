@@ -10,6 +10,6 @@ public class ScrbCountry : ScriptableObject
     public int healthPerSummon;
     public GameObject spawnable1;
     public GameObject spawnable2;
-
+    public GameObject spawnable3;
 
 }

@@ -7,6 +7,7 @@ public class SumomController : MonoBehaviour
 {
     private float movimentCooldownTime;
     public int damege;
+    private static int dgmOnCountry;
     private float direction;
     private int curantHealth;
     public ScrbSummon summonStats;
@@ -14,6 +15,7 @@ public class SumomController : MonoBehaviour
     void Start()
     {
         curantHealth = summonStats.maxHealth;
+        dgmOnCountry = summonStats.dmgOnCountry;
         damege = summonStats.damegeDelt;
         //This here will change the direction that the summon will go depending on where it spawns
         switch (this.transform.position.x >0)
@@ -84,11 +86,19 @@ public class SumomController : MonoBehaviour
         //Then it moves
         this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
     }
-    void OnTriggerEnter2D(Collider2D collWithTank)
+    void OnTriggerEnter2D(Collider2D collWithObj)
     {
-        if (collWithTank.gameObject.tag == "Enemy")
+        switch (collWithObj.tag)
         {
+            case "Enemy":
             Destroy(this.gameObject);
+            break;
+            case "Country":
+            EarthController.TakeDamege(dgmOnCountry);
+            Destroy(this.gameObject);
+            break;
+            default:
+            break;
         }
     }
     public void TakeDamege(int damege)

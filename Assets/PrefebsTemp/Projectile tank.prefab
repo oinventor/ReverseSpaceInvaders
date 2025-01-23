@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2421003957658736644}
   - component: {fileID: 3958540961435348746}
   m_Layer: 0
-  m_Name: Projectile 2
+  m_Name: Projectile tank
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.3303235, g: 1, b: 0.031372547, a: 1}
+  m_Color: {r: 1, g: 0.033018887, b: 0.9676811, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damege: 0
-  projectileStats: {fileID: 11400000, guid: e691ccda3e7c48446a55b6f3de2bf67c, type: 2}
+  projectileStats: {fileID: 11400000, guid: 2c666a730f485ae40a0c76c3b799eb30, type: 2}
