@@ -15,9 +15,12 @@ MonoBehaviour:
   projectileTank: {fileID: 0}
   maxHealth: 0
   damegeDelt: 5
+  dmgOnCountry: 0
   shootingTime: 0
+  rotationSpeed: 0
   coolDownMovimento: 0.04
   moveinetoHorizontal: 0
   movimentoVertical: 1
   distanciaMaxDireita: 0
   distanciaMaxEsquerda: 0
+  shootSpeed: 1

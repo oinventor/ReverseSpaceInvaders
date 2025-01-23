@@ -2665,7 +2665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1602406088
 Transform:
   m_ObjectHideFlags: 0
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   summon: {fileID: 8352907226429474862, guid: 9dca42fea9c9a9244a61041f99b77b04, type: 3}
   superSummon: {fileID: 2854873896457048217, guid: 03afb7d1830d324479aded1dfa29187b, type: 3}
   playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
-  shield: {fileID: 0}
+  shield: {fileID: 1602406087}
   canMove: 0
   chargeBar: {fileID: 1151975963}
   pausePanel: {fileID: 916790183}
@@ -4067,8 +4067,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022521544, y: -0.041885354}
-  m_Size: {x: 1.5068744, y: 1.5575635}
+  m_Offset: {x: 0.007718802, y: -0.0014205661}
+  m_Size: {x: 1.1137514, y: 1.1742314}
   m_Direction: 0
 --- !u!50 &2083018396
 Rigidbody2D:
