@@ -15,14 +15,14 @@ MonoBehaviour:
   maxHealth: 30
   coolDownSummoning: 1
   shieldCooldown: 5
-  shieldUptime: 5
+  shieldUptime: 3
   holdToSuperSummonTime: 1
   holdToSummonTime: 0.5
   manaPerSummon: 5
   manaPerSuperSummon: 20
   maxMana: 50
   manaPerManaBall: 10
-  manaPerShield: 5
+  manaPerShield: 10
   laneMaxDistance: 10
   coyoteTime: 0.2
   movementBuffer: 0.2
