@@ -15,4 +15,4 @@ MonoBehaviour:
   spawn: {fileID: 3721383624786979510, guid: a7bf638654fbeda4380b52555e98b1dc, type: 3}
   tempoDeSpawn: 4
   randMin: 1
-  randMax: 5
+  randMax: 3

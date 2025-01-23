@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af05e202097a6414d9aa9e92330ffafc, type: 3}
   m_Name: Country Stats
   m_EditorClassIdentifier: 
-  spawnTime: 10
+  spawnTime: 8
   maxHealth: 100
   healthPerSummon: 0
   spawnable1: {fileID: 2016230141594238315, guid: 4441dbea40e1b79409a690bc15e4203d, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SuperSummon
   m_EditorClassIdentifier: 
   projectileTank: {fileID: 0}
-  maxHealth: 25
+  maxHealth: 40
   damegeDelt: 15
   dmgOnCountry: 15
   shootingTime: 0
