@@ -11,12 +11,22 @@ public class SumomController : MonoBehaviour
     private float direction;
     private int curantHealth;
     public ScrbSummon summonStats;
+    private bool takeDamage;
+    private bool death;
+
+    [Header("Animação")]
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         curantHealth = summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
         damege = summonStats.damegeDelt;
+        death = false;
+        takeDamage = false;
+        animator = this.gameObject.GetComponent<Animator>();
+
         //This here will change the direction that the summon will go depending on where it spawns
         switch (this.transform.position.x >0)
         {
@@ -34,8 +44,9 @@ public class SumomController : MonoBehaviour
     {
         if (curantHealth <= 0)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(animationDeath());
         }
+
         //Increases the cooldown time
         movimentCooldownTime += Time.deltaTime;
         //So then when the cooldown reaches the trashold set by the Scrb
@@ -86,6 +97,7 @@ public class SumomController : MonoBehaviour
         //Then it moves
         this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
     }
+    
     void OnTriggerEnter2D(Collider2D collWithObj)
     {
         switch (collWithObj.tag)
@@ -101,9 +113,32 @@ public class SumomController : MonoBehaviour
             break;
         }
     }
+    
     public void TakeDamege(int damege)
     {
         curantHealth -= damege;
+        StartCoroutine(animationDamage());
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDamage()
+    {
+        takeDamage = true;
+        animator.SetBool("DanoSofrido", takeDamage);
+        yield return new WaitForSeconds(0.3f);
+        takeDamage = false;
+        animator.SetBool("DanoSofrido", takeDamage);
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDeath()
+    {
+        death = true;
+        animator.SetBool("Morte", death);
+        yield return new WaitForSeconds(1.0f);
+        death = false;
+        animator.SetBool("Morte", death);
+        Destroy(this.gameObject);
     }
 }
 

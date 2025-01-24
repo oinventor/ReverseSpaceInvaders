@@ -7,14 +7,17 @@ public class TankController : MonoBehaviour
     public ScrbSummon tankStats;
     private int curentHealth;
     private float countdownToShoot;
-    private bool tankFire = false;
+    private bool tankFire;
+    private bool death;
     public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         curentHealth = tankStats.maxHealth;
-        animator = this.gameObject.GetComponent<Animator>();
+        tankFire = false;
+        death = false;
+    animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +25,7 @@ public class TankController : MonoBehaviour
     {
         if (curentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(animationDeath());
         }
 
         countdownToShoot += Time.deltaTime;
@@ -62,5 +65,16 @@ public class TankController : MonoBehaviour
 
         tankFire = false;
         animator.SetBool("Atirando", tankFire);
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDeath()
+    {
+        death = true;
+        animator.SetBool("Morte", death);
+        yield return new WaitForSeconds(1.0f);
+        death = false;
+        animator.SetBool("Morte", death);
+        Destroy(this.gameObject);
     }
 }

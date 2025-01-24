@@ -26,12 +26,16 @@ public class PlayerController : MonoBehaviour
     public GameObject shield;
     private bool isPaused;
     public bool canMove;
+    private bool takeDamage;
 
     [Header("Paineis e Menus")]
     public GameObject chargeBar;
     public GameObject pausePanel;
     public GameObject uiPanel;
     public string cena;
+
+    [Header("Animação")]
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
         this.gameObject.transform.position = new Vector3(1.1f, 14.3f, 0);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        takeDamage = false;
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -296,6 +302,7 @@ public class PlayerController : MonoBehaviour
                 if (shield.activeSelf != true)
                 {
                     curantHealth -= objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
+                    StartCoroutine(animationDamage());
                 }
             break;
             default:
@@ -330,5 +337,15 @@ public class PlayerController : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(cena);
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDamage()
+    {
+        takeDamage = true;
+        animator.SetBool("DanoSofrido", takeDamage);
+        yield return new WaitForSeconds(0.3f);
+        takeDamage = false;
+        animator.SetBool("DanoSofrido", takeDamage);
     }
 }

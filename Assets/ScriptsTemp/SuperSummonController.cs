@@ -9,12 +9,20 @@ public class SuperSummonController : MonoBehaviour
     private float movimentCooldownTime;
     private int curantHealth;
     public ScrbSummon summonStats;
+    private bool takeDamage;
+    private bool death;
+
+    [Header("Animação")]
+    public Animator animator;
 
     void Start()
     {
         damege = summonStats.damegeDelt;
         curantHealth = summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
+        death = false;
+        takeDamage = false;
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,8 +30,11 @@ public class SuperSummonController : MonoBehaviour
     {
         if (curantHealth <= 0)
         {
-            Destroy(this.gameObject);
+            Debug.Log("Entrou na morte");
+
+            StartCoroutine(animationDeath());
         }
+
         //Increases the cooldown time
         movimentCooldownTime += Time.deltaTime;
         //So then when the cooldown reaches the trashold set by the Scrb
@@ -56,5 +67,29 @@ public class SuperSummonController : MonoBehaviour
     public void TakeDamege(int damege)
     {
         curantHealth -= damege;
+        StartCoroutine(animationDamage());
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDamage()
+    {
+        takeDamage = true;
+        animator.SetBool("DanoSofrido", takeDamage);
+        yield return new WaitForSeconds(0.3f);
+        takeDamage = false;
+        animator.SetBool("DanoSofrido", takeDamage);
+    }
+
+    //Take damage in Cleber
+    IEnumerator animationDeath()
+    {
+        Debug.Log("Morreu animação");
+
+        death = true;
+        animator.SetBool("Morte", death);
+        yield return new WaitForSeconds(1.0f);
+        death = false;
+        animator.SetBool("Morte", death);
+        Destroy(this.gameObject);
     }
 }

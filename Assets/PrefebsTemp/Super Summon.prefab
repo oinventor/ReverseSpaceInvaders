@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7747277492731511511}
   - component: {fileID: 8320650575714667047}
   - component: {fileID: -6652307200849926003}
+  - component: {fileID: 7921057098298721088}
   m_Layer: 0
   m_Name: Super Summon
   m_TagString: SupperSummon
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damege: 0
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
+  animator: {fileID: 7921057098298721088}
 --- !u!58 &8320650575714667047
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +165,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &7921057098298721088
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854873896457048217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfb3d47c8f28a4b49ae1be605a3c62a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

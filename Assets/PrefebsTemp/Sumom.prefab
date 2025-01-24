@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5654528812459939239}
   - component: {fileID: -2632541083104375115}
   - component: {fileID: 9004357356988573683}
+  - component: {fileID: 1314780769861037296}
   m_Layer: 0
   m_Name: Sumom
   m_TagString: Summon
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damege: 0
   summonStats: {fileID: 11400000, guid: 4180a5ebdd76c5d4f801c123610b48cc, type: 2}
+  animator: {fileID: 1314780769861037296}
 --- !u!58 &-2632541083104375115
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +165,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1314780769861037296
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352907226429474862}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf539683ea0334b499dae92d5cedd0cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
