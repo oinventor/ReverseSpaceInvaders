@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private bool isPaused;
     public bool canMove;
     private bool takeDamage;
+    private bool activeShield;
 
     [Header("Paineis e Menus")]
     public GameObject chargeBar;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         takeDamage = false;
+        activeShield = false;
         animator = this.gameObject.GetComponent<Animator>();
     }
 
@@ -278,6 +280,9 @@ public class PlayerController : MonoBehaviour
         if (shieldCooldown <= 0 && shieldUptime <= 0)
         {
             shield.SetActive(true);
+
+            StartCoroutine(animationShield());
+
             shieldUptime = playerStats.shieldUptime;
             curentMana -= playerStats.manaPerShield;
         }
@@ -347,5 +352,17 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         takeDamage = false;
         animator.SetBool("DanoSofrido", takeDamage);
+    }
+
+    //Active Shield in Cleber
+    IEnumerator animationShield()
+    {
+        Debug.Log("Entrou no escudo");
+
+        activeShield = true;
+        animator.SetBool("DefesaAtiva", activeShield);
+        yield return new WaitForSeconds(0.3f);
+        activeShield = false;
+        animator.SetBool("DefesaAtiva", activeShield);
     }
 }
