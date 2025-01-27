@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public GameObject uiPanel;
     public string cena;
 
-    [Header("Animação")]
+    [Header("Animaï¿½ï¿½o")]
     public Animator animator;
 
     // Start is called before the first frame update
@@ -316,7 +316,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Pause
-    void PauseScreen()
+    public void PauseScreen()
     {
         if(isPaused)
         {

@@ -13,6 +13,14 @@ public class MenuesController : MonoBehaviour
     {
         SceneManager.LoadScene("MainManue");
     }
+    public void LoadSceneDeath()
+    {
+        SceneManager.LoadScene("DeathScene");
+    }
+    public void LoadSceneWin()
+    {
+        SceneManager.LoadScene("WinhScene");
+    }
     public void Quit()
     {
         Application.Quit();
