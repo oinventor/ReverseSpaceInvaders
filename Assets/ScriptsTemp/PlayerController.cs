@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float movementBufferRight;
     private float movementBufferLeft;
     public static float curentMana;
-    private float shieldCooldown;
+    [NonSerialized]public static float shieldCooldown;
     private float shieldUptime;
     private bool canSummon;
     public GameObject shield;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14d32e8c4a85a844fadffa456819b247
+guid: efff779d4436c1a4683b12c04c1cca59
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 11
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,55 +93,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EXPROSION_0
+      name: escudo-Sheet_0
       rect:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 12
+        width: 11
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 087d86056cd3f4e4b94e59068668c771
-      internalID: 1995152121
+      spriteID: f86bb813971063840bf95d3bfe2f358e
+      internalID: -882686155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPROSION_1
+      name: escudo-Sheet_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 14
-        height: 15
+        x: 18
+        y: 2
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,71 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1833a88086f1af244b6981fc8aa1d2fc
-      internalID: 1680570425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPROSION_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 1
-        width: 15
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1fe78857ebac2ad41b418cb47adb7227
-      internalID: -2134233415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPROSION_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 4
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4ff1606764aa2646a43e5c7224eba89
-      internalID: -309252110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPROSION_4
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 6
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17947e1daad14dc43a05bf1bfe937b76
-      internalID: -1077732345
+      spriteID: 5ae1196516952644ba7326853d324c5f
+      internalID: -1436360580
       vertices: []
       indices: 
       edges: []
@@ -251,11 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EXPROSION_0: 1995152121
-      EXPROSION_1: 1680570425
-      EXPROSION_2: -2134233415
-      EXPROSION_3: -309252110
-      EXPROSION_4: -1077732345
+      escudo-Sheet_0: -882686155
+      escudo-Sheet_1: -1436360580
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

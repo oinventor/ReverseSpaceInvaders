@@ -17,7 +17,7 @@ public class TankController : MonoBehaviour
         curentHealth = tankStats.maxHealth;
         tankFire = false;
         death = false;
-    animator = this.gameObject.GetComponent<Animator>();
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
