@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac74a4665ae528645a014a1f3fbac61a
+guid: 175ed7a1237810b47a1c6d61a6bbd3a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 3
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mana 3 16px_0
+      name: missil_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 11
-        height: 11
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1a1b4fd2779144a95d977ad1c457b1
-      internalID: 1044909377
+      spriteID: 5c5e8109ebfc6394aad9f445f0038702
+      internalID: -705138230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mana 3 16px_1
+      name: missil_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 2
-        width: 11
-        height: 12
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,29 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ed80287a4e6df5498d4eba189dddada
-      internalID: -669465929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mana 3 16px_2
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 3
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01f6eda176f2b9c4fbecf6d592d5fc9b
-      internalID: -1596355123
+      spriteID: 4f6ebb3afb08b4c4cae38137faa54787
+      internalID: -1841419592
       vertices: []
       indices: 
       edges: []
@@ -209,9 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mana 3 16px_0: 1044909377
-      mana 3 16px_1: -669465929
-      mana 3 16px_2: -1596355123
+      missil_0: -705138230
+      missil_1: -1841419592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

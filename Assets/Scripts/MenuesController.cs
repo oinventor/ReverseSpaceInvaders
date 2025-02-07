@@ -19,7 +19,7 @@ public class MenuesController : MonoBehaviour
     }
     public void LoadSceneWin()
     {
-        SceneManager.LoadScene("WinhScene");
+        SceneManager.LoadScene("WinScene");
     }
     public void Quit()
     {
