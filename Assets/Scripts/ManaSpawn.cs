@@ -23,7 +23,7 @@ public class ManaSpawn : MonoBehaviour
         {
             spawnTimeCount = 0;
             spawnChanceRand = 0;
-            spawnChanceRand = Random.Range(manaSpawn.randMin, manaSpawn.randMax+1);
+            spawnChanceRand = Random.Range(1, manaSpawn.randMax+1);
             RaycastHit2D manaChec = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 2f), transform.TransformDirection(Vector2.down), 2f);
             if(manaChec.collider == null)
             {

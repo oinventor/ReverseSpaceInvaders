@@ -43,13 +43,13 @@ public class EarthController : MonoBehaviour
             switch (whatSpawnable)
             {
                 case 1:
-                spawnable = countryStats.spawnable1;
+                spawnable = countryStats.inimigo1;
                 break;
                 case 2:
-                spawnable = countryStats.spawnable2;
+                spawnable = countryStats.inimigo2;
                 break;
                 default:
-                spawnable = countryStats.spawnable3;
+                spawnable = countryStats.inimigo3;
                 break;
             }
             SpawnTank(chosenPlataform);

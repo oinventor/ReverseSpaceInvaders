@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: Torreta
   m_EditorClassIdentifier: 
-  projectileTank: {fileID: 5018502367730268849, guid: 749a4a732cacb8c41ae73d62e932df5e, type: 3}
-  maxHealth: 15
-  damegeDelt: 0
-  dmgOnCountry: 0
-  shootingTime: 3
-  rotationSpeed: 0
-  coolDownMovimento: 0
-  moveinetoHorizontal: 0
-  movimentoVertical: 0
-  distanciaMaxDireita: 0
-  distanciaMaxEsquerda: 0
-  shootSpeed: 0
+  healthMax: 15
+  damegeDeltOnCollision: 0
+  damegeDeltOnPlanet: 0
+  followSpeed: 0
+  movementCooldown: 0
+  horizontalMovement: 0
+  verticalMovement: 0
+  rightMovementMaxDistance: 0
+  leftMovementMaxDistance: 0
+  projectile: {fileID: 5018502367730268849, guid: 749a4a732cacb8c41ae73d62e932df5e, type: 3}
+  shootingCooldown: 5
+  projectileSpeed: 0

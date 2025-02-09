@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  coolDownSummoning: 1
-  shieldCooldown: 5
-  shieldUptime: 3
-  holdToSuperSummonTime: 1
-  holdToSummonTime: 0.5
-  manaPerSummon: 5
-  manaPerSuperSummon: 20
-  maxMana: 50
-  manaPerManaBall: 10
-  manaPerShield: 10
-  laneMaxDistance: 10
-  coyoteTime: 0.2
-  movementBuffer: 0.2
+  healthMax: 100
+  manaMax: 50
+  manaRegen: 15
+  heathSteal: 0
+  summoningCoolDown: 2
+  manaUsedPerMiniSummon: 2
+  manaUsedPerSuperSummon: 5
+  coolDownShield: 2
+  uptimeShield: 3
+  manaUsedPerShield: 5
+  inputCoyoteTime: 0.2
+  inputMovementBuffer: 0.2
+  pressedTimeToMiniSummon: 0.5
+  pressedTimeToSuperSummon: 1
+  laneDistance: 10

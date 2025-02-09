@@ -33,7 +33,7 @@ public class TankController : MonoBehaviour
         {
             StartCoroutine(animationFire());
 
-            Instantiate(tankStats.projectileTank, new Vector3(transform.position.x,transform.position.y, 0), transform.rotation);
+            Instantiate(tankStats.projectile, new Vector3(transform.position.x,transform.position.y, 0), transform.rotation);
             countdownToShoot = 0;
         }
     }

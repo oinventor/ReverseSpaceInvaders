@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: TankStats
   m_EditorClassIdentifier: 
-  projectileTank: {fileID: 5018502367730268849, guid: 5e8598d967dd4f043b6dc84730c1ef25, type: 3}
-  maxHealth: 20
-  damegeDelt: 0
-  dmgOnCountry: 0
-  shootingTime: 5
-  rotationSpeed: 0
-  coolDownMovimento: 0
-  moveinetoHorizontal: 0
-  movimentoVertical: 0
-  distanciaMaxDireita: 0
-  distanciaMaxEsquerda: 0
-  shootSpeed: 0
+  healthMax: 20
+  damegeDeltOnCollision: 0
+  damegeDeltOnPlanet: 0
+  followSpeed: 0
+  movementCooldown: 0
+  horizontalMovement: 0
+  verticalMovement: 0
+  rightMovementMaxDistance: 0
+  leftMovementMaxDistance: 0
+  projectile: {fileID: 5018502367730268849, guid: 5e8598d967dd4f043b6dc84730c1ef25, type: 3}
+  shootingCooldown: 15
+  projectileSpeed: 0

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1408624f904e647922b0c4548c95d7, type: 3}
   m_Name: Mana Spawn
   m_EditorClassIdentifier: 
+  spawnTime: 5
+  xSpawnChance: 3
   spawn: {fileID: 3721383624786979510, guid: a7bf638654fbeda4380b52555e98b1dc, type: 3}
-  tempoDeSpawn: 4
-  randMin: 1
-  randMax: 3
