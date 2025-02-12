@@ -33,5 +33,13 @@ public class ScrbCountry : ScriptableObject
         healthPerSummon = healthConsumedPerEnemySpawn;
         Debug.Log("Planet Stats Loaded");
     }
+    public void UpdateStats(float firstSpawTime, float timeForSapwn,  int healthMax, int healthConsumedPerEnemySpawn)
+    {
+        startSpawnTime += firstSpawTime;
+        spawnTime += timeForSapwn;
+        maxHealth += healthMax;
+        healthPerSummon += healthConsumedPerEnemySpawn;
+        Debug.Log("Planet Stats Updated");
+    }
 
 }

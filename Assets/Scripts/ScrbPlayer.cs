@@ -79,4 +79,26 @@ public class ScrbPlayer : ScriptableObject
         laneMaxDistance = laneDistance;
         Debug.Log("Player Stats Loaded");
     }
+    public void UpdateStats(int healthMax, int manaMax, int manaRegen, int heathSteal, float summoningCoolDown,
+    int manaUsedPerMiniSummon, int manaUsedPerSuperSummon, float coolDownShield, float uptimeShield,
+    float manaUsedPerShield, float inputCoyoteTime, float inputMovementBuffer, float pressedTimeToMiniSummon,
+    float pressedTimeToSuperSummon, float laneDistance)
+    {
+        maxHealth += healthMax;
+        maxMana += manaMax;
+        manaPerManaBall += manaRegen;
+        stealHealth += heathSteal;
+        coolDownSummoning += summoningCoolDown;
+        manaPerSummon += manaUsedPerMiniSummon;
+        manaPerSuperSummon += manaUsedPerSuperSummon;
+        shieldCooldown += coolDownShield;
+        shieldUptime += uptimeShield;
+        manaPerShield += manaUsedPerShield;
+        coyoteTime += inputCoyoteTime;
+        movementBuffer += inputMovementBuffer;
+        holdToSummonTime += pressedTimeToMiniSummon;
+        holdToSuperSummonTime += pressedTimeToSuperSummon;
+        laneMaxDistance += laneDistance;
+        Debug.Log("Player Stats Updated");
+    }
 }

@@ -61,4 +61,20 @@ public class ScrbSummon : ScriptableObject
         shootingTime = shootingCooldown;
         Debug.Log("Summon Stats Loaded");
     }
+    public void UpdateStats(int healthMax, int damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
+    float movementCooldown, float horizontalMovement, float verticalMovement, float rightMovementMaxDistance,
+    float leftMovementMaxDistance, float shootingCooldown)
+    {
+        maxHealth += healthMax;
+        damegeDelt += damegeDeltOnCollision;
+        dmgOnCountry += damegeDeltOnPlanet;
+        rotationSpeed += followSpeed;
+        coolDownMovimento += movementCooldown;
+        moveinetoHorizontal += horizontalMovement;
+        movimentoVertical += verticalMovement;
+        distanciaMaxDireita += rightMovementMaxDistance;
+        distanciaMaxEsquerda += leftMovementMaxDistance;
+        shootingTime += shootingCooldown;
+        Debug.Log("Summon Stats Updated");
+    }
 }

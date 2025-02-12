@@ -26,4 +26,10 @@ public class ScrbSpawns : ScriptableObject
         randMax = xSpawnChance;
         Debug.Log("Spawnable Stats Loaded");
     }
+    public void UpdateStats(float spawnTime, int xSpawnChance)
+    {
+        tempoDeSpawn += spawnTime;
+        randMax += xSpawnChance;
+        Debug.Log("Spawnable Stats Updated");
+    }
 }
