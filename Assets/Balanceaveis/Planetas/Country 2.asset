@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05e202097a6414d9aa9e92330ffafc, type: 3}
+  m_Name: Country 2
+  m_EditorClassIdentifier: 
+  firstSpawnTime: 1
+  timeForSapwn: 15
+  healthMax: 100
+  healthConsumedPerEnemySpawn: 0
+  inimigo1: {fileID: 2016230141594238315, guid: 4441dbea40e1b79409a690bc15e4203d, type: 3}
+  inimigo2: {fileID: 7071268658602506392, guid: 766e5eef08ee8554f9ed49b01c90552d, type: 3}
+  inimigo3: {fileID: 7459104625516175061, guid: f09e64f393da85f48adb6b04e6792abf, type: 3}

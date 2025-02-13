@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: SuperSummon
   m_EditorClassIdentifier: 
-  healthMax: 20
+  healthMax: 35
   damegeDeltOnCollision: 10
   damegeDeltOnPlanet: 10
   followSpeed: 0
@@ -23,4 +23,3 @@ MonoBehaviour:
   leftMovementMaxDistance: 0
   projectile: {fileID: 0}
   shootingCooldown: 0
-  projectileSpeed: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Projetile Tank
   m_EditorClassIdentifier: 
   healthMax: 0
-  damegeDeltOnCollision: 15
+  damegeDeltOnCollision: 10
   damegeDeltOnPlanet: 0
   followSpeed: 0
   movementCooldown: 0.2

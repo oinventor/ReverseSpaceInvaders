@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: Summon weak
   m_EditorClassIdentifier: 
-  healthMax: 10
+  healthMax: 20
   damegeDeltOnCollision: 5
   damegeDeltOnPlanet: 5
   followSpeed: 0
   movementCooldown: 1.5
   horizontalMovement: 1
   verticalMovement: 2
-  rightMovementMaxDistance: 15
-  leftMovementMaxDistance: 15
+  rightMovementMaxDistance: 6
+  leftMovementMaxDistance: 6
   projectile: {fileID: 0}
   shootingCooldown: 0
-  projectileSpeed: 0

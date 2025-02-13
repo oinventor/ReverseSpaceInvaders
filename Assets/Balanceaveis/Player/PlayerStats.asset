@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  healthMax: 100
-  manaMax: 50
+  healthMax: 25
+  manaMax: 40
   manaRegen: 15
   heathSteal: 0
   summoningCoolDown: 2
