@@ -19,7 +19,7 @@ public class ManaSpawn : MonoBehaviour
     {
         //Mana spawn
         spawnTimeCount += Time.deltaTime;
-        if (spawnTimeCount >= manaSpawn.tempoDeSpawn)
+        if (spawnTimeCount >= manaSpawn.tempoDeSpawn && Time.timeScale != 0)
         {
             spawnTimeCount = 0;
             spawnChanceRand = 0;
