@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af05e202097a6414d9aa9e92330ffafc, type: 3}
   m_Name: Country 2
   m_EditorClassIdentifier: 
-  firstSpawnTime: 1
+  firstSpawnTime: 15
   timeForSapwn: 15
-  healthMax: 100
+  healthMax: 5
   healthConsumedPerEnemySpawn: 0
   inimigo1: {fileID: 2016230141594238315, guid: 4441dbea40e1b79409a690bc15e4203d, type: 3}
   inimigo2: {fileID: 7071268658602506392, guid: 766e5eef08ee8554f9ed49b01c90552d, type: 3}

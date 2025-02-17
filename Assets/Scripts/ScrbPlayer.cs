@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerStats", menuName = "Scrbs/Player")]
+[CreateAssetMenu(fileName = "New PlayerStats", menuName = "Scrbs/Player")]
 public class ScrbPlayer : ScriptableObject
 {
     [Header("Player Related Stats")]
@@ -31,7 +31,7 @@ public class ScrbPlayer : ScriptableObject
 
     [NonSerialized]
     public int stealHealth;
-    [NonSerialized]
+    //[NonSerialized]
     public int maxHealth;
     [NonSerialized]
     public float coolDownSummoning;

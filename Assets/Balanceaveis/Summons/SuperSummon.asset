@@ -16,7 +16,7 @@ MonoBehaviour:
   damegeDeltOnCollision: 10
   damegeDeltOnPlanet: 10
   followSpeed: 0
-  movementCooldown: 1
+  movementCooldown: 0.2
   horizontalMovement: 0
   verticalMovement: 2
   rightMovementMaxDistance: 0

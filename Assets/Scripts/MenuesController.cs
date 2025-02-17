@@ -9,6 +9,14 @@ public class MenuesController : MonoBehaviour
     {
         SceneManager.LoadScene("SceneOne");
     }
+    public void LoadSceneTwo()
+    {
+        SceneManager.LoadScene("SceneTwo");
+    }
+    public void LoadUpgradeScene()
+    {
+        SceneManager.LoadScene("UpgradeScene");
+    }
     public void LoadSceneMainManue()
     {
         SceneManager.LoadScene("MainManue");

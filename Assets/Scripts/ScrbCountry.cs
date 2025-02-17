@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Planet Stats", menuName = "Scrbs/Planet")]
+[CreateAssetMenu(fileName = "New Planet", menuName = "Scrbs/Planet")]
 public class ScrbCountry : ScriptableObject
 {
     [Header("Stats basicos")]
@@ -33,9 +33,9 @@ public class ScrbCountry : ScriptableObject
         healthPerSummon = healthConsumedPerEnemySpawn;
         Debug.Log("Planet Stats Loaded");
     }
-    public void UpdateStats(float firstSpawTime, float timeForSapwn,  int healthMax, int healthConsumedPerEnemySpawn)
+    public void UpdateStats(float firstSpawnTime, float timeForSapwn,  int healthMax, int healthConsumedPerEnemySpawn)
     {
-        startSpawnTime += firstSpawTime;
+        startSpawnTime += firstSpawnTime;
         spawnTime += timeForSapwn;
         maxHealth += healthMax;
         healthPerSummon += healthConsumedPerEnemySpawn;
