@@ -1091,6 +1091,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: fed266e2c730cd842946b28e337b3be9, type: 2}
+        m_TargetAssemblyTypeName: ScrbPlayer, Assembly-CSharp
+        m_MethodName: LoadStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &733825367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3699,7 +3711,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  countryStats: {fileID: 11400000, guid: d68d41f729ed2fc43923a6ddf6030687, type: 2}
+  countryStats: {fileID: 11400000, guid: fed266e2c730cd842946b28e337b3be9, type: 2}
   spawnPlataform1: {fileID: 419137883}
   spawnPlataform2: {fileID: 1414432813}
   spawnPlataform3: {fileID: 1274995470}
@@ -3764,6 +3776,10 @@ PrefabInstance:
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1294903426}
+    - target: {fileID: 8199444155652435710, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSceneDeath
+      objectReference: {fileID: 0}
     - target: {fileID: 8548796716243517906, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1
