@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Spawn Entropy Wave", menuName = "Scrbs/Stats Updates/Spawn Entropy Wave")]
-public class ScrbSpawnsStatsUpdates : ScriptableObject
+public class ScrbSpawnsStatsUpdates : Upgrade
 {
-    [Header("Updade Description")]
-    [TextArea(3, 10)]
-    public string description;
-
     [Header("Spawn Stats ScriptableObject")]
     public ScrbSpawns spawnsStats;
 
@@ -18,7 +14,7 @@ public class ScrbSpawnsStatsUpdates : ScriptableObject
     [Header("///Sempre 1 em X chances///")]
     public int xSpawnChanceUpdate ;
 
-    public void UpdateSpawnStats()
+    public override void UpdateStats()
     {
         spawnsStats.UpdateStats(spawnTimeUpdate, xSpawnChanceUpdate);
     }

@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Planet Entropy Wave", menuName = "Scrbs/Stats Updates/Planet Entropy Wave")]
-public class ScrbPlanetStatsUpdates : ScriptableObject
+public class ScrbPlanetStatsUpdates : Upgrade
 {
-    [Header("Updade Description")]
-    [TextArea(3, 10)]
-    public string description;
-
     [Header("Planet Stats ScriptableObject")]
     public ScrbCountry planetStats;
     [Header("Stats basicos Update")]
@@ -17,7 +13,7 @@ public class ScrbPlanetStatsUpdates : ScriptableObject
     public int healthMaxUpdate;
     public int healthConsumedPerEnemySpawnUpdate;
 
-    public void UpdatePlanetStats()
+    public override void UpdateStats()
     {
         planetStats.UpdateStats(firstSpawnTimeUpdate, timeForSapwnUpdate, healthMaxUpdate, healthConsumedPerEnemySpawnUpdate);
     }

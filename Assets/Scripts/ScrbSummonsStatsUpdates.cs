@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Summon Upgrade", menuName = "Scrbs/Stats Updates/Summon Upgrade")]
-public class ScrbSummonsStatsUpdates : ScriptableObject
+public class ScrbSummonsStatsUpdates : Upgrade
 {
-    [Header("Updade Description")]
-    [TextArea(3, 10)]
-    public string description;
-
     [Header("Summon Stats ScriptableObject")]
     public ScrbSummon summonStats;
 
@@ -31,7 +27,7 @@ public class ScrbSummonsStatsUpdates : ScriptableObject
     [Header("Shoting Related Stats Update")]
     public float shootingCooldownUpdate;
 
-    public void UpdateSummonStats()
+    public override void UpdateStats()
     {
         summonStats.UpdateStats(healthMaxUpdate, damegeDeltOnCollisionUpdate, damegeDeltOnPlanetUpdate, followSpeedUpdate,
         movementCooldownUpdate, horizontalMovementUpdate, verticalMovementUpdate, rightMovementMaxDistanceUpdate,

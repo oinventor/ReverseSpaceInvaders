@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Player Upgrade", menuName = "Scrbs/Stats Updates/Player Upgrade")]
-public class ScrbPlayerStatsUpdates : ScriptableObject
+public class ScrbPlayerStatsUpdates : Upgrade
 {
-    [Header("Updade Description")]
-    [TextArea(3, 10)]
-    public string description;
-
     [Header("Player Stats ScriptableObject")]
     public ScrbPlayer playerStats;
 
@@ -35,7 +31,7 @@ public class ScrbPlayerStatsUpdates : ScriptableObject
     public float pressedTimeToSuperSummonUpdate;
     public float laneDistanceUpdate;
 
-    public void UpdatePlayerStats()
+    public override void UpdateStats()
     {
         playerStats.UpdateStats(healthMaxUpdate, manaMaxUpdate, manaRegenUpdate, heathStealUpdate, summoningCoolDownUpdate,
         manaUsedPerMiniSummonUpdate, manaUsedPerSuperSummonUpdate, coolDownShieldUpdate, uptimeShieldUpdate,

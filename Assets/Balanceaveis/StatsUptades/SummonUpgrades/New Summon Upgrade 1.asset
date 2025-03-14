@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd73d433b052b9546a82f447a16d25f4, type: 3}
-  m_Name: New Summon Upgrade
+  m_Name: New Summon Upgrade 1
   m_EditorClassIdentifier: 
-  description: super summon moviment to 0.05
+  description: super summon damege + 100
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   healthMaxUpdate: 0
-  damegeDeltOnCollisionUpdate: 0
-  damegeDeltOnPlanetUpdate: 0
+  damegeDeltOnCollisionUpdate: 100
+  damegeDeltOnPlanetUpdate: 100
   followSpeedUpdate: 0
-  movementCooldownUpdate: -0.25
+  movementCooldownUpdate: 0
   horizontalMovementUpdate: 0
   verticalMovementUpdate: 0
   rightMovementMaxDistanceUpdate: 0
