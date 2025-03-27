@@ -3832,7 +3832,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1294903426}
         m_TargetAssemblyTypeName: MenuesController, Assembly-CSharp
-        m_MethodName: LoadSceneWin
+        m_MethodName: LoadUpgradeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

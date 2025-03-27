@@ -362,7 +362,7 @@ public class PlayerController : MonoBehaviour
 
         activeShield = true;
         animator.SetBool("DefesaAtiva", activeShield);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(playerStats.shieldUptime - 0.2f);
         activeShield = false;
         animator.SetBool("DefesaAtiva", activeShield);
     }
