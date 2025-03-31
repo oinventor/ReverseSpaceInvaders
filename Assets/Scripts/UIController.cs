@@ -36,7 +36,7 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        shieldCooldown.value = PlayerController.shieldCooldown;
+        shieldCooldown.value = maxShieldCooldown - PlayerController.shieldCooldown;
         chargeBar.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 4);
         newMana = PlayerController.curentMana;
         manaBar.value = newMana;

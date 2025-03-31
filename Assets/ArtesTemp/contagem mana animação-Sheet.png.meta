@@ -1,0 +1,466 @@
+fileFormatVersion: 2
+guid: 290302aa6e3998f48918d0e9180be829
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 31
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fcffac8895a694d975d22e860b2b86
+      internalID: -2107184338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215387542d7a6a341b4d991ff8877197
+      internalID: 681609050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85d84ad614028c40b06dbc85cd4c9e5
+      internalID: 169617633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce00d3efb06cc2043bca8fa53fcc3730
+      internalID: -1568146517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d4852f22f3f95429a64c8d68e91f96
+      internalID: 1294280480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c92ca1f5832364bb0387b5c6de0c76
+      internalID: -852506160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2905b42aebc16e149aeafea66132985d
+      internalID: 531757599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a44d21cd78871c4295c77fd8a57ae0b
+      internalID: 40764594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db16f436b231554e868933f34370b4d
+      internalID: -347009806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114eeaf3981c829458ff1b1963a0d5ab
+      internalID: -1132469509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146158ae5c4f28342a50e00f5db9c1af
+      internalID: 27715479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0898827003cb14f8e6526b17605b06
+      internalID: 757755284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d27e08af3a6984786fcefd23d87be8
+      internalID: 1767754311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf103c05aeb2954fb42de91fff805a8
+      internalID: -946903075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613146ebdda434a4c87037c2357b75a8
+      internalID: -1437478596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "contagem mana anima\xE7\xE3o-Sheet_15"
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 15
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9f2c2834aff7e42b9db7e60f788e10
+      internalID: 300676094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "contagem mana anima\xE7\xE3o-Sheet_0": -2107184338
+      "contagem mana anima\xE7\xE3o-Sheet_1": 681609050
+      "contagem mana anima\xE7\xE3o-Sheet_10": 27715479
+      "contagem mana anima\xE7\xE3o-Sheet_11": 757755284
+      "contagem mana anima\xE7\xE3o-Sheet_12": 1767754311
+      "contagem mana anima\xE7\xE3o-Sheet_13": -946903075
+      "contagem mana anima\xE7\xE3o-Sheet_14": -1437478596
+      "contagem mana anima\xE7\xE3o-Sheet_15": 300676094
+      "contagem mana anima\xE7\xE3o-Sheet_2": 169617633
+      "contagem mana anima\xE7\xE3o-Sheet_3": -1568146517
+      "contagem mana anima\xE7\xE3o-Sheet_4": 1294280480
+      "contagem mana anima\xE7\xE3o-Sheet_5": -852506160
+      "contagem mana anima\xE7\xE3o-Sheet_6": 531757599
+      "contagem mana anima\xE7\xE3o-Sheet_7": 40764594
+      "contagem mana anima\xE7\xE3o-Sheet_8": -347009806
+      "contagem mana anima\xE7\xE3o-Sheet_9": -1132469509
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
