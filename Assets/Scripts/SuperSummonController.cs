@@ -12,7 +12,7 @@ public class SuperSummonController : MonoBehaviour
     private bool takeDamage;
     private bool death;
 
-    [Header("Animação")]
+    [Header("Animaï¿½ï¿½o")]
     public Animator animator;
 
     void Start()
@@ -57,7 +57,7 @@ public class SuperSummonController : MonoBehaviour
             Destroy(this.gameObject);
             break;
             case "Country":
-            EarthController.TakeDamege(dgmOnCountry);
+            EarthController.TakeDamege();
             Destroy(this.gameObject);
             break;
             default:
@@ -83,7 +83,7 @@ public class SuperSummonController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        Debug.Log("Morreu animação");
+        Debug.Log("Morreu animaï¿½ï¿½o");
 
         death = true;
         animator.SetBool("Morte", death);

@@ -14,7 +14,7 @@ public class SumomController : MonoBehaviour
     private bool takeDamage;
     private bool death;
 
-    [Header("Animação")]
+    [Header("Animaï¿½ï¿½o")]
     public Animator animator;
 
     // Start is called before the first frame update
@@ -97,7 +97,7 @@ public class SumomController : MonoBehaviour
         //Then it moves
         this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
     }
-    
+
     void OnTriggerEnter2D(Collider2D collWithObj)
     {
         switch (collWithObj.tag)
@@ -106,14 +106,14 @@ public class SumomController : MonoBehaviour
             Destroy(this.gameObject);
             break;
             case "Country":
-            EarthController.TakeDamege(dgmOnCountry);
+            EarthController.TakeDamege();
             Destroy(this.gameObject);
             break;
             default:
             break;
         }
     }
-    
+
     public void TakeDamege(int damege)
     {
         curantHealth -= damege;

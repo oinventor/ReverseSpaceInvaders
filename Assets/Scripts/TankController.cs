@@ -26,6 +26,7 @@ public class TankController : MonoBehaviour
         if (curentHealth <= 0)
         {
             StartCoroutine(animationDeath());
+
         }
 
         countdownToShoot += Time.deltaTime;
@@ -75,6 +76,7 @@ public class TankController : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);
+        PointsAndLevelController.AddPoints("tank");
         Destroy(this.gameObject);
     }
 }

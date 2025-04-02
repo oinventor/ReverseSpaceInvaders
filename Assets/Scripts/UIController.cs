@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class UIController : MonoBehaviour
@@ -8,12 +9,11 @@ public class UIController : MonoBehaviour
     public Slider manaBar;
     public Slider healthBar;
     public Slider shieldCooldown;
-    public Slider countryHealthBar;
+    public TextMeshProUGUI points;
+    public TextMeshProUGUI level;
     private GameObject player;
     private int maxHealth;
     private int curantHealth;
-    private int countryMaxHealth;
-    private int countryCurantHealth;
     private float curantCharge;
     private float maxShieldCooldown;
     private float maxCharge;
@@ -26,13 +26,13 @@ public class UIController : MonoBehaviour
         maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
         maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
         maxCharge = player.GetComponent<PlayerController>().playerStats.holdToSuperSummonTime;
-        countryMaxHealth = GameObject.Find("Earth Controller").GetComponent<EarthController>().countryStats.maxHealth;
         maxShieldCooldown = player.GetComponent<PlayerController>().playerStats.shieldCooldown;
         chargeBar.maxValue = maxCharge;
         manaBar.maxValue = maxMana;
         healthBar.maxValue = maxHealth;
-        countryHealthBar.maxValue = countryMaxHealth;
         shieldCooldown.maxValue = maxShieldCooldown;
+        points.text = "";
+        level.text = "";
     }
     void Update()
     {
@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour
         chargeBar.value = curantCharge;
         curantHealth = PlayerController.curantHealth;
         healthBar.value = curantHealth;
-        countryCurantHealth = EarthController.curantHealth;
-        countryHealthBar.value = countryCurantHealth;
+        points.text = PointsAndLevelController.points.ToString();
+        level.text = PointsAndLevelController.levels.ToString();
     }
 }

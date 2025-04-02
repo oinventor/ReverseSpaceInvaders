@@ -14,7 +14,6 @@ public class EarthController : MonoBehaviour
     public GameObject spawnPlataform4;
     public GameObject spawnPlataform5;
     private GameObject spawnable;
-    public static int curantHealth;
     private int chosenPlataform;
     private int nextPlataform;
     private float spawnCountTime;
@@ -23,7 +22,6 @@ public class EarthController : MonoBehaviour
     void Start()
     {
         firstSpawn = true;
-        curantHealth = countryStats.maxHealth;
     }
 
     // Update is called once per frame
@@ -35,7 +33,7 @@ public class EarthController : MonoBehaviour
             firstSpawn = false;
             spawnCountTime = countryStats.spawnTime;
         }
-        if (curantHealth > 0 && spawnCountTime >= countryStats.spawnTime || nextPlataform > 0)
+        if (spawnCountTime >= countryStats.spawnTime || nextPlataform > 0)
         {
             spawnCountTime = 0;
             chosenPlataform = nextPlataform <= 0? Random.Range(1, 5 + 1): nextPlataform;
@@ -54,24 +52,6 @@ public class EarthController : MonoBehaviour
             }
             SpawnTank(chosenPlataform);
         }
-        else if(curantHealth <= 0)
-        {
-            RaycastHit2D plataformChec1 = Physics2D.Raycast(spawnPlataform1.transform.position, transform.TransformDirection(Vector2.up), 2f);
-            RaycastHit2D plataformChec2 = Physics2D.Raycast(spawnPlataform2.transform.position, transform.TransformDirection(Vector2.up), 2f);
-            RaycastHit2D plataformChec3 = Physics2D.Raycast(spawnPlataform3.transform.position, transform.TransformDirection(Vector2.up), 2f);
-            RaycastHit2D plataformChec4 = Physics2D.Raycast(spawnPlataform4.transform.position, transform.TransformDirection(Vector2.up), 2f);
-            RaycastHit2D plataformChec5 = Physics2D.Raycast(spawnPlataform5.transform.position, transform.TransformDirection(Vector2.up), 2f);
-
-            if (plataformChec1.collider == null && plataformChec2.collider == null && plataformChec3.collider == null &&
-                plataformChec4.collider == null && plataformChec5.collider == null)
-            {
-                Time.timeScale = 0;
-                GameObject.FindWithTag("Player").GetComponent<PlayerController>().canMove = false;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                onVictory.Invoke();
-            }
-        }
     }
     void SpawnTank(int chosenPlataform)
     {
@@ -86,7 +66,6 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    curantHealth -= countryStats.healthPerSummon;
                     Instantiate(spawnable, spawnPlataform1.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
@@ -101,7 +80,6 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    curantHealth -= countryStats.healthPerSummon;
                     Instantiate(spawnable, spawnPlataform2.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
@@ -116,7 +94,6 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    curantHealth -= countryStats.healthPerSummon;
                     Instantiate(spawnable, spawnPlataform3.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
@@ -131,7 +108,6 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    curantHealth -= countryStats.healthPerSummon;
                     Instantiate(spawnable, spawnPlataform4.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
@@ -146,7 +122,6 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    curantHealth -= countryStats.healthPerSummon;
                     Instantiate(spawnable, spawnPlataform5.transform.position, Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
@@ -162,8 +137,8 @@ public class EarthController : MonoBehaviour
         }
     }
 
-    public static void TakeDamege(int dmgTaken)
+    public static void TakeDamege()
     {
-        curantHealth -= dmgTaken;
+        PointsAndLevelController.AddPoints("earth");
     }
 }
