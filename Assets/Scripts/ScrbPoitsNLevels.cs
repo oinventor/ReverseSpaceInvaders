@@ -7,6 +7,7 @@ public class ScrbPoitsNLevels : ScriptableObject
 {
     public int pointsToLevel;
     public int levelsToUpgrade;
+    public int levelsToIncreaseDificulty;
     public int turretKillPoints;
     public int tankKillPoints;
     public int earthHitPoints;

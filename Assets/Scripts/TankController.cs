@@ -49,11 +49,9 @@ public class TankController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collWithSummon)
     {
-        Debug.Log("I triggered");
         switch (collWithSummon.tag)
         {
             case "Summon":
-                Debug.Log("I triggered 2");
                 curentHealth -= collWithSummon.gameObject.GetComponent<SumomController>().damege;
                 Destroy(collWithSummon.gameObject);
             break;

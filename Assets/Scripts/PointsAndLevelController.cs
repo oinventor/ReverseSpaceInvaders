@@ -9,6 +9,8 @@ public class PointsAndLevelController : MonoBehaviour
     public ScrbPoitsNLevels poitsNLevelsScrb;
     public UnityEvent upgradeWindowTrigger;
     private static ScrbPoitsNLevels poitsNLevelsStats;
+    private int levelsToDificulty;
+    [NonSerialized]public static int dificulty;
     [NonSerialized]public static int points;
     private static int pointsToLeveling;
     [NonSerialized]public static int levels;
@@ -19,6 +21,8 @@ public class PointsAndLevelController : MonoBehaviour
         poitsNLevelsStats = poitsNLevelsScrb;
         pointsToLeveling = poitsNLevelsStats.pointsToLevel;
         levelsToUpgrade = poitsNLevelsStats.levelsToUpgrade;
+        levelsToDificulty = poitsNLevelsStats.levelsToIncreaseDificulty;
+        dificulty = 1;
     }
 
     void Update()
@@ -33,7 +37,11 @@ public class PointsAndLevelController : MonoBehaviour
             upgradeWindowTrigger.Invoke();
             levelsToUpgrade += poitsNLevelsStats.levelsToUpgrade;
         }
-        Debug.Log(levels);
+        if (levels >= levelsToDificulty)
+        {
+            levelsToDificulty += poitsNLevelsStats.levelsToIncreaseDificulty;
+            dificulty += 1;
+        }
     }
 
     public static void AddPoints(string pointGuiver)

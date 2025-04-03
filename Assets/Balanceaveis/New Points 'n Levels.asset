@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsToLevel: 100
   levelsToUpgrade: 5
+  levelsToIncreaseDificulty: 5
   turretKillPoints: 100
   tankKillPoints: 200
   earthHitPoints: 300

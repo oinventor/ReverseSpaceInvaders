@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerStats.healthMax);
         //If game paused action in game don't run
         if(!isPaused)
         {

@@ -27,7 +27,6 @@ public class ManaSpawn : MonoBehaviour
             RaycastHit2D manaChec = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 2f), transform.TransformDirection(Vector2.down), 2f);
             if(manaChec.collider == null)
             {
-                Debug.Log("no mana found");
                 if (spawnChanceRand == 1)
                 {
                     Instantiate(manaSpawn.spawn, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
@@ -39,11 +38,11 @@ public class ManaSpawn : MonoBehaviour
             }
             else if(manaChec.collider.tag == "ManaBall")
             {
-                Debug.Log("mana found");
+
             }
             else
             {
-                Debug.Log("player");
+
             }
         }
         else
