@@ -6,6 +6,7 @@ public class TankController : MonoBehaviour
 {
     public ScrbSummon tankStats;
     private int curentHealth;
+    private string enemyType;
     private float countdownToShoot;
     private bool tankFire;
     private bool death;
@@ -18,6 +19,14 @@ public class TankController : MonoBehaviour
         tankFire = false;
         death = false;
         animator = this.gameObject.GetComponent<Animator>();
+        if (tankStats.tank == true)
+        {
+            enemyType = "tank";
+        }
+        else if (tankStats.turret == true)
+        {
+            enemyType = "turret";
+        }
     }
 
     // Update is called once per frame
@@ -76,7 +85,7 @@ public class TankController : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);
-        PointsAndLevelController.AddPoints("tank");
+        PointsAndLevelController.AddPoints(enemyType);
         Destroy(this.gameObject);
     }
 }

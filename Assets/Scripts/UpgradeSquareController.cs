@@ -11,7 +11,7 @@ public class UpgradeSquareController : MonoBehaviour
     private Upgrade chosenUpgrade;
     public UnityEvent selectUpgrade;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         chosenUpgrade = upgradePool.ChoseUpgrade();
         if (chosenUpgrade != null)
@@ -26,14 +26,9 @@ public class UpgradeSquareController : MonoBehaviour
         {
             return;
         }
-        description.enabled = true;
         if (Input.GetMouseButtonUp(0))
         {
             selectUpgrade.Invoke();
         }
-    }
-    void OnMouseExit()
-    {
-        description.enabled = false;
     }
 }

@@ -6,7 +6,9 @@ using UnityEngine.Events;
 
 public class PointsAndLevelController : MonoBehaviour
 {
+    public ScrbPoitsNLevels poitsNLevelsScrb;
     public UnityEvent upgradeWindowTrigger;
+    private static ScrbPoitsNLevels poitsNLevelsStats;
     [NonSerialized]public static int points;
     private static int pointsToLeveling;
     [NonSerialized]public static int levels;
@@ -14,8 +16,9 @@ public class PointsAndLevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pointsToLeveling = 100;
-        levelsToUpgrade = 5;
+        poitsNLevelsStats = poitsNLevelsScrb;
+        pointsToLeveling = poitsNLevelsStats.pointsToLevel;
+        levelsToUpgrade = poitsNLevelsStats.levelsToUpgrade;
     }
 
     void Update()
@@ -23,12 +26,12 @@ public class PointsAndLevelController : MonoBehaviour
         if (points >= pointsToLeveling)
         {
             levels += 1;
-            pointsToLeveling += 100;
+            pointsToLeveling += poitsNLevelsStats.pointsToLevel;
         }
         if (levels >= levelsToUpgrade)
         {
             upgradeWindowTrigger.Invoke();
-            levelsToUpgrade += 5;
+            levelsToUpgrade += poitsNLevelsStats.levelsToUpgrade;
         }
         Debug.Log(levels);
     }
@@ -38,13 +41,13 @@ public class PointsAndLevelController : MonoBehaviour
         switch (pointGuiver)
         {
             case "tank":
-                points += 100;
+                points += poitsNLevelsStats.tankKillPoints;
             break;
             case "turret":
-                points += 200;
+                points += poitsNLevelsStats.turretKillPoints;
             break;
             case "earth":
-                points += 300;
+                points += poitsNLevelsStats.earthHitPoints;
             break;
             default:
             break;
@@ -52,7 +55,7 @@ public class PointsAndLevelController : MonoBehaviour
     }
     void RemovePoints()
     {
-        points -= 100;
+        points -= poitsNLevelsStats.pointsToRemove;
     }
 
 }

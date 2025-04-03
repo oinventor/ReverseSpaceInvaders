@@ -33,4 +33,18 @@ public class MenuesController : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Unfreeze()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        PlayerController.canMove = true;
+    }
+    public void Freeze()
+    {
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PlayerController.canMove = false;
+    }
 }

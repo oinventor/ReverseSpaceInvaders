@@ -34,6 +34,6 @@ public class ScrbUpgradePool : ScriptableObject
     public void SelectUpgrade()
     {
         chosenUpgrade.UpdateStats();
-        upgradePoolList.Remove(chosenUpgrade);
+        //upgradePoolList.Remove(chosenUpgrade);
     }
 }

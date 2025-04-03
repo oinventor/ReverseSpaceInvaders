@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool canSummon;
     public GameObject shield;
     private bool isPaused;
-    public bool canMove;
+    public static bool canMove;
     private bool takeDamage;
     private bool activeShield;
 

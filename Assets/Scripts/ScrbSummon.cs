@@ -9,6 +9,10 @@ public class ScrbSummon : ScriptableObject
     [Header("///Aviso: este tipo de scriptable object contem informações sobre: ")]
     [Header("summons do player, inimigos e projeteis///")]
 
+    [Header("If enemy, type:")]
+    public bool turret;
+    public bool tank;
+
     [Header("Summon Related Stats")]
     public int healthMax;
     public int damegeDeltOnCollision;
