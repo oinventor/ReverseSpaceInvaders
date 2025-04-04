@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: Projetile Turret
   m_EditorClassIdentifier: 
+  projectileBool: 1
+  turret: 0
+  tank: 0
   healthMax: 0
   damegeDeltOnCollision: 5
   damegeDeltOnPlanet: 0

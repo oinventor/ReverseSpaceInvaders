@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd73d433b052b9546a82f447a16d25f4, type: 3}
+  m_Name: TurretFDificultyIncrease
+  m_EditorClassIdentifier: 
+  description: 
+  dificultyIncreaseBool: 1
+  summonStats: {fileID: 11400000, guid: c5f340fd2a7981041950724afe3a1934, type: 2}
+  healthMaxUpdate: 0
+  damegeDeltOnCollisionUpdate: 0
+  damegeDeltOnPlanetUpdate: 0
+  followSpeedUpdate: 0
+  movementCooldownUpdate: 0
+  horizontalMovementUpdate: 0
+  verticalMovementUpdate: 0
+  rightMovementMaxDistanceUpdate: 0
+  leftMovementMaxDistanceUpdate: 0
+  shootingCooldownUpdate: 0

@@ -10,6 +10,7 @@ public class ScrbSummon : ScriptableObject
     [Header("summons do player, inimigos e projeteis///")]
 
     [Header("If enemy, type:")]
+    public bool projectileBool;
     public bool turret;
     public bool tank;
 

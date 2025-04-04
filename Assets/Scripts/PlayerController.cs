@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shield and summoning handller
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.S))
             {
                 chargeBar.SetActive(true);
                 //Summon cooldown (I wrote Colldown, sry :|)
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
                 //Coyete time subtraction
                 coyoteTime -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 if (curentMana >= playerStats.manaPerShield)
                 {
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shield and summoning input Up handller
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.S))
             {
                 chargeBar.SetActive(false);
                 //Sets coyote time to 0 to prevent any errors or bugs

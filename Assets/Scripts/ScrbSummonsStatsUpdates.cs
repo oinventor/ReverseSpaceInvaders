@@ -5,6 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Summon Upgrade", menuName = "Scrbs/Stats Updates/Summon Upgrade")]
 public class ScrbSummonsStatsUpdates : Upgrade
 {
+    [Header("DO NEVER TOUCH THIS IF YOU DON'T KNOW WHAT IT IS")]
+    public bool dificultyIncreaseBool;
+
+
     [Header("Summon Stats ScriptableObject")]
     public ScrbSummon summonStats;
 
@@ -29,6 +33,17 @@ public class ScrbSummonsStatsUpdates : Upgrade
 
     public override void UpdateStats()
     {
+        if (dificultyIncreaseBool == true)
+        {
+            healthMaxUpdate = 0;
+            damegeDeltOnCollisionUpdate = 0;
+            if (summonStats.turret == true || summonStats.tank == true || summonStats.projectileBool == true)
+            {
+                healthMaxUpdate = summonStats.healthMax * PointsAndLevelController.dificulty;
+                damegeDeltOnCollisionUpdate = summonStats.damegeDeltOnCollision * PointsAndLevelController.dificulty;
+                //shootingCooldownUpdate *= summonStats.shootingCooldown * PointsAndLevelController.dificulty;
+            }
+        }
         summonStats.UpdateStats(healthMaxUpdate, damegeDeltOnCollisionUpdate, damegeDeltOnPlanetUpdate, followSpeedUpdate,
         movementCooldownUpdate, horizontalMovementUpdate, verticalMovementUpdate, rightMovementMaxDistanceUpdate,
         leftMovementMaxDistanceUpdate, shootingCooldownUpdate);
