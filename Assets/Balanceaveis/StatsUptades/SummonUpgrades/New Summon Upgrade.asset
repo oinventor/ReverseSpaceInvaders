@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Summon Upgrade
   m_EditorClassIdentifier: 
   description: super summon moviment to 0.05
+  dificultyIncreaseBool: 0
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   healthMaxUpdate: 0
   damegeDeltOnCollisionUpdate: 0

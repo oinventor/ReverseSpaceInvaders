@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         if(!isPaused)
         {
             //Player keyboard imputs
-            switch (Input.GetKeyDown(KeyCode.D) && canMove == true)
+            switch (Input.GetKeyDown(KeyCode.D) && canMove == true || Input.GetKeyDown(KeyCode.RightArrow) && canMove == true)
             {
                 //If player presses the key it sets the buffer to time
                 case true:
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
                     movementBufferRight -= Time.deltaTime;
                     break;
             }
-            switch (Input.GetKeyDown(KeyCode.A) && canMove == true)
+            switch (Input.GetKeyDown(KeyCode.A) && canMove == true || Input.GetKeyDown(KeyCode.LeftArrow) && canMove == true)
             {
                 case true:
                     movementBufferLeft = playerStats.movementBuffer;
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shield and summoning handller
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 chargeBar.SetActive(true);
                 //Summon cooldown (I wrote Colldown, sry :|)
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
                 //Coyete time subtraction
                 coyoteTime -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 if (curentMana >= playerStats.manaPerShield)
                 {
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shield and summoning input Up handller
-            if (Input.GetKeyUp(KeyCode.S))
+            if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
             {
                 chargeBar.SetActive(false);
                 //Sets coyote time to 0 to prevent any errors or bugs

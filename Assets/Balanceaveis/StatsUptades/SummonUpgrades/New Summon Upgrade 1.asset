@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: New Summon Upgrade 1
   m_EditorClassIdentifier: 
   description: super summon damege + 100
+  dificultyIncreaseBool: 0
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   healthMaxUpdate: 0
-  damegeDeltOnCollisionUpdate: 100
+  damegeDeltOnCollisionUpdate: 1000000
   damegeDeltOnPlanetUpdate: 100
   followSpeedUpdate: 0
   movementCooldownUpdate: 0

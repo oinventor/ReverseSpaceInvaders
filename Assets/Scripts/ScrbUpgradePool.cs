@@ -29,11 +29,4 @@ public class ScrbUpgradePool : ScriptableObject
         chosenUpgrade = upgradePoolList[upgradeRandomizer];
         return chosenUpgrade;
     }
-
-
-    public void SelectUpgrade()
-    {
-        chosenUpgrade.UpdateStats();
-        //upgradePoolList.Remove(chosenUpgrade);
-    }
 }

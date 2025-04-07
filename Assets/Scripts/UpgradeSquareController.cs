@@ -28,6 +28,8 @@ public class UpgradeSquareController : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+            chosenUpgrade.UpdateStats();
+            //upgradePoolList.Remove(chosenUpgrade);
             selectUpgrade.Invoke();
         }
     }
