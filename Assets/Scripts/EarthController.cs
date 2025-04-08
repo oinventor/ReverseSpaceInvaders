@@ -59,7 +59,7 @@ public class EarthController : MonoBehaviour
         {
             case 1:
                 RaycastHit2D plataformChec1 = Physics2D.Raycast(spawnPlataform1.transform.position, transform.TransformDirection(Vector2.up), 2f);
-                if (plataformChec1.collider != null)
+                if (plataformChec1.collider != null || spawnPlataform1.activeSelf == false)
                 {
                     Debug.Log("p1 cheia");
                     nextPlataform++;
@@ -73,7 +73,7 @@ public class EarthController : MonoBehaviour
             break;
             case 2:
                 RaycastHit2D plataformChec2 = Physics2D.Raycast(spawnPlataform2.transform.position, transform.TransformDirection(Vector2.up), 2f);
-                if (plataformChec2.collider != null)
+                if (plataformChec2.collider != null || spawnPlataform2.activeSelf == false)
                 {
                     Debug.Log("p2 cheia");
                     nextPlataform++;
@@ -87,7 +87,7 @@ public class EarthController : MonoBehaviour
             break;
             case 3:
                 RaycastHit2D plataformChec3 = Physics2D.Raycast(spawnPlataform3.transform.position, transform.TransformDirection(Vector2.up), 2f);
-                if (plataformChec3.collider != null)
+                if (plataformChec3.collider != null || spawnPlataform3.activeSelf == false)
                 {
                     Debug.Log("p3 cheia");
                     nextPlataform++;
@@ -101,7 +101,7 @@ public class EarthController : MonoBehaviour
             break;
             case 4:
                 RaycastHit2D plataformChec4 = Physics2D.Raycast(spawnPlataform4.transform.position, transform.TransformDirection(Vector2.up), 2f);
-                if (plataformChec4.collider != null)
+                if (plataformChec4.collider != null || spawnPlataform4.activeSelf == false)
                 {
                     Debug.Log("p4 cheia");
                     nextPlataform++;
@@ -115,7 +115,7 @@ public class EarthController : MonoBehaviour
             break;
             case 5:
                 RaycastHit2D plataformChec5 = Physics2D.Raycast(spawnPlataform5.transform.position, transform.TransformDirection(Vector2.up), 2f);
-                if (plataformChec5.collider != null)
+                if (plataformChec5.collider != null || spawnPlataform5.activeSelf == false)
                 {
                     Debug.Log("p5 cheia");
                     nextPlataform++;
