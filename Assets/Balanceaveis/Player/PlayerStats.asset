@@ -26,4 +26,5 @@ MonoBehaviour:
   inputMovementBuffer: 0.2
   pressedTimeToMiniSummon: 0.5
   pressedTimeToSuperSummon: 1
-  laneDistance: 10
+  laneDistance: 500
+  maxHealth: 25

@@ -6,6 +6,15 @@ using UnityEngine.Events;
 
 public class PointsAndLevelController : MonoBehaviour
 {
+    public GameObject spawnPlataform4;
+    public GameObject spawnPlataform5;
+    public GameObject spawnPlataform6;
+    public GameObject spawnPlataform7;
+    public GameObject lane4;
+    public GameObject lane5;
+    public GameObject lane6;
+    public GameObject lane7;
+
     public ScrbPoitsNLevels poitsNLevelsScrb;
     public UnityEvent upgradeWindowTrigger;
     public UnityEvent dificultyIncreaseTrigger;
@@ -60,6 +69,29 @@ public class PointsAndLevelController : MonoBehaviour
             break;
             default:
             break;
+        }
+    }
+    public void LaneUpdade()
+    {
+        if (levels >= poitsNLevelsScrb.levelsToLane1)
+        {
+            lane4.SetActive(true);
+            spawnPlataform4.SetActive(true);
+        }
+        if (levels >= poitsNLevelsScrb.levelsToLane2)
+        {
+            lane5.SetActive(true);
+            spawnPlataform5.SetActive(true);
+        }
+        if (levels >= poitsNLevelsScrb.levelsToLane3)
+        {
+            lane6.SetActive(true);
+            spawnPlataform6.SetActive(true);
+        }
+        if (levels >= poitsNLevelsScrb.levelsToLane4)
+        {
+            lane7.SetActive(true);
+            spawnPlataform7.SetActive(true);
         }
     }
     void RemovePoints()

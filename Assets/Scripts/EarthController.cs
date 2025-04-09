@@ -13,6 +13,8 @@ public class EarthController : MonoBehaviour
     public GameObject spawnPlataform3;
     public GameObject spawnPlataform4;
     public GameObject spawnPlataform5;
+    public GameObject spawnPlataform6;
+    public GameObject spawnPlataform7;
     private GameObject spawnable;
     private int chosenPlataform;
     private int nextPlataform;
@@ -36,7 +38,7 @@ public class EarthController : MonoBehaviour
         if (spawnCountTime >= countryStats.spawnTime || nextPlataform > 0)
         {
             spawnCountTime = 0;
-            chosenPlataform = nextPlataform <= 0? Random.Range(1, 5 + 1): nextPlataform;
+            chosenPlataform = nextPlataform <= 0? Random.Range(1, 7 + 1): nextPlataform;
             int whatSpawnable = Random.Range(1, 3 + 1);
             switch (whatSpawnable)
             {
@@ -128,6 +130,34 @@ public class EarthController : MonoBehaviour
                 }
             break;
             case 6:
+                RaycastHit2D plataformChec6 = Physics2D.Raycast(spawnPlataform6.transform.position, transform.TransformDirection(Vector2.up), 2f);
+                if (plataformChec6.collider != null || spawnPlataform6.activeSelf == false)
+                {
+                    Debug.Log("p6 cheia");
+                    nextPlataform++;
+                }
+                else
+                {
+                    Instantiate(spawnable, spawnPlataform6.transform.position, Quaternion.identity);
+                    nextPlataform = 0;
+                    spawnCountTime = 0;
+                }
+            break;
+            case 7:
+                RaycastHit2D plataformChec7 = Physics2D.Raycast(spawnPlataform7.transform.position, transform.TransformDirection(Vector2.up), 2f);
+                if (plataformChec7.collider != null || spawnPlataform7.activeSelf == false)
+                {
+                    Debug.Log("p7 cheia");
+                    nextPlataform++;
+                }
+                else
+                {
+                    Instantiate(spawnable, spawnPlataform7.transform.position, Quaternion.identity);
+                    nextPlataform = 0;
+                    spawnCountTime = 0;
+                }
+            break;
+            case 8:
                 Debug.Log("no space");
                 nextPlataform = 0;
                 spawnCountTime = 0;
