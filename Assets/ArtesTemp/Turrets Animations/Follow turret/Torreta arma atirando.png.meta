@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 45104c2589376124fb74c991130228fe
+guid: fdc474b780dadec458d0109c7fb17c8d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,149 +93,110 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tanque_0
+      name: Torreta arma atirando_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 23
-        height: 24
+        x: 6
+        y: 24
+        width: 20
+        height: 26
       alignment: 9
-      pivot: {x: 0.494636, y: 0.39719078}
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 441ec317e5b451f4fa3ee7f504c265ec
-      internalID: 1702523881
+      spriteID: 90abdddc53c26ae46b3c292df299f8e7
+      internalID: 124478673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_1
+      name: Torreta arma atirando_1
       rect:
         serializedVersion: 2
         x: 37
-        y: 2
+        y: 20
         width: 23
-        height: 28
+        height: 27
       alignment: 9
-      pivot: {x: 0.4946362, y: 0.3399114}
+      pivot: {x: 0.48, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf9d80bfdd9cdbe49ae3c6cbe2ec9211
-      internalID: 1744859722
+      spriteID: c7ba4d12532906a4ba98228276d553fe
+      internalID: -738765871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_2
+      name: Torreta arma atirando_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 2
-        width: 23
+        x: 70
+        y: 23
+        width: 20
         height: 26
       alignment: 9
-      pivot: {x: 0.5, y: 0.33076018}
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4202ca55bb44547a73131f92e13818
-      internalID: 898067825
+      spriteID: 96f3e63bba767d24985f3a23ab008c6e
+      internalID: 1530972697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_3
+      name: Torreta arma atirando_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 2
-        width: 23
-        height: 29
-      alignment: 9
-      pivot: {x: 0.4946362, y: 0.29154527}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d48185bfa6e8d464db72f91d284e6e4f
-      internalID: 1613275856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tanque_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 2
-        width: 23
+        x: 102
+        y: 24
+        width: 20
         height: 28
       alignment: 9
-      pivot: {x: 0.50000066, y: 0.3457861}
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7dd431ebe6a7864db9b2bd55860de31
-      internalID: -379149884
+      spriteID: 645de62001447dd42bcc80cb52c164ab
+      internalID: 1948051713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torreta arma atirando_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 24
+        width: 20
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2135ca4133970f5429ca17b79cf122fa
+      internalID: 2010137954
       vertices: []
       indices: 
       edges: []
@@ -251,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tanque_0: 1702523881
-      tanque_1: 1744859722
-      tanque_2: 898067825
-      tanque_3: 1613275856
-      tanque_4: -379149884
+      Torreta arma atirando_0: 124478673
+      Torreta arma atirando_1: -738765871
+      Torreta arma atirando_2: 1530972697
+      Torreta arma atirando_3: 1948051713
+      Torreta arma atirando_4: 2010137954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

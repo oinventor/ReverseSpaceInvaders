@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 45104c2589376124fb74c991130228fe
+guid: 21960ba098c967541ae69281db801482
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36.5
+  spritePixelsToUnits: 360
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,149 +93,89 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tanque_0
+      name: mundo hit_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 23
-        height: 24
-      alignment: 9
-      pivot: {x: 0.494636, y: 0.39719078}
+        x: 0
+        y: 0
+        width: 360
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 441ec317e5b451f4fa3ee7f504c265ec
-      internalID: 1702523881
+      spriteID: 405f7da722c757f4d84da1e840192a4d
+      internalID: -893184525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_1
+      name: mundo hit_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 2
-        width: 23
-        height: 28
-      alignment: 9
-      pivot: {x: 0.4946362, y: 0.3399114}
+        x: 360
+        y: 0
+        width: 360
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf9d80bfdd9cdbe49ae3c6cbe2ec9211
-      internalID: 1744859722
+      spriteID: 139fdc34853d83c4d98dce90ed60557b
+      internalID: -571326318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_2
+      name: mundo hit_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 2
-        width: 23
-        height: 26
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33076018}
+        x: 720
+        y: 0
+        width: 360
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4202ca55bb44547a73131f92e13818
-      internalID: 898067825
+      spriteID: 55ae9986ddec3a0409c4dfc2e1808df4
+      internalID: 2117415810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanque_3
+      name: mundo hit_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 2
-        width: 23
-        height: 29
-      alignment: 9
-      pivot: {x: 0.4946362, y: 0.29154527}
+        x: 1080
+        y: 0
+        width: 360
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d48185bfa6e8d464db72f91d284e6e4f
-      internalID: 1613275856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tanque_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 2
-        width: 23
-        height: 28
-      alignment: 9
-      pivot: {x: 0.50000066, y: 0.3457861}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7dd431ebe6a7864db9b2bd55860de31
-      internalID: -379149884
+      spriteID: 485fb0519da023243bbdc8e525f16141
+      internalID: -2035311584
       vertices: []
       indices: 
       edges: []
@@ -251,11 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tanque_0: 1702523881
-      tanque_1: 1744859722
-      tanque_2: 898067825
-      tanque_3: 1613275856
-      tanque_4: -379149884
+      mundo hit_0: -893184525
+      mundo hit_1: -571326318
+      mundo hit_2: 2117415810
+      mundo hit_3: -2035311584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class EarthController : MonoBehaviour
 {
+    public Animator animator;
     public UnityEvent onVictory;
-
     public ScrbCountry countryStats;
     public GameObject spawnPlataform1;
     public GameObject spawnPlataform2;
@@ -16,6 +16,7 @@ public class EarthController : MonoBehaviour
     public GameObject spawnPlataform6;
     public GameObject spawnPlataform7;
     private GameObject spawnable;
+    private static bool takeDamage;
     private int chosenPlataform;
     private int nextPlataform;
     private float spawnCountTime;
@@ -29,6 +30,10 @@ public class EarthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (takeDamage == true)
+        {
+            StartCoroutine(animationDamage());
+        }
         spawnCountTime += Time.deltaTime;
         if (firstSpawn == true && spawnCountTime >= countryStats.startSpawnTime)
         {
@@ -170,5 +175,13 @@ public class EarthController : MonoBehaviour
     public static void TakeDamege()
     {
         PointsAndLevelController.AddPoints("earth");
+        takeDamage = true;
+    }
+    IEnumerator animationDamage()
+    {
+        animator.SetBool("DanoSofrido", takeDamage);
+        yield return new WaitForSeconds(0.3f);
+        takeDamage = false;
+        animator.SetBool("DanoSofrido", takeDamage);
     }
 }

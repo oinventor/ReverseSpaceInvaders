@@ -80,10 +80,18 @@ public class TankController : MonoBehaviour
     {
         death = true;
         animator.SetBool("Morte", death);
+        if (tankStats.turret == true && tankStats.tank == false)
+        {
+            this.transform.parent.GetComponent<SpriteRenderer>().enabled = false;
+        }
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);
         PointsAndLevelController.AddPoints(enemyType);
         Destroy(this.gameObject);
+        if (tankStats.turret == true && tankStats.tank == false)
+        {
+            Destroy(this.transform.parent.gameObject);
+        }
     }
 }
