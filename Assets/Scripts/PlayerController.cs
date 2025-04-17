@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public UnityEvent onDeath;
-
+    public static bool canPause;
+    public static bool canActivateShield;
     public GameObject summon;
     public GameObject superSummon;
     private float summonColldown;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public static float curentMana;
     [NonSerialized]public static float shieldCooldown;
     private float shieldUptime;
-    private bool canSummon;
+    public static bool canSummon;
     public GameObject shield;
     private bool isPaused;
     public static bool canMove;
@@ -31,16 +32,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("Paineis e Menus")]
     public GameObject chargeBar;
-    public GameObject pausePanel;
-    public GameObject uiPanel;
-    public string cena;
-
-    [Header("Anima��o")]
-    public Animator animator;
+    public GameObject pauseMenue;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        isPaused = false;
+        canActivateShield = true;
+        canPause = true;
         canSummon = true;
         canMove = true;
         Time.timeScale = 1;
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shield and summoning handller
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.S) && canSummon == true|| Input.GetKey(KeyCode.DownArrow) && canSummon == true)
             {
                 chargeBar.SetActive(true);
                 //Summon cooldown (I wrote Colldown, sry :|)
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
                 //Coyete time subtraction
                 coyoteTime -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.W) && canActivateShield == true|| Input.GetKey(KeyCode.UpArrow) && canActivateShield == true)
             {
                 if (curentMana >= playerStats.manaPerShield)
                 {
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Pauser jogo
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && canPause == true)
         {
             PauseScreen();
         }
@@ -321,27 +321,16 @@ public class PlayerController : MonoBehaviour
         if(isPaused)
         {
             isPaused = false;
-            Time.timeScale = 1;
-            pausePanel.SetActive(false);
-            uiPanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            MenuesController.Unfreeze();
+            pauseMenue.SetActive(false);
         }
         else
         {
             isPaused = true;
-            Time.timeScale = 0;
-            pausePanel.SetActive(true);
-            uiPanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            MenuesController.Freeze();
+            canPause = true;
+            pauseMenue.SetActive(true);
         }
-    }
-
-    //Back to Menu
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene(cena);
     }
 
     //Take damage in Cleber

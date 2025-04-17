@@ -21,6 +21,7 @@ public class EarthController : MonoBehaviour
     private int nextPlataform;
     private float spawnCountTime;
     private bool firstSpawn;
+    private float offSet;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,12 +50,15 @@ public class EarthController : MonoBehaviour
             {
                 case 1:
                 spawnable = countryStats.inimigo1;
+                offSet = 2;
                 break;
                 case 2:
                 spawnable = countryStats.inimigo2;
+                offSet = 3;
                 break;
                 default:
                 spawnable = countryStats.inimigo3;
+                offSet = 3;
                 break;
             }
             SpawnTank(chosenPlataform);
@@ -73,7 +77,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform1.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform1.transform.position.x, spawnPlataform1.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -87,7 +91,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform2.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform2.transform.position.x, spawnPlataform2.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -101,7 +105,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform3.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform3.transform.position.x, spawnPlataform3.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 };
@@ -115,7 +119,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform4.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform4.transform.position.x, spawnPlataform4.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -129,7 +133,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform5.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform5.transform.position.x, spawnPlataform5.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -143,7 +147,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform6.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform6.transform.position.x, spawnPlataform6.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
@@ -157,7 +161,7 @@ public class EarthController : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(spawnable, spawnPlataform7.transform.position, Quaternion.identity);
+                    Instantiate(spawnable, new Vector2(spawnPlataform7.transform.position.x, spawnPlataform7.transform.position.y + offSet), Quaternion.identity);
                     nextPlataform = 0;
                     spawnCountTime = 0;
                 }
