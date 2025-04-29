@@ -36,6 +36,16 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
+        player = GameObject.FindWithTag("Player");
+        maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
+        maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
+        maxCharge = player.GetComponent<PlayerController>().playerStats.holdToSuperSummonTime;
+        maxShieldCooldown = player.GetComponent<PlayerController>().playerStats.shieldCooldown;
+        chargeBar.maxValue = maxCharge;
+        manaBar.maxValue = maxMana;
+        healthBar.maxValue = maxHealth;
+        shieldCooldown.maxValue = maxShieldCooldown;
+
         shieldCooldown.value = maxShieldCooldown - PlayerController.shieldCooldown;
         chargeBar.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 4);
         newMana = PlayerController.curentMana;

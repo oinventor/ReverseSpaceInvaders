@@ -59,6 +59,8 @@ public class ScrbPlayer : ScriptableObject
     public float coyoteTime;
     [NonSerialized]
     public float movementBuffer;
+    [NonSerialized]
+    public bool updateBool;
 
     public void LoadStats()
     {
@@ -78,6 +80,7 @@ public class ScrbPlayer : ScriptableObject
         holdToSuperSummonTime = pressedTimeToSuperSummon;
         laneMaxDistance = laneDistance;
         Debug.Log("Player Stats Loaded");
+        updateBool = false;
     }
     public void UpdateStats(int healthMax, int manaMax, int manaRegen, int heathSteal, float summoningCoolDown,
     int manaUsedPerMiniSummon, int manaUsedPerSuperSummon, float coolDownShield, float uptimeShield,
@@ -100,5 +103,6 @@ public class ScrbPlayer : ScriptableObject
         holdToSuperSummonTime += pressedTimeToSuperSummon;
         laneMaxDistance += laneDistance;
         Debug.Log("Player Stats Updated");
+        updateBool = true;
     }
 }

@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: a9c69d08d40b4e04da17d12f0ebc4c34
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UpgradeScene.unity
     guid: c8e5e5f31169572428cf3c20fbbdd834
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneTwo.unity
     guid: d70cadf889a442743b148374a5a0b384
   m_configObjects: {}

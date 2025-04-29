@@ -61,6 +61,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerStats.updateBool == true)
+        {
+            curantHealth += playerStats.maxHealth - playerStats.healthMax;
+            playerStats.updateBool = false;
+        }
+
+        if (curantHealth > playerStats.maxHealth)
+        {
+            curantHealth = playerStats.maxHealth;
+        }
         //If game paused action in game don't run
         if(!isPaused)
         {

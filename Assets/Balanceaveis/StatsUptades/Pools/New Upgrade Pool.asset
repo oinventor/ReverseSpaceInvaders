@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: New Upgrade Pool
   m_EditorClassIdentifier: 
   upgradePool:
-  - {fileID: 11400000, guid: 850c964cab370794b9866457ac112d39, type: 2}
-  - {fileID: 11400000, guid: 323cb4e97379ee549b0347ab4cd98fe5, type: 2}
-  - {fileID: 11400000, guid: a3361b3ded9bdeb4d98fbc47df0aa8f6, type: 2}
+  - {fileID: 11400000, guid: 1e0a60dfc87562c40a3dc32907cf5be8, type: 2}
