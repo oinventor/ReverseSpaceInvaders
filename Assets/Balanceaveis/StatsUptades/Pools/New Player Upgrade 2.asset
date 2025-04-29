@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3542e900a13bd5e49a1592897c88e5d4, type: 3}
-  m_Name: New Player Upgrade
+  m_Name: New Player Upgrade 2
   m_EditorClassIdentifier: 
-  removeAfterAquisition: 1
-  aquisitionTimes: 2
-  description: eeeeeeeeee
+  removeAfterAquisition: 0
+  aquisitionTimes: 0
+  description: gggggggggggggggg
   playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
   healthMaxUpdate: 100
   manaMaxUpdate: 0
