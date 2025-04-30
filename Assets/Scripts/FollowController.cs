@@ -18,6 +18,11 @@ public class FollowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (turretaQueSegue.updateBool == true)
+        {
+            enemyAimSpeed = turretaQueSegue.rotationSpeed;
+            turretaQueSegue.updateBool = false;
+        }
         newRotation = Quaternion.LookRotation (transform.position - target.position, Vector3.forward);
         newRotation.x = 0.0f;
         newRotation.y = 0.0f;

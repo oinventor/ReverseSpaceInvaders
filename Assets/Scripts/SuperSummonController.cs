@@ -28,6 +28,12 @@ public class SuperSummonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (summonStats.updateBool == true)
+        {
+            damege = summonStats.damegeDelt;
+            curantHealth += summonStats.maxHealth - summonStats.healthMax;
+            summonStats.updateBool = false;
+        }
         if (curantHealth <= 0)
         {
             Debug.Log("Entrou na morte");

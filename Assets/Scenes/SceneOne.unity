@@ -711,7 +711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &352276158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1250,9 +1250,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 352276158}
   - {fileID: 916790184}
   - {fileID: 1714208491}
-  - {fileID: 352276158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1556,6 +1556,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
         m_TargetAssemblyTypeName: ScrbPlayer, Assembly-CSharp
+        m_MethodName: LoadStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 73e41c5ac20482749af9bb0df5daea7b, type: 2}
+        m_TargetAssemblyTypeName: ScrbSummon, Assembly-CSharp
         m_MethodName: LoadStats
         m_Mode: 1
         m_Arguments:
@@ -2929,7 +2941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36800003, y: 0.14723048}
   m_AnchorMax: {x: 0.6427083, y: 0.22479558}
-  m_AnchoredPosition: {x: -10.5, y: 4.9995728}
+  m_AnchoredPosition: {x: -10.5, y: 4.9989014}
   m_SizeDelta: {x: -369, y: -96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970776232
@@ -5188,6 +5200,10 @@ MonoBehaviour:
   shieldCooldown: {fileID: 1503060439}
   points: {fileID: 1122233490}
   level: {fileID: 897196314}
+  tutorial: {fileID: 352276159}
+  startFadeOutTime: 10
+  fadeOutTimeDuration: 10
+  transparencySubtraction: 0.01
 --- !u!4 &1833222792
 Transform:
   m_ObjectHideFlags: 0
@@ -5994,6 +6010,10 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 1151975963}
+    - target: {fileID: 8199444155652435710, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
+      propertyPath: midSummon
+      value: 
+      objectReference: {fileID: 2854873896457048217, guid: a5c1387438f41f642bdd4d983a33120a, type: 3}
     - target: {fileID: 8199444155652435710, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
       propertyPath: pauseMenue
       value: 

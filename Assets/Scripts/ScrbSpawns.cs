@@ -19,17 +19,21 @@ public class ScrbSpawns : ScriptableObject
     public float tempoDeSpawn;
     [NonSerialized]
     public int randMax;
+    [NonSerialized]
+    public bool updateBool;
 
     public void LoadStats()
     {
         tempoDeSpawn = spawnTime;
         randMax = xSpawnChance;
+        updateBool = false;
         Debug.Log("Spawnable Stats Loaded");
     }
     public void UpdateStats(float spawnTime, int xSpawnChance)
     {
         tempoDeSpawn += spawnTime;
         randMax += xSpawnChance;
+        updateBool = true;
         Debug.Log("Spawnable Stats Updated");
     }
 }

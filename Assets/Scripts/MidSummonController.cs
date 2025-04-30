@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SumomController : MonoBehaviour
+public class MidSummonController : MonoBehaviour
 {
     private float movimentCooldownTime;
     public int damege;
@@ -69,13 +68,11 @@ public class SumomController : MonoBehaviour
         if (this.transform.position.x < -summonStats.distanciaMaxEsquerda && direction == -1)
         {
             //It moves down an change directions
-            StartCoroutine(VerticalMovement());
             direction *=-1f;
         }
         //Same thing, but now for the right
         else if (this.transform.position.x > summonStats.distanciaMaxDireita && direction == 1)
         {
-            StartCoroutine(VerticalMovement());
             direction *=-1f;
         }
         else
@@ -91,6 +88,7 @@ public class SumomController : MonoBehaviour
         movimentCooldownTime = 0;
         //Then it moves
         this.transform.position += new Vector3(summonStats.moveinetoHorizontal*direction,0,0);
+        StartCoroutine(VerticalMovement());
     }
 
     //Vertical Movement
@@ -147,4 +145,3 @@ public class SumomController : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
-

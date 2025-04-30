@@ -18,13 +18,15 @@ MonoBehaviour:
   heathSteal: 0
   summoningCoolDown: 2
   manaUsedPerMiniSummon: 2
+  manaUsedPerMidSummon: 3
   manaUsedPerSuperSummon: 5
   coolDownShield: 2
   uptimeShield: 3
   manaUsedPerShield: 5
   inputCoyoteTime: 0.2
   inputMovementBuffer: 0.2
-  pressedTimeToMiniSummon: 0.5
+  pressedTimeToMiniSummon: 0.01
+  pressedTimeToMidSummon: 0.5
   pressedTimeToSuperSummon: 1
   laneDistance: 500
   maxHealth: 25

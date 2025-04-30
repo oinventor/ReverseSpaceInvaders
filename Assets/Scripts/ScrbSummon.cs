@@ -51,6 +51,8 @@ public class ScrbSummon : ScriptableObject
     public float distanciaMaxDireita;
     [NonSerialized]
     public float distanciaMaxEsquerda;
+    [NonSerialized]
+    public bool updateBool;
 
     public void LoadStats()
     {
@@ -64,6 +66,7 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita = rightMovementMaxDistance;
         distanciaMaxEsquerda = leftMovementMaxDistance;
         shootingTime = shootingCooldown;
+        updateBool = false;
         Debug.Log("Summon Stats Loaded");
     }
     public void UpdateStats(int healthMax, int damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
@@ -80,6 +83,7 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita += rightMovementMaxDistance;
         distanciaMaxEsquerda += leftMovementMaxDistance;
         shootingTime += shootingCooldown;
+        updateBool = true;
         Debug.Log("Summon Stats Updated");
     }
 }

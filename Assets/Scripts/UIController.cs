@@ -12,6 +12,10 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI points;
     public TextMeshProUGUI level;
     private GameObject player;
+    public Image tutorial;
+    public float startFadeOutTime;
+    public float fadeOutTimeDuration;
+    public float transparencySubtraction;
     private int maxHealth;
     private int curantHealth;
     private float curantCharge;
@@ -33,10 +37,10 @@ public class UIController : MonoBehaviour
         shieldCooldown.maxValue = maxShieldCooldown;
         points.text = "";
         level.text = "";
+        StartCoroutine(StartFadeOut());
     }
     void Update()
     {
-        player = GameObject.FindWithTag("Player");
         maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
         maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
         maxCharge = player.GetComponent<PlayerController>().playerStats.holdToSuperSummonTime;
@@ -56,5 +60,21 @@ public class UIController : MonoBehaviour
         healthBar.value = curantHealth;
         points.text = PointsAndLevelController.points.ToString();
         level.text = PointsAndLevelController.levels.ToString();
+    }
+
+    IEnumerator StartFadeOut()
+    {
+        yield return new WaitForSeconds(startFadeOutTime);
+        StartCoroutine(FadeOut());
+    }
+    IEnumerator FadeOut()
+    {
+        for (float aFactor = 1f; aFactor >= -0.001f; aFactor -= transparencySubtraction)
+        {
+            Color transparency = tutorial.color;
+            transparency.a = aFactor;
+            tutorial.color = transparency;
+            yield return new WaitForSeconds(fadeOutTimeDuration * Time.deltaTime);
+        }
     }
 }

@@ -24,6 +24,8 @@ public class ScrbCountry : ScriptableObject
     public int maxHealth;
     [NonSerialized]
     public int healthPerSummon;
+    [NonSerialized]
+    public bool updateBool;
 
     public void LoadStats()
     {
@@ -31,6 +33,7 @@ public class ScrbCountry : ScriptableObject
         spawnTime = timeForSapwn;
         maxHealth = healthMax;
         healthPerSummon = healthConsumedPerEnemySpawn;
+        updateBool = false;
         Debug.Log("Planet Stats Loaded");
     }
     public void UpdateStats(float firstSpawnTime, float timeForSapwn,  int healthMax, int healthConsumedPerEnemySpawn)
@@ -39,6 +42,7 @@ public class ScrbCountry : ScriptableObject
         spawnTime += timeForSapwn;
         maxHealth += healthMax;
         healthPerSummon += healthConsumedPerEnemySpawn;
+        updateBool = true;
         Debug.Log("Planet Stats Updated");
     }
 

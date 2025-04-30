@@ -17,6 +17,7 @@ public class ScrbPlayerStatsUpdates : Upgrade
     [Header("Summon Related Stats Updates")]
     public float summoningCoolDownUpdate;
     public int manaUsedPerMiniSummonUpdate;
+    public int manaUsedPerMidSummonUpdate;
     public int manaUsedPerSuperSummonUpdate;
 
     [Header("Shield Related Stats Updates")]
@@ -28,14 +29,15 @@ public class ScrbPlayerStatsUpdates : Upgrade
     public float inputCoyoteTimeUpdate;
     public float inputMovementBufferUpdate;
     public float pressedTimeToMiniSummonUpdate;
+    public float pressedTimeToMidSummonUpdate;
     public float pressedTimeToSuperSummonUpdate;
     public float laneDistanceUpdate;
 
     public override void UpdateStats()
     {
         playerStats.UpdateStats(healthMaxUpdate, manaMaxUpdate, manaRegenUpdate, heathStealUpdate, summoningCoolDownUpdate,
-        manaUsedPerMiniSummonUpdate, manaUsedPerSuperSummonUpdate, coolDownShieldUpdate, uptimeShieldUpdate,
+        manaUsedPerMiniSummonUpdate, manaUsedPerMidSummonUpdate, manaUsedPerSuperSummonUpdate, coolDownShieldUpdate, uptimeShieldUpdate,
         manaUsedPerShieldUpdate, inputCoyoteTimeUpdate, inputMovementBufferUpdate, pressedTimeToMiniSummonUpdate,
-        pressedTimeToSuperSummonUpdate, laneDistanceUpdate);
+        pressedTimeToMidSummonUpdate, pressedTimeToSuperSummonUpdate, laneDistanceUpdate);
     }
 }

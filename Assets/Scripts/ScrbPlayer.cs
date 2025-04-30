@@ -15,6 +15,7 @@ public class ScrbPlayer : ScriptableObject
     [Header("Summon Related Stats")]
     public float summoningCoolDown;
     public int manaUsedPerMiniSummon;
+    public int manaUsedPerMidSummon;
     public int manaUsedPerSuperSummon;
 
     [Header("Shield Related Stats")]
@@ -26,6 +27,7 @@ public class ScrbPlayer : ScriptableObject
     public float inputCoyoteTime;
     public float inputMovementBuffer;
     public float pressedTimeToMiniSummon;
+    public float pressedTimeToMidSummon;
     public float pressedTimeToSuperSummon;
     public float laneDistance;
 
@@ -42,9 +44,13 @@ public class ScrbPlayer : ScriptableObject
     [NonSerialized]
     public float holdToSuperSummonTime;
     [NonSerialized]
+    public float holdToMidSummonTime;
+    [NonSerialized]
     public float holdToSummonTime;
     [NonSerialized]
     public int manaPerSummon;
+    [NonSerialized]
+    public int manaPerMidSummon;
     [NonSerialized]
     public int manaPerSuperSummon;
     [NonSerialized]
@@ -70,6 +76,7 @@ public class ScrbPlayer : ScriptableObject
         stealHealth = heathSteal;
         coolDownSummoning = summoningCoolDown;
         manaPerSummon = manaUsedPerMiniSummon;
+        manaPerMidSummon = manaUsedPerMidSummon;
         manaPerSuperSummon = manaUsedPerSuperSummon;
         shieldCooldown = coolDownShield;
         shieldUptime = uptimeShield;
@@ -77,15 +84,16 @@ public class ScrbPlayer : ScriptableObject
         coyoteTime = inputCoyoteTime;
         movementBuffer = inputMovementBuffer;
         holdToSummonTime = pressedTimeToMiniSummon;
+        holdToMidSummonTime = pressedTimeToMidSummon;
         holdToSuperSummonTime = pressedTimeToSuperSummon;
         laneMaxDistance = laneDistance;
         Debug.Log("Player Stats Loaded");
         updateBool = false;
     }
     public void UpdateStats(int healthMax, int manaMax, int manaRegen, int heathSteal, float summoningCoolDown,
-    int manaUsedPerMiniSummon, int manaUsedPerSuperSummon, float coolDownShield, float uptimeShield,
+    int manaUsedPerMiniSummon, int manaUsedPerMidSummon, int manaUsedPerSuperSummon, float coolDownShield, float uptimeShield,
     float manaUsedPerShield, float inputCoyoteTime, float inputMovementBuffer, float pressedTimeToMiniSummon,
-    float pressedTimeToSuperSummon, float laneDistance)
+    float pressedTimeToMidSummon, float pressedTimeToSuperSummon, float laneDistance)
     {
         maxHealth += healthMax;
         maxMana += manaMax;
@@ -93,6 +101,7 @@ public class ScrbPlayer : ScriptableObject
         stealHealth += heathSteal;
         coolDownSummoning += summoningCoolDown;
         manaPerSummon += manaUsedPerMiniSummon;
+        manaPerMidSummon += manaUsedPerMidSummon;
         manaPerSuperSummon += manaUsedPerSuperSummon;
         shieldCooldown += coolDownShield;
         shieldUptime += uptimeShield;
@@ -100,6 +109,7 @@ public class ScrbPlayer : ScriptableObject
         coyoteTime += inputCoyoteTime;
         movementBuffer += inputMovementBuffer;
         holdToSummonTime += pressedTimeToMiniSummon;
+        holdToMidSummonTime += pressedTimeToMidSummon;
         holdToSuperSummonTime += pressedTimeToSuperSummon;
         laneMaxDistance += laneDistance;
         Debug.Log("Player Stats Updated");

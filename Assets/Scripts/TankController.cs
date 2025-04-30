@@ -32,6 +32,11 @@ public class TankController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tankStats.updateBool == true)
+        {
+            curentHealth += tankStats.maxHealth - tankStats.healthMax;
+            tankStats.updateBool = false;
+        }
         if (curentHealth <= 0)
         {
             StartCoroutine(animationDeath());
@@ -57,6 +62,10 @@ public class TankController : MonoBehaviour
             break;
             case "SupperSummon":
                 curentHealth -= collWithSummon.gameObject.GetComponent<SuperSummonController>().damege;
+                Destroy(collWithSummon.gameObject);
+            break;
+            case "MidSummon":
+                curentHealth -= collWithSummon.gameObject.GetComponent<MidSummonController>().damege;
                 Destroy(collWithSummon.gameObject);
             break;
             default:

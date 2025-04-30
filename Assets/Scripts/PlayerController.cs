@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public static bool canActivateShield;
     public GameObject summon;
     public GameObject superSummon;
+    public GameObject midSummon;
     private float summonColldown;
     public static int curantHealth;
     public static float countDownToSummon;
@@ -221,7 +222,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        else if(countDownToSummon >= playerStats.holdToSummonTime && countDownToSummon < playerStats.holdToSuperSummonTime && coyoteTime == 0 && canSummon == true)
+        else if(countDownToSummon >= playerStats.holdToMidSummonTime && countDownToSummon < playerStats.holdToSuperSummonTime && coyoteTime == 0 && canSummon == true)
         {
             //if there is mana
             if (curentMana >= playerStats.manaPerSummon)
@@ -229,10 +230,28 @@ public class PlayerController : MonoBehaviour
                 //Resets the delay
                 countDownToSummon = 0;
                 //Instantiates the super summon
-                Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                Instantiate(midSummon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerSummon;
+            }
+            else
+            {
+
+            }
+        }
+        else if(countDownToSummon >= playerStats.holdToSummonTime && countDownToSummon < playerStats.holdToMidSummonTime && coyoteTime == 0 && canSummon == true)
+        {
+            //if there is mana
+            if (curentMana >= playerStats.manaPerMidSummon)
+            {
+                //Resets the delay
+                countDownToSummon = 0;
+                //Instantiates the super summon
+                Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                //Starts the summon cooldown
+                summonColldown = playerStats.coolDownSummoning;
+                curentMana -= playerStats.manaPerMidSummon;
             }
             else
             {
