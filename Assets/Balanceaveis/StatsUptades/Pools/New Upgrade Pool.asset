@@ -15,5 +15,3 @@ MonoBehaviour:
   upgradePool:
   - {fileID: 11400000, guid: 1e0a60dfc87562c40a3dc32907cf5be8, type: 2}
   - {fileID: 11400000, guid: ab9b57967adbf9e4a996c1e2aeca9c98, type: 2}
-  - {fileID: 11400000, guid: 7d1cc1cd764fece45be7d74d11826b7d, type: 2}
-  - {fileID: 11400000, guid: 7d1cc1cd764fece45be7d74d11826b7d, type: 2}
