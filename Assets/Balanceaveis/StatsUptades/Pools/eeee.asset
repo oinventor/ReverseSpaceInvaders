@@ -16,7 +16,7 @@ MonoBehaviour:
   aquisitionTimes: 0
   description: 
   dificultyIncreaseBool: 0
-  summonStats: {fileID: 0}
+  summonStats: {fileID: 11400000, guid: f363ad37bb7426f468f7603285a18bf6, type: 2}
   healthMaxUpdate: 0
   damegeDeltOnCollisionUpdate: 0
   damegeDeltOnPlanetUpdate: 0

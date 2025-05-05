@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeAfterAquisition: 0
   aquisitionTimes: 0
-  description: fffffffffffffffffffffffffffffffff
+  description: 'e
+
+    e
+
+    s'
   playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
   healthMaxUpdate: 100
   manaMaxUpdate: 0
@@ -22,6 +26,7 @@ MonoBehaviour:
   heathStealUpdate: 0
   summoningCoolDownUpdate: 0
   manaUsedPerMiniSummonUpdate: 0
+  manaUsedPerMidSummonUpdate: 0
   manaUsedPerSuperSummonUpdate: 0
   coolDownShieldUpdate: 0
   uptimeShieldUpdate: 0
@@ -29,5 +34,6 @@ MonoBehaviour:
   inputCoyoteTimeUpdate: 0
   inputMovementBufferUpdate: 0
   pressedTimeToMiniSummonUpdate: 0
+  pressedTimeToMidSummonUpdate: 0
   pressedTimeToSuperSummonUpdate: 0
   laneDistanceUpdate: 0
