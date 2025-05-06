@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: Torreta
   m_EditorClassIdentifier: 
+  projectileBool: 0
   turret: 1
   tank: 0
-  healthMax: 15
+  healthMax: 10
   damegeDeltOnCollision: 0
   damegeDeltOnPlanet: 0
   followSpeed: 0

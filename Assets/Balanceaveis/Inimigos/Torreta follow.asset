@@ -15,7 +15,7 @@ MonoBehaviour:
   projectileBool: 0
   turret: 1
   tank: 0
-  healthMax: 15
+  healthMax: 10
   damegeDeltOnCollision: 0
   damegeDeltOnPlanet: 0
   followSpeed: 2

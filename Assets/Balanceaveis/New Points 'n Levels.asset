@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsToLevel: 100
   levelsToUpgrade: 5
-  levelsToIncreaseDificulty: 1
+  levelsToIncreaseDificulty: 2
   levelsToLane1: 5
   levelsToLane2: 10
   levelsToLane3: 15
   levelsToLane4: 20
-  dificultyIncrease: 0
+  dificultyIncrease: 0.1
   turretKillPoints: 100
   tankKillPoints: 200
   earthHitPoints: 300

@@ -32,9 +32,9 @@ public class ScrbSummon : ScriptableObject
     public float shootingCooldown;
 
     [NonSerialized]
-    public int maxHealth;
+    public float maxHealth;
     [NonSerialized]
-    public int damegeDelt;
+    public float damegeDelt;
     [NonSerialized]
     public int dmgOnCountry;
     [NonSerialized]
@@ -56,8 +56,8 @@ public class ScrbSummon : ScriptableObject
 
     public void LoadStats()
     {
-        maxHealth = healthMax;
-        damegeDelt = damegeDeltOnCollision;
+        maxHealth = (float)healthMax;
+        damegeDelt = (float)damegeDeltOnCollision;
         dmgOnCountry = damegeDeltOnPlanet;
         rotationSpeed = followSpeed;
         coolDownMovimento = movementCooldown;
@@ -69,7 +69,7 @@ public class ScrbSummon : ScriptableObject
         updateBool = false;
         Debug.Log("Summon Stats Loaded");
     }
-    public void UpdateStats(int healthMax, int damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
+    public void UpdateStats(float healthMax, float damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
     float movementCooldown, float horizontalMovement, float verticalMovement, float rightMovementMaxDistance,
     float leftMovementMaxDistance, float shootingCooldown)
     {

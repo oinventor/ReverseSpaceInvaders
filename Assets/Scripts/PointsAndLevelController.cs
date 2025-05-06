@@ -20,7 +20,7 @@ public class PointsAndLevelController : MonoBehaviour
     public UnityEvent dificultyIncreaseTrigger;
     private static ScrbPoitsNLevels poitsNLevelsStats;
     private int levelsToDificulty;
-    [NonSerialized]public static int dificulty;
+    [NonSerialized]public static float dificulty;
     [NonSerialized]public static int points;
     private static int pointsToLeveling;
     [NonSerialized]public static int levels;

@@ -17,8 +17,8 @@ public class SuperSummonController : MonoBehaviour
 
     void Start()
     {
-        damege = summonStats.damegeDelt;
-        curantHealth = summonStats.maxHealth;
+        damege = (int)summonStats.damegeDelt;
+        curantHealth = (int)summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
         death = false;
         takeDamage = false;
@@ -30,8 +30,8 @@ public class SuperSummonController : MonoBehaviour
     {
         if (summonStats.updateBool == true)
         {
-            damege = summonStats.damegeDelt;
-            curantHealth += summonStats.maxHealth - summonStats.healthMax;
+            damege = (int)summonStats.damegeDelt;
+            curantHealth += (int)summonStats.maxHealth - summonStats.healthMax;
             summonStats.updateBool = false;
         }
         if (curantHealth <= 0)

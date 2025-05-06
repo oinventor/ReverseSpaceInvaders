@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  healthMax: 25
-  manaMax: 40
-  manaRegen: 15
+  healthMax: 15
+  manaMax: 20
+  manaRegen: 5
   heathSteal: 0
   summoningCoolDown: 2
   manaUsedPerMiniSummon: 2
-  manaUsedPerMidSummon: 3
-  manaUsedPerSuperSummon: 5
+  manaUsedPerMidSummon: 6
+  manaUsedPerSuperSummon: 10
   coolDownShield: 2
   uptimeShield: 3
   manaUsedPerShield: 5
@@ -29,4 +29,3 @@ MonoBehaviour:
   pressedTimeToMidSummon: 0.5
   pressedTimeToSuperSummon: 1
   laneDistance: 500
-  maxHealth: 25

@@ -16,10 +16,10 @@ MonoBehaviour:
   turret: 0
   tank: 0
   healthMax: 0
-  damegeDeltOnCollision: 10
+  damegeDeltOnCollision: 2
   damegeDeltOnPlanet: 0
   followSpeed: 0
-  movementCooldown: 0.02
+  movementCooldown: 0.06
   horizontalMovement: 0
   verticalMovement: 1.5
   rightMovementMaxDistance: 0

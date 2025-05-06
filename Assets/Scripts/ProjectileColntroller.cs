@@ -11,13 +11,18 @@ public class ProjectileColntroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damege = projectileStats.damegeDelt;
+        damege = (int)projectileStats.damegeDelt;
         this.transform.position += new Vector3(0, projectileStats.movimentoVertical,0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (projectileStats.updateBool == true)
+        {
+            damege = (int)projectileStats.damegeDelt;
+            projectileStats.updateBool = false;
+        }
         //Increases the cooldown time
         movimentCooldownTime += Time.deltaTime;
         //So then when the cooldown reaches the trashold set by the Scrb

@@ -15,7 +15,7 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        curentHealth = tankStats.maxHealth;
+        curentHealth = (int)tankStats.maxHealth;
         tankFire = false;
         death = false;
         animator = this.gameObject.GetComponent<Animator>();
@@ -34,7 +34,7 @@ public class TankController : MonoBehaviour
     {
         if (tankStats.updateBool == true)
         {
-            curentHealth += tankStats.maxHealth - tankStats.healthMax;
+            curentHealth += (int)tankStats.maxHealth - tankStats.healthMax;
             tankStats.updateBool = false;
         }
         if (curentHealth <= 0)

@@ -33,7 +33,7 @@ public class ScrbPlayer : ScriptableObject
 
     [NonSerialized]
     public int stealHealth;
-    //[NonSerialized]
+    [NonSerialized]
     public int maxHealth;
     [NonSerialized]
     public float coolDownSummoning;

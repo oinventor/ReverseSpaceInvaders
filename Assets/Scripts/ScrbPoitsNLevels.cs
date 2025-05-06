@@ -12,7 +12,7 @@ public class ScrbPoitsNLevels : ScriptableObject
     public int levelsToLane2;
     public int levelsToLane3;
     public int levelsToLane4;
-    public int dificultyIncrease;
+    public float dificultyIncrease;
     public int turretKillPoints;
     public int tankKillPoints;
     public int earthHitPoints;

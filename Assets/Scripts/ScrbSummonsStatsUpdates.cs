@@ -16,8 +16,8 @@ public class ScrbSummonsStatsUpdates : Upgrade
     [Header("summons do player, inimigos e projeteis///")]
 
     [Header("Summon Related Stats Update")]
-    public int healthMaxUpdate;
-    public int damegeDeltOnCollisionUpdate;
+    public float healthMaxUpdate;
+    public float damegeDeltOnCollisionUpdate;
     public int damegeDeltOnPlanetUpdate;
 
     [Header("Movement Related Stats Update")]

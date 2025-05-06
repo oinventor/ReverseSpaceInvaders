@@ -20,9 +20,9 @@ public class SumomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        curantHealth = summonStats.maxHealth;
+        curantHealth = (int)summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
-        damege = summonStats.damegeDelt;
+        damege = (int)summonStats.damegeDelt;
         death = false;
         takeDamage = false;
         animator = this.gameObject.GetComponent<Animator>();
@@ -44,8 +44,8 @@ public class SumomController : MonoBehaviour
     {
         if (summonStats.updateBool == true)
         {
-            damege = summonStats.damegeDelt;
-            curantHealth += summonStats.maxHealth - summonStats.healthMax;
+            damege = (int)summonStats.damegeDelt;
+            curantHealth += (int)summonStats.maxHealth - summonStats.healthMax;
             summonStats.updateBool = false;
         }
         if (curantHealth <= 0)
