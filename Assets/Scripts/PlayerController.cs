@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public static float curentMana;
     [NonSerialized]public static float shieldCooldown;
     private float shieldUptime;
+    private int damegeTakenTraker;
     public static bool canSummon;
     public GameObject shield;
     private bool isPaused;
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerStats.updateBool == true)
         {
-            curantHealth += playerStats.maxHealth - playerStats.healthMax;
+            curantHealth = playerStats.maxHealth - damegeTakenTraker;
             playerStats.updateBool = false;
         }
 
@@ -225,7 +226,7 @@ public class PlayerController : MonoBehaviour
         else if(countDownToSummon >= playerStats.holdToMidSummonTime && countDownToSummon < playerStats.holdToSuperSummonTime && coyoteTime == 0 && canSummon == true)
         {
             //if there is mana
-            if (curentMana >= playerStats.manaPerSummon)
+            if (curentMana >= playerStats.manaPerMidSummon)
             {
                 //Resets the delay
                 countDownToSummon = 0;
@@ -233,7 +234,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(midSummon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
-                curentMana -= playerStats.manaPerSummon;
+                curentMana -= playerStats.manaPerMidSummon;
             }
             else
             {
@@ -243,7 +244,7 @@ public class PlayerController : MonoBehaviour
         else if(countDownToSummon >= playerStats.holdToSummonTime && countDownToSummon < playerStats.holdToMidSummonTime && coyoteTime == 0 && canSummon == true)
         {
             //if there is mana
-            if (curentMana >= playerStats.manaPerMidSummon)
+            if (curentMana >= playerStats.manaPerSummon)
             {
                 //Resets the delay
                 countDownToSummon = 0;
@@ -251,7 +252,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
-                curentMana -= playerStats.manaPerMidSummon;
+                curentMana -= playerStats.manaPerSummon;
             }
             else
             {
@@ -336,6 +337,7 @@ public class PlayerController : MonoBehaviour
                 if (shield.activeSelf != true)
                 {
                     curantHealth -= objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
+                    damegeTakenTraker += objColls.gameObject.GetComponent<ProjectileColntroller>().damege;
                     StartCoroutine(animationDamage());
                 }
             break;

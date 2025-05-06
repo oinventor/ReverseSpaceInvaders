@@ -44,7 +44,6 @@ public class MidSummonController : MonoBehaviour
         if (summonStats.updateBool == true)
         {
             damege = (int)summonStats.damegeDelt;
-            curantHealth += (int)summonStats.maxHealth - summonStats.healthMax;
             summonStats.updateBool = false;
         }
         if (curantHealth <= 0)

@@ -22,7 +22,7 @@ MonoBehaviour:
   movementCooldown: 0.5
   horizontalMovement: 2
   verticalMovement: 3
-  rightMovementMaxDistance: 12
-  leftMovementMaxDistance: 12
+  rightMovementMaxDistance: 28.5
+  leftMovementMaxDistance: 28.5
   projectile: {fileID: 0}
   shootingCooldown: 0

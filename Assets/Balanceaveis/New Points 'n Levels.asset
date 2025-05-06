@@ -19,7 +19,7 @@ MonoBehaviour:
   levelsToLane2: 10
   levelsToLane3: 15
   levelsToLane4: 20
-  dificultyIncrease: 0.1
+  dificultyIncrease: 0
   turretKillPoints: 100
   tankKillPoints: 200
   earthHitPoints: 300

@@ -13,9 +13,19 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI level;
     private GameObject player;
     public Image tutorial;
+    public Material healthTex;
+    public Material manaTex;
+    public Material emptyHealthTex;
+    public Material emptyManaTex;
     public float startFadeOutTime;
     public float fadeOutTimeDuration;
     public float transparencySubtraction;
+    private float heathSliderSize;
+    private float manaSliderSize;
+    private float heathSegments;
+    private float manaSegments;
+    private float emptyHeathSegments;
+    private float emptyManaSegments;
     private int maxHealth;
     private int curantHealth;
     private float curantCharge;
@@ -35,12 +45,27 @@ public class UIController : MonoBehaviour
         manaBar.maxValue = maxMana;
         healthBar.maxValue = maxHealth;
         shieldCooldown.maxValue = maxShieldCooldown;
+        heathSegments = healthTex.GetFloat("_segments");
+        manaSegments = manaTex.GetFloat("_segments");
+        emptyHeathSegments = heathSegments;
+        emptyManaSegments = manaSegments;
+        heathSliderSize = healthBar.transform.localScale.x / (float)maxHealth;
+        manaSliderSize = manaBar.transform.localScale.x / (float)maxMana;
         points.text = "";
         level.text = "";
         StartCoroutine(StartFadeOut());
     }
     void Update()
     {
+        healthTex.SetFloat("_segments", maxHealth);
+        manaTex.SetFloat("_segments", maxMana);
+        emptyHealthTex.SetFloat("_segments", maxHealth);
+        emptyManaTex.SetFloat("_segments", maxMana);
+        emptyHeathSegments = heathSegments;
+        emptyManaSegments = manaSegments;
+        healthBar.transform.localScale = new Vector3 ( heathSliderSize * (float)maxHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+        manaBar.transform.localScale = new Vector3 (manaSliderSize * (float)maxMana, manaBar.transform.localScale.y, manaBar.transform.localScale.z);
+
         maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
         maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
         maxCharge = player.GetComponent<PlayerController>().playerStats.holdToSuperSummonTime;
@@ -76,5 +101,16 @@ public class UIController : MonoBehaviour
             tutorial.color = transparency;
             yield return new WaitForSeconds(fadeOutTimeDuration * Time.deltaTime);
         }
+    }
+
+    public void LoadSegments()
+    {
+
+        //healthBar.transform.localScale = new Vector3 ((float)heathSliderSize * (float)maxHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+        //manaBar.transform.localScale = new Vector3 ((float)manaSliderSize * (float)maxMana, manaBar.transform.localScale.y, manaBar.transform.localScale.z);
+        healthTex.SetFloat("_segments", maxHealth);
+        manaTex.SetFloat("_segments", maxMana);
+        emptyHealthTex.SetFloat("_segments", maxHealth);
+        emptyManaTex.SetFloat("_segments", maxMana);
     }
 }

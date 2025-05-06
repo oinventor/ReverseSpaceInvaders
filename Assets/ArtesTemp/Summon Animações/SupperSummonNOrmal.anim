@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HorrorFracoVivo
+  m_Name: SupperSummonNOrmal
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1886603163, guid: 5c2a4d76d62c9ff4981eab148c88d532, type: 3}
+      value: {fileID: -1516523819, guid: 130e13cc413150e459a160fc358c4d8e, type: 3}
     - time: 0.06666667
-      value: {fileID: -918946273, guid: 5c2a4d76d62c9ff4981eab148c88d532, type: 3}
+      value: {fileID: 1977924935, guid: 130e13cc413150e459a160fc358c4d8e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1886603163, guid: 5c2a4d76d62c9ff4981eab148c88d532, type: 3}
-    - {fileID: -918946273, guid: 5c2a4d76d62c9ff4981eab148c88d532, type: 3}
+    - {fileID: -1516523819, guid: 130e13cc413150e459a160fc358c4d8e, type: 3}
+    - {fileID: 1977924935, guid: 130e13cc413150e459a160fc358c4d8e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   healthMax: 15
-  manaMax: 20
+  manaMax: 10
   manaRegen: 5
   heathSteal: 0
   summoningCoolDown: 2
-  manaUsedPerMiniSummon: 2
-  manaUsedPerMidSummon: 6
-  manaUsedPerSuperSummon: 10
+  manaUsedPerMiniSummon: 1
+  manaUsedPerMidSummon: 3
+  manaUsedPerSuperSummon: 5
   coolDownShield: 2
   uptimeShield: 3
   manaUsedPerShield: 5

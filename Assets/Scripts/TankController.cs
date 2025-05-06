@@ -34,7 +34,6 @@ public class TankController : MonoBehaviour
     {
         if (tankStats.updateBool == true)
         {
-            curentHealth += (int)tankStats.maxHealth - tankStats.healthMax;
             tankStats.updateBool = false;
         }
         if (curentHealth <= 0)

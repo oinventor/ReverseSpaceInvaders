@@ -18,8 +18,8 @@ MonoBehaviour:
 
 '
   playerStats: {fileID: 11400000, guid: 5ecf2457c1d39384fbc4e171e62500e7, type: 2}
-  healthMaxUpdate: 0
-  manaMaxUpdate: 0
+  healthMaxUpdate: 1
+  manaMaxUpdate: 1
   manaRegenUpdate: 0
   heathStealUpdate: 0
   summoningCoolDownUpdate: 0
