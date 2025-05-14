@@ -30,6 +30,10 @@ public class ScrbSummonsStatsUpdates : Upgrade
 
     [Header("Shoting Related Stats Update")]
     public float shootingCooldownUpdate;
+    [Header("States Related Stats")]
+    public bool state1;
+    public bool state2;
+    public bool state3;
 
     public override void UpdateStats()
     {
@@ -46,6 +50,6 @@ public class ScrbSummonsStatsUpdates : Upgrade
         }
         summonStats.UpdateStats(healthMaxUpdate, damegeDeltOnCollisionUpdate, damegeDeltOnPlanetUpdate, followSpeedUpdate,
         movementCooldownUpdate, horizontalMovementUpdate, verticalMovementUpdate, rightMovementMaxDistanceUpdate,
-        leftMovementMaxDistanceUpdate, shootingCooldownUpdate);
+        leftMovementMaxDistanceUpdate, shootingCooldownUpdate, state1, state2, state3);
     }
 }

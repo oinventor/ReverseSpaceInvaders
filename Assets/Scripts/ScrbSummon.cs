@@ -53,6 +53,12 @@ public class ScrbSummon : ScriptableObject
     public float distanciaMaxEsquerda;
     [NonSerialized]
     public bool updateBool;
+    [NonSerialized]
+    public bool state11;
+    [NonSerialized]
+    public bool state22;
+    [NonSerialized]
+    public bool state33;
 
     public void LoadStats()
     {
@@ -66,12 +72,15 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita = rightMovementMaxDistance;
         distanciaMaxEsquerda = leftMovementMaxDistance;
         shootingTime = shootingCooldown;
+        state11 = false;
+        state22 = false;
+        state33 = false;
         updateBool = false;
         Debug.Log("Summon Stats Loaded");
     }
     public void UpdateStats(float healthMax, float damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
     float movementCooldown, float horizontalMovement, float verticalMovement, float rightMovementMaxDistance,
-    float leftMovementMaxDistance, float shootingCooldown)
+    float leftMovementMaxDistance, float shootingCooldown, bool state1, bool state2, bool state3)
     {
         maxHealth += healthMax;
         damegeDelt += damegeDeltOnCollision;
@@ -83,6 +92,27 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita += rightMovementMaxDistance;
         distanciaMaxEsquerda += leftMovementMaxDistance;
         shootingTime += shootingCooldown;
+        if (state1 == true || state2 == true || state3 == true)
+        {
+            if (state1 == true)
+            {
+                state11 = state1;
+                state22 = false;
+                state33 = false;
+            }
+            else if (state2 == true)
+            {
+                state11 = false;
+                state22 = state2;
+                state33 = false;
+            }
+            else if (state3 == true)
+            {
+                state11 = false;
+                state22 = false;
+                state33 = state3;
+            }
+        }
         updateBool = true;
         Debug.Log("Summon Stats Updated");
     }

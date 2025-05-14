@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd73d433b052b9546a82f447a16d25f4, type: 3}
-  m_Name: eeee
+  m_Name: State 2
   m_EditorClassIdentifier: 
-  removeAfterAquisition: 0
-  aquisitionTimes: 0
-  description: 
+  removeAfterAquisition: 1
+  aquisitionTimes: 1
+  icon: {fileID: 0}
+  upgradeName: 
+  description: state 2
   dificultyIncreaseBool: 0
-  summonStats: {fileID: 11400000, guid: f363ad37bb7426f468f7603285a18bf6, type: 2}
+  summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   healthMaxUpdate: 0
   damegeDeltOnCollisionUpdate: 0
   damegeDeltOnPlanetUpdate: 0
@@ -27,3 +29,6 @@ MonoBehaviour:
   rightMovementMaxDistanceUpdate: 0
   leftMovementMaxDistanceUpdate: 0
   shootingCooldownUpdate: 0
+  state1: 0
+  state2: 1
+  state3: 0

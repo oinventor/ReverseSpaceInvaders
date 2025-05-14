@@ -23,6 +23,18 @@ public class SuperSummonController : MonoBehaviour
         death = false;
         takeDamage = false;
         animator = this.gameObject.GetComponent<Animator>();
+        if (summonStats.state11)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(255,  0, 0);
+        }
+        else if (summonStats.state22)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
+        }
+        else if (summonStats.state33)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
+        }
     }
 
     // Update is called once per frame

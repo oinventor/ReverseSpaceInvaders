@@ -25,9 +25,11 @@ public class PointsAndLevelController : MonoBehaviour
     private static int pointsToLeveling;
     [NonSerialized]public static int levels;
     private static int levelsToUpgrade;
+    [NonSerialized]public static int xp;
     // Start is called before the first frame update
     void Start()
     {
+        xp = 0;
         poitsNLevelsStats = poitsNLevelsScrb;
         pointsToLeveling = poitsNLevelsStats.pointsToLevel;
         levelsToUpgrade = poitsNLevelsStats.levelsToUpgrade;
@@ -40,6 +42,7 @@ public class PointsAndLevelController : MonoBehaviour
         {
             levels += 1;
             pointsToLeveling += poitsNLevelsStats.pointsToLevel;
+            xp -= poitsNLevelsStats.pointsToLevel;
         }
         if (levels >= levelsToUpgrade)
         {
@@ -60,12 +63,15 @@ public class PointsAndLevelController : MonoBehaviour
         {
             case "tank":
                 points += poitsNLevelsStats.tankKillPoints;
+                xp += poitsNLevelsStats.tankKillPoints;
             break;
             case "turret":
                 points += poitsNLevelsStats.turretKillPoints;
+                xp += poitsNLevelsStats.turretKillPoints;
             break;
             case "earth":
                 points += poitsNLevelsStats.earthHitPoints;
+                xp += poitsNLevelsStats.earthHitPoints;
             break;
             default:
             break;

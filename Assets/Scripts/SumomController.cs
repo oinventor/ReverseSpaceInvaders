@@ -26,6 +26,18 @@ public class SumomController : MonoBehaviour
         death = false;
         takeDamage = false;
         animator = this.gameObject.GetComponent<Animator>();
+        if (summonStats.state11)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(255, 40, 40);
+        }
+        else if (summonStats.state22)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(40, 255, 40);
+        }
+        else if (summonStats.state33)
+        {
+            this.GetComponent<SpriteRenderer>().color = new Color(40, 40, 255);
+        }
 
         //This here will change the direction that the summon will go depending on where it spawns
         switch (this.transform.position.x >0)

@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public Slider manaBar;
     public Slider healthBar;
     public Slider shieldCooldown;
+    public Slider xpBar;
     public TextMeshProUGUI points;
     public TextMeshProUGUI level;
     private GameObject player;
@@ -83,6 +84,7 @@ public class UIController : MonoBehaviour
         chargeBar.value = curantCharge;
         curantHealth = PlayerController.curantHealth;
         healthBar.value = curantHealth;
+        xpBar.value = PointsAndLevelController.xp;
         points.text = PointsAndLevelController.points.ToString();
         level.text = PointsAndLevelController.levels.ToString();
     }
