@@ -56,16 +56,16 @@ public class TankController : MonoBehaviour
         switch (collWithSummon.tag)
         {
             case "Summon":
-                curentHealth -= collWithSummon.gameObject.GetComponent<SumomController>().damege;
-                Destroy(collWithSummon.gameObject);
+                curentHealth -= (int)collWithSummon.gameObject.GetComponent<SumomController>().damege;
             break;
             case "SupperSummon":
-                curentHealth -= collWithSummon.gameObject.GetComponent<SuperSummonController>().damege;
-                Destroy(collWithSummon.gameObject);
+                curentHealth -= (int)collWithSummon.gameObject.GetComponent<SuperSummonController>().damege;
             break;
             case "MidSummon":
-                curentHealth -= collWithSummon.gameObject.GetComponent<MidSummonController>().damege;
-                Destroy(collWithSummon.gameObject);
+                curentHealth -= (int)collWithSummon.gameObject.GetComponent<MidSummonController>().damege;
+            break;
+            case "Explosion":
+                curentHealth -= (int)collWithSummon.gameObject.GetComponent<ExplosionCOntroller>().damege;
             break;
             default:
             break;

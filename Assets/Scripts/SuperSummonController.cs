@@ -72,6 +72,10 @@ public class SuperSummonController : MonoBehaviour
         switch (collWithObj.tag)
         {
             case "Enemy":
+            if (summonStats.state11)
+            {
+                Instantiate(summonStats.explosionType, new Vector2(transform.position.x, transform.position.y - 4), Quaternion.identity);
+            }
             Destroy(this.gameObject);
             break;
             case "Country":

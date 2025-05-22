@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96ceb253d0a5499b174421f0031b3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
+  summoning: {fileID: 8300000, guid: 813cb1f7cb161d64a83fb8deff8c75b6, type: 3}
+  shieldActivation: {fileID: 8300000, guid: b638e543146f60c459c50f48244c88c2, type: 3}
+  shieldDeactivation: {fileID: 8300000, guid: 7a468e3a8656a334b93258a913926212, type: 3}
+  takingDamege: {fileID: 8300000, guid: 1e4defcb951d9304e979fddb203f3b0d, type: 3}
+  moving: {fileID: 0}
+  gettingMana: {fileID: 8300000, guid: 2ba2f58d379c6e149a3ede082e6aee14, type: 3}
   healthMax: 15
   manaMax: 10
   manaRegen: 5

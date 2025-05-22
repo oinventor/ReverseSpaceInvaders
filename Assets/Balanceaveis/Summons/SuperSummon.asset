@@ -16,7 +16,7 @@ MonoBehaviour:
   turret: 0
   tank: 0
   healthMax: 30
-  damegeDeltOnCollision: 20
+  damegeDeltOnCollision: 1191
   damegeDeltOnPlanet: 0
   followSpeed: 0
   movementCooldown: 0.2
@@ -26,3 +26,4 @@ MonoBehaviour:
   leftMovementMaxDistance: 0
   projectile: {fileID: 0}
   shootingCooldown: 0
+  explosionType: {fileID: 6268053223639872589, guid: 1684da5df52645c41a1aabcd42689024, type: 3}

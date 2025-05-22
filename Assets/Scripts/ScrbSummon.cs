@@ -30,6 +30,8 @@ public class ScrbSummon : ScriptableObject
     [Header("Shoting Related Stats")]
     public GameObject projectile;
     public float shootingCooldown;
+    [Header("States Related Stats")]
+    public GameObject explosionType;
 
     [NonSerialized]
     public float maxHealth;

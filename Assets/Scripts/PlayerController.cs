@@ -213,10 +213,15 @@ public class PlayerController : MonoBehaviour
                 //Resets the delay
                 countDownToSummon = 0;
                 //Instantiates the super summon
-                Instantiate(superSummon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                Instantiate(superSummon, new Vector3(transform.position.x, transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerSuperSummon;
+                if (playerStats.summoning != null)
+                {
+                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                }
+
             }
             else
             {
@@ -231,10 +236,14 @@ public class PlayerController : MonoBehaviour
                 //Resets the delay
                 countDownToSummon = 0;
                 //Instantiates the super summon
-                Instantiate(midSummon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                Instantiate(midSummon, new Vector3(transform.position.x, transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerMidSummon;
+                if (playerStats.summoning != null)
+                {
+                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                }
             }
             else
             {
@@ -249,10 +258,14 @@ public class PlayerController : MonoBehaviour
                 //Resets the delay
                 countDownToSummon = 0;
                 //Instantiates the super summon
-                Instantiate(summon, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                Instantiate(summon, new Vector3(transform.position.x, transform.position.y - 3, 0), Quaternion.identity);
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerSummon;
+                if (playerStats.summoning != null)
+                {
+                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                }
             }
             else
             {
@@ -280,6 +293,10 @@ public class PlayerController : MonoBehaviour
         {
             //With hit the lane collider, it tps self to it
             transform.position = new Vector3(rightLane.collider.gameObject.transform.position.x, transform.position.y, 0);
+            if (playerStats.moving != null)
+            {
+                AudioController.audioController.PlayAudioClip(playerStats.moving, transform, 1f);
+            }
         }
         else
         {
@@ -297,6 +314,10 @@ public class PlayerController : MonoBehaviour
         else if (leftLane.collider.gameObject.tag == "Lane")
         {
             transform.position = new Vector3(leftLane.collider.gameObject.transform.position.x, transform.position.y, 0);
+            if (playerStats.moving != null)
+            {
+                AudioController.audioController.PlayAudioClip(playerStats.moving, transform, 1f);
+            }
         }
         else
         {
@@ -326,6 +347,10 @@ public class PlayerController : MonoBehaviour
             case "ManaBall":
                 if (curentMana <= playerStats.maxMana)
                 {
+                    if (playerStats.gettingMana != null)
+                    {
+                        AudioController.audioController.PlayAudioClip(playerStats.gettingMana, transform, 1f);
+                    }
                     curentMana += playerStats.manaPerManaBall;
                 }
                 else
@@ -369,6 +394,10 @@ public class PlayerController : MonoBehaviour
     {
         takeDamage = true;
         animator.SetBool("DanoSofrido", takeDamage);
+        if (playerStats.takingDamege != null)
+        {
+            AudioController.audioController.PlayAudioClip(playerStats.takingDamege, transform, 1f);
+        }
         yield return new WaitForSeconds(0.3f);
         takeDamage = false;
         animator.SetBool("DanoSofrido", takeDamage);
@@ -378,10 +407,17 @@ public class PlayerController : MonoBehaviour
     IEnumerator animationShield()
     {
         Debug.Log("Entrou no escudo");
-
+        if (playerStats.shieldActivation != null)
+        {
+            AudioController.audioController.PlayAudioClip(playerStats.shieldActivation, transform, 1f);
+        }
         activeShield = true;
         animator.SetBool("DefesaAtiva", activeShield);
         yield return new WaitForSeconds(playerStats.shieldUptime - 0.2f);
+        if (playerStats.shieldDeactivation != null)
+        {
+            AudioController.audioController.PlayAudioClip(playerStats.shieldDeactivation, transform, 1f);
+        }
         activeShield = false;
         animator.SetBool("DefesaAtiva", activeShield);
     }

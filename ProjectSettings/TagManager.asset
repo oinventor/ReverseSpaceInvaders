@@ -15,6 +15,7 @@ TagManager:
   - Tank
   - Country
   - MidSummon
+  - Explosion
   layers:
   - Default
   - TransparentFX

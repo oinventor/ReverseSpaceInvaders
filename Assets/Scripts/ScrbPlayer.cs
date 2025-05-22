@@ -6,6 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New PlayerStats", menuName = "Scrbs/Player")]
 public class ScrbPlayer : ScriptableObject
 {
+    [Header("Player Sounds")]
+    public AudioClip summoning;
+    public AudioClip shieldActivation;
+    public AudioClip shieldDeactivation;
+    public AudioClip takingDamege;
+    public AudioClip moving;
+    public AudioClip gettingMana;
     [Header("Player Related Stats")]
     public int healthMax;
     public int manaMax;
