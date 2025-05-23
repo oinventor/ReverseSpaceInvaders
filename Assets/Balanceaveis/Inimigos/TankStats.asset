@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: TankStats
   m_EditorClassIdentifier: 
+  shooting: {fileID: 0}
+  spawning: {fileID: 0}
+  takingDamege: {fileID: 0}
+  dying: {fileID: 0}
+  moving: {fileID: 0}
   projectileBool: 0
   turret: 0
   tank: 1
@@ -26,3 +31,4 @@ MonoBehaviour:
   leftMovementMaxDistance: 0
   projectile: {fileID: 5018502367730268849, guid: 5e8598d967dd4f043b6dc84730c1ef25, type: 3}
   shootingCooldown: 10
+  explosionType: {fileID: 0}

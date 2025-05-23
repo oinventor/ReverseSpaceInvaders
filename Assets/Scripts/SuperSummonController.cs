@@ -17,6 +17,10 @@ public class SuperSummonController : MonoBehaviour
 
     void Start()
     {
+        if (summonStats.spawning != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.spawning, transform, 1f);
+        }
         damege = (int)summonStats.damegeDelt;
         curantHealth = (int)summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
@@ -61,6 +65,10 @@ public class SuperSummonController : MonoBehaviour
             //It will move to a certan horizontal direction
             case true:
                 this.transform.position += new Vector3(0, summonStats.movimentoVertical *-1,0);
+                if (summonStats.moving != null)
+                {
+                    AudioController.audioController.PlayAudioClip(summonStats.moving, transform, 1f);
+                }
                 movimentCooldownTime = 0;
             break;
             default:
@@ -97,6 +105,10 @@ public class SuperSummonController : MonoBehaviour
     {
         takeDamage = true;
         animator.SetBool("DanoSofrido", takeDamage);
+        if (summonStats.takingDamege != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.takingDamege, transform, 1f);
+        }
         yield return new WaitForSeconds(0.3f);
         takeDamage = false;
         animator.SetBool("DanoSofrido", takeDamage);
@@ -106,9 +118,12 @@ public class SuperSummonController : MonoBehaviour
     IEnumerator animationDeath()
     {
         Debug.Log("Morreu anima��o");
-
-        death = true;
         animator.SetBool("Morte", death);
+        if (summonStats.dying != null && death == false)
+        {
+            death = true;
+            AudioController.audioController.PlayAudioClip(summonStats.dying, transform, 1f);
+        }
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);

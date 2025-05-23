@@ -16,6 +16,8 @@ public class EarthController : MonoBehaviour
     public GameObject spawnPlataform6;
     public GameObject spawnPlataform7;
     private GameObject spawnable;
+    private static AudioClip a;
+    private static Transform b;
     private static bool takeDamage;
     private int chosenPlataform;
     private int nextPlataform;
@@ -25,6 +27,8 @@ public class EarthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        b = this.transform;
+        a = countryStats.takingDamege;
         firstSpawn = true;
     }
 
@@ -34,6 +38,7 @@ public class EarthController : MonoBehaviour
         if (takeDamage == true)
         {
             StartCoroutine(animationDamage());
+
         }
         spawnCountTime += Time.deltaTime;
         if (firstSpawn == true && spawnCountTime >= countryStats.startSpawnTime)
@@ -180,6 +185,10 @@ public class EarthController : MonoBehaviour
     {
         PointsAndLevelController.AddPoints("earth");
         takeDamage = true;
+        if (a != null)
+        {
+            AudioController.audioController.PlayAudioClip(a, b, 1f);
+        }
     }
     IEnumerator animationDamage()
     {

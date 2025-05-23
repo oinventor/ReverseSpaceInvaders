@@ -20,6 +20,10 @@ public class SumomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (summonStats.spawning != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.spawning, transform, 1f);
+        }
         curantHealth = (int)summonStats.maxHealth;
         dgmOnCountry = summonStats.dmgOnCountry;
         damege = (int)summonStats.damegeDelt;
@@ -102,7 +106,11 @@ public class SumomController : MonoBehaviour
         //Resets cooldown
         movimentCooldownTime = 0;
         //Then it moves
-        this.transform.position += new Vector3(summonStats.moveinetoHorizontal*direction,0,0);
+        this.transform.position += new Vector3(summonStats.moveinetoHorizontal * direction, 0, 0);
+        if (summonStats.moving != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.moving, transform, 1f);
+        }
     }
 
     //Vertical Movement
@@ -113,7 +121,11 @@ public class SumomController : MonoBehaviour
         //Then wait for the cooldown
         yield return new WaitForSeconds(summonStats.coolDownMovimento);
         //Then it moves
-        this.transform.position += new Vector3(0,-1*summonStats.movimentoVertical,0);
+        this.transform.position += new Vector3(0, -1 * summonStats.movimentoVertical, 0);
+        if (summonStats.moving != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.moving, transform, 1f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collWithObj)
@@ -143,6 +155,10 @@ public class SumomController : MonoBehaviour
     {
         takeDamage = true;
         animator.SetBool("DanoSofrido", takeDamage);
+        if (summonStats.takingDamege != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.takingDamege, transform, 1f);
+        }
         yield return new WaitForSeconds(0.3f);
         takeDamage = false;
         animator.SetBool("DanoSofrido", takeDamage);
@@ -151,8 +167,12 @@ public class SumomController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        death = true;
         animator.SetBool("Morte", death);
+        if (summonStats.dying != null && death == false)
+        {
+            death = true;
+            AudioController.audioController.PlayAudioClip(summonStats.dying, transform, 1f);
+        }
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);

@@ -7,7 +7,9 @@ using UnityEngine;
 public class ScrbPlayer : ScriptableObject
 {
     [Header("Player Sounds")]
-    public AudioClip summoning;
+    public AudioClip summoningSmallSummon;
+    public AudioClip summoningMidSummon;
+    public AudioClip summoningSuperSummon;
     public AudioClip shieldActivation;
     public AudioClip shieldDeactivation;
     public AudioClip takingDamege;

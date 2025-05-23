@@ -11,6 +11,10 @@ public class ProjectileColntroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (projectileStats.spawning != null)
+        {
+            AudioController.audioController.PlayAudioClip(projectileStats.spawning, transform, 1f);
+        }
         damege = (int)projectileStats.damegeDelt;
         this.transform.position += new Vector3(0, projectileStats.movimentoVertical,0);
     }
@@ -56,6 +60,10 @@ public class ProjectileColntroller : MonoBehaviour
             break;
             case "SupperSummon":
                 objColls.gameObject.GetComponent<SuperSummonController>().TakeDamege(damege);
+                Destroy(this.gameObject);
+            break;
+            case "MidSummon":
+                objColls.gameObject.GetComponent<MidSummonController>().TakeDamege(damege);
                 Destroy(this.gameObject);
             break;
             default:

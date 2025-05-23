@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Spawn", menuName = "Scrbs/Spawns")]
 public class ScrbSpawns : ScriptableObject
 {
+    [Header("Spawnable Sounds")]
+    public AudioClip spawning;
     [Header("Stats Basicos")]
     public float spawnTime;
 

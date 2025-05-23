@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Planet", menuName = "Scrbs/Planet")]
 public class ScrbCountry : ScriptableObject
 {
+    [Header("Eath Sounds")]
+    public AudioClip takingDamege;
     [Header("Stats basicos")]
     public float firstSpawnTime;
     public float timeForSapwn;

@@ -9,6 +9,12 @@ public class ScrbSummon : ScriptableObject
     [Header("///Aviso: este tipo de scriptable object contem informações sobre: ")]
     [Header("summons do player, inimigos e projeteis///")]
 
+    [Header("SummonSounds Sounds")]
+    public AudioClip shooting;
+    public AudioClip spawning;
+    public AudioClip takingDamege;
+    public AudioClip dying;
+    public AudioClip moving;
     [Header("If enemy, type:")]
     public bool projectileBool;
     public bool turret;

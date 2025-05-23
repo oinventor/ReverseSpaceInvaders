@@ -15,6 +15,10 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (tankStats.spawning != null)
+        {
+            AudioController.audioController.PlayAudioClip(tankStats.spawning, transform, 1f);
+        }
         curentHealth = (int)tankStats.maxHealth;
         tankFire = false;
         death = false;
@@ -39,7 +43,6 @@ public class TankController : MonoBehaviour
         if (curentHealth <= 0)
         {
             StartCoroutine(animationDeath());
-
         }
 
         countdownToShoot += Time.deltaTime;
@@ -57,15 +60,31 @@ public class TankController : MonoBehaviour
         {
             case "Summon":
                 curentHealth -= (int)collWithSummon.gameObject.GetComponent<SumomController>().damege;
+            if (tankStats.takingDamege != null)
+            {
+                AudioController.audioController.PlayAudioClip(tankStats.takingDamege, transform, 1f);
+            }
             break;
             case "SupperSummon":
                 curentHealth -= (int)collWithSummon.gameObject.GetComponent<SuperSummonController>().damege;
+                if (tankStats.takingDamege != null)
+                {
+                    AudioController.audioController.PlayAudioClip(tankStats.takingDamege, transform, 1f);
+                }
             break;
             case "MidSummon":
                 curentHealth -= (int)collWithSummon.gameObject.GetComponent<MidSummonController>().damege;
+                if (tankStats.takingDamege != null)
+                {
+                    AudioController.audioController.PlayAudioClip(tankStats.takingDamege, transform, 1f);
+                }
             break;
             case "Explosion":
                 curentHealth -= (int)collWithSummon.gameObject.GetComponent<ExplosionCOntroller>().damege;
+                if (tankStats.takingDamege != null)
+                {
+                    AudioController.audioController.PlayAudioClip(tankStats.takingDamege, transform, 1f);
+                }
             break;
             default:
             break;
@@ -76,7 +95,10 @@ public class TankController : MonoBehaviour
     {
         tankFire = true;
         animator.SetBool("Atirando", tankFire);
-
+        if (tankStats.shooting != null)
+        {
+            AudioController.audioController.PlayAudioClip(tankStats.shooting, transform, 1f);
+        }
         yield return new WaitForSeconds(1.0f);
 
         tankFire = false;
@@ -86,7 +108,11 @@ public class TankController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        death = true;
+        if (tankStats.dying != null && death == false)
+        {
+            death = true;
+            AudioController.audioController.PlayAudioClip(tankStats.dying, transform, 1f);
+        }
         animator.SetBool("Morte", death);
         if (tankStats.turret == true && tankStats.tank == false)
         {

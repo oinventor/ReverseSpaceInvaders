@@ -217,9 +217,9 @@ public class PlayerController : MonoBehaviour
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerSuperSummon;
-                if (playerStats.summoning != null)
+                if (playerStats.summoningSuperSummon != null)
                 {
-                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                    AudioController.audioController.PlayAudioClip(playerStats.summoningSuperSummon, transform, 1f);
                 }
 
             }
@@ -240,9 +240,9 @@ public class PlayerController : MonoBehaviour
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerMidSummon;
-                if (playerStats.summoning != null)
+                if (playerStats.summoningMidSummon != null)
                 {
-                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                    AudioController.audioController.PlayAudioClip(playerStats.summoningMidSummon, transform, 1f);
                 }
             }
             else
@@ -262,9 +262,9 @@ public class PlayerController : MonoBehaviour
                 //Starts the summon cooldown
                 summonColldown = playerStats.coolDownSummoning;
                 curentMana -= playerStats.manaPerSummon;
-                if (playerStats.summoning != null)
+                if (playerStats.summoningSmallSummon != null)
                 {
-                    AudioController.audioController.PlayAudioClip(playerStats.summoning, transform, 1f);
+                    AudioController.audioController.PlayAudioClip(playerStats.summoningSmallSummon, transform, 1f);
                 }
             }
             else

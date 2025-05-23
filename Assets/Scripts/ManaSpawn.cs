@@ -29,7 +29,11 @@ public class ManaSpawn : MonoBehaviour
             {
                 if (spawnChanceRand == 1)
                 {
-                    Instantiate(manaSpawn.spawn, new Vector3(transform.position.x,transform.position.y - 3, 0), Quaternion.identity);
+                    Instantiate(manaSpawn.spawn, new Vector3(transform.position.x, transform.position.y - 3, 0), Quaternion.identity);
+                    if (manaSpawn.spawning != null)
+                    {
+                        AudioController.audioController.PlayAudioClip(manaSpawn.spawning, transform, 1f);
+                    }
                 }
                 else
                 {

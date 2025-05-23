@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1ceb83972a414d97d032d65435f57, type: 3}
   m_Name: Summon weak
   m_EditorClassIdentifier: 
+  shooting: {fileID: 0}
+  spawning: {fileID: 0}
+  takingDamege: {fileID: 0}
+  dying: {fileID: 0}
+  moving: {fileID: 0}
   projectileBool: 0
   turret: 0
   tank: 0
@@ -26,3 +31,4 @@ MonoBehaviour:
   leftMovementMaxDistance: 28.5
   projectile: {fileID: 0}
   shootingCooldown: 0
+  explosionType: {fileID: 0}
