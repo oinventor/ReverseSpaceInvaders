@@ -12,6 +12,10 @@ public class ExplosionCOntroller : MonoBehaviour
     void Awake()
     {
         damege = summonStats.damegeDelt;
+        if (summonStats.explosion != null)
+        {
+            AudioController.audioController.PlayAudioClip(summonStats.explosion, transform, 1f);
+        }
         StartCoroutine(Expand());
         Destroy(this.gameObject, animationCip.length * 5);
     }

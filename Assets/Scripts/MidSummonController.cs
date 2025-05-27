@@ -31,15 +31,15 @@ public class MidSummonController : MonoBehaviour
         animator = this.gameObject.GetComponent<Animator>();
         if (summonStats.state11)
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(255, 40, 40);
+            this.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
         else if (summonStats.state22)
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(40, 255, 40);
+            this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
         }
         else if (summonStats.state33)
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(40, 40, 255);
+            this.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
         }
 
         //This here will change the direction that the summon will go depending on where it spawns
@@ -130,6 +130,10 @@ public class MidSummonController : MonoBehaviour
         switch (collWithObj.tag)
         {
             case "Enemy":
+            if (summonStats.state11)
+            {
+                Instantiate(summonStats.explosionType, collWithObj.transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
             break;
             case "Country":

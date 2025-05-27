@@ -82,7 +82,7 @@ public class SuperSummonController : MonoBehaviour
             case "Enemy":
             if (summonStats.state11)
             {
-                Instantiate(summonStats.explosionType, new Vector2(transform.position.x, transform.position.y - 4), Quaternion.identity);
+                Instantiate(summonStats.explosionType, collWithObj.transform.position, Quaternion.identity);
             }
             Destroy(this.gameObject);
             break;

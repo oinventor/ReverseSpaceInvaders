@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd73d433b052b9546a82f447a16d25f4, type: 3}
-  m_Name: State 2
+  m_Name: State ex (small)) 2
   m_EditorClassIdentifier: 
-  removeAfterAquisition: 1
-  aquisitionTimes: 1
+  removeAfterAquisition: 0
+  aquisitionTimes: 0
   icon: {fileID: 0}
   upgradeName: 
-  description: state 2
+  description: ex small
   dificultyIncreaseBool: 0
-  summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
+  summonStats: {fileID: 11400000, guid: 4180a5ebdd76c5d4f801c123610b48cc, type: 2}
   healthMaxUpdate: 0
   damegeDeltOnCollisionUpdate: 0
   damegeDeltOnPlanetUpdate: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   rightMovementMaxDistanceUpdate: 0
   leftMovementMaxDistanceUpdate: 0
   shootingCooldownUpdate: 0
-  state1: 0
-  state2: 1
+  state1: 1
+  state2: 0
   state3: 0

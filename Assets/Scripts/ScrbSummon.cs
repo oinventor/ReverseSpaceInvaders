@@ -15,6 +15,7 @@ public class ScrbSummon : ScriptableObject
     public AudioClip takingDamege;
     public AudioClip dying;
     public AudioClip moving;
+    public AudioClip explosion;
     [Header("If enemy, type:")]
     public bool projectileBool;
     public bool turret;
