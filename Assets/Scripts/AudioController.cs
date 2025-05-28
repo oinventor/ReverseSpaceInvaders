@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class AudioController : MonoBehaviour
     //script remain the only one of its kind!!!
     public static AudioController audioController;
     [SerializeField] private AudioSource audioSourceOBJ;
+    [SerializeField] private AudioMixer mainAudioMixer;
     private void Awake()
     {
         if (audioController == null)
@@ -24,5 +27,18 @@ public class AudioController : MonoBehaviour
         audioSource.volume = volume;
         audioSource.Play();
         Destroy(audioSource.gameObject, audioSource.clip.length);
+    }
+
+    public void SetMasterVolume(float level)
+    {
+        mainAudioMixer.SetFloat("mastarVolume", Mathf.Log10(level) * 20);
+    }
+    public void SetMusicVolume(float level)
+    {
+        mainAudioMixer.SetFloat("musicVolume", Mathf.Log10(level) * 20);
+    }
+    public void SetSFXVolume(float level)
+    {
+        mainAudioMixer.SetFloat("sfxVolume", Mathf.Log10(level) * 20);
     }
 }
