@@ -113,6 +113,7 @@ public class TankController : MonoBehaviour
             death = true;
             AudioController.audioController.PlayAudioClip(tankStats.dying, transform, 1f);
         }
+        death = true;
         animator.SetBool("Morte", death);
         if (tankStats.turret == true && tankStats.tank == false)
         {

@@ -117,13 +117,14 @@ public class SuperSummonController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        Debug.Log("Morreu anima��o");
-        animator.SetBool("Morte", death);
+        //Debug.Log("Morreu anima��o");
         if (summonStats.dying != null && death == false)
         {
             death = true;
             AudioController.audioController.PlayAudioClip(summonStats.dying, transform, 1f);
         }
+        death = true;
+        animator.SetBool("Morte", death);
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);

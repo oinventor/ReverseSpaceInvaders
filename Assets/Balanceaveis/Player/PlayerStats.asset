@@ -33,7 +33,7 @@ MonoBehaviour:
   manaUsedPerShield: 5
   inputCoyoteTime: 0.2
   inputMovementBuffer: 0.2
-  pressedTimeToMiniSummon: 0.01
+  pressedTimeToMiniSummon: 0.05
   pressedTimeToMidSummon: 0.5
   pressedTimeToSuperSummon: 1
   laneDistance: 500

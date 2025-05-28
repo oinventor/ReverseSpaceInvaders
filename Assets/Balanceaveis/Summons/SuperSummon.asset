@@ -17,6 +17,7 @@ MonoBehaviour:
   takingDamege: {fileID: 0}
   dying: {fileID: 0}
   moving: {fileID: 0}
+  explosion: {fileID: 8300000, guid: 0a62cc866cbb28a4cbcd4b14bad1c33e, type: 3}
   projectileBool: 0
   turret: 0
   tank: 0

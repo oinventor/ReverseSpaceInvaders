@@ -22,7 +22,7 @@ public class PointsAndLevelController : MonoBehaviour
     private int levelsToDificulty;
     [NonSerialized]public static float dificulty;
     [NonSerialized]public static int points;
-    private static int pointsToLeveling;
+    public static int pointsToLeveling;
     [NonSerialized]public static int levels;
     private static int levelsToUpgrade;
     [NonSerialized]public static int xp;

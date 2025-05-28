@@ -168,12 +168,13 @@ public class MidSummonController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        animator.SetBool("Morte", death);
         if (summonStats.dying != null && death == false)
         {
             death = true;
             AudioController.audioController.PlayAudioClip(summonStats.dying, transform, 1f);
         }
+        death = true;
+        animator.SetBool("Morte", death);
         yield return new WaitForSeconds(1.0f);
         death = false;
         animator.SetBool("Morte", death);

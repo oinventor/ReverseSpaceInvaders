@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -44,6 +45,7 @@ public class UIController : MonoBehaviour
         maxShieldCooldown = player.GetComponent<PlayerController>().playerStats.shieldCooldown;
         chargeBar.maxValue = maxCharge;
         manaBar.maxValue = maxMana;
+        xpBar.maxValue = PointsAndLevelController.pointsToLeveling;
         healthBar.maxValue = maxHealth;
         shieldCooldown.maxValue = maxShieldCooldown;
         heathSegments = healthTex.GetFloat("_segments");
@@ -84,7 +86,7 @@ public class UIController : MonoBehaviour
         chargeBar.value = curantCharge;
         curantHealth = PlayerController.curantHealth;
         healthBar.value = curantHealth;
-        xpBar.value = PointsAndLevelController.xp;
+        xpBar.value = Mathf.Lerp(xpBar.value, PointsAndLevelController.xp, 0.05f);
         points.text = PointsAndLevelController.points.ToString();
         level.text = PointsAndLevelController.levels.ToString();
     }
