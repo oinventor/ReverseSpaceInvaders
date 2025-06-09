@@ -184,9 +184,20 @@ public class PlayerController : MonoBehaviour
         }
 
         //Pauser jogo
-        if(Input.GetKeyDown(KeyCode.Escape) && canPause == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseScreen();
+            if (canPause == true)
+            {
+                PauseScreen();
+            }
+            else if (canPause == false && pauseMenue.activeSelf == false)
+            {
+                pauseMenue.SetActive(true);
+            }
+            else if (canPause == false && pauseMenue.activeSelf == true)
+            {
+                pauseMenue.SetActive(false);
+            }
         }
     }
 
