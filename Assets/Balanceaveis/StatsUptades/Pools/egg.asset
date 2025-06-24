@@ -19,7 +19,7 @@ MonoBehaviour:
   description: egg
   dificultyIncreaseBool: 0
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
-  healthMaxUpdate: 0
+  healthMaxUpdate: 5
   damegeDeltOnCollisionUpdate: 0
   damegeDeltOnPlanetUpdate: 0
   followSpeedUpdate: 0

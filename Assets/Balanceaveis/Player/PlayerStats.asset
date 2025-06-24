@@ -20,8 +20,8 @@ MonoBehaviour:
   takingDamege: {fileID: 0}
   moving: {fileID: 0}
   gettingMana: {fileID: 0}
-  healthMax: 15
-  manaMax: 10
+  healthMax: 1
+  manaMax: 15
   manaRegen: 5
   heathSteal: 0
   summoningCoolDown: 2

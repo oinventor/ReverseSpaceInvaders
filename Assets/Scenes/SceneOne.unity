@@ -4820,7 +4820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22938347}
   m_AnchorMax: {x: 0.421375, y: 0.30669546}
-  m_AnchoredPosition: {x: -10.885071, y: 63.5}
+  m_AnchoredPosition: {x: -10.885132, y: 63.499928}
   m_SizeDelta: {x: -550.08997, y: -96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970776232
@@ -5364,7 +5364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.20944114}
-  m_AnchoredPosition: {x: -16.946716, y: 4.2592773}
+  m_AnchoredPosition: {x: -16.946655, y: 4.2592773}
   m_SizeDelta: {x: 149.9, y: 8.599976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054705960
@@ -6375,7 +6375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25942296}
   m_AnchorMax: {x: 0.421375, y: 0.3451936}
-  m_AnchoredPosition: {x: -10.885071, y: 308.49994}
+  m_AnchoredPosition: {x: -10.885132, y: 308.49994}
   m_SizeDelta: {x: -550.08997, y: -110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1290905861
@@ -9536,7 +9536,7 @@ PrefabInstance:
       objectReference: {fileID: 1294903426}
     - target: {fileID: 8199444155652435710, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSceneDeath
+      value: LoadSceneWin
       objectReference: {fileID: 0}
     - target: {fileID: 8548796716243517906, guid: e8155b89a8e26e24c953177f808b5230, type: 3}
       propertyPath: m_LocalPosition.x

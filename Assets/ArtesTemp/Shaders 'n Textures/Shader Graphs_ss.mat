@@ -65,7 +65,7 @@ Material:
     - _ZWrite: 1
     - _offSet: 0
     - _rotation: 0
-    - _segments: 10
+    - _segments: 15
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

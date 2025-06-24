@@ -52,10 +52,10 @@ public class UIController : MonoBehaviour
         manaSegments = manaTex.GetFloat("_segments");
         emptyHeathSegments = heathSegments;
         emptyManaSegments = manaSegments;
-        heathSliderSize = healthBar.transform.localScale.x / (float)maxHealth;
-        manaSliderSize = manaBar.transform.localScale.x / (float)maxMana;
-        points.text = "";
-        level.text = "";
+        heathSliderSize = healthBar.gameObject.transform.localScale.x / 10;
+        manaSliderSize = manaBar.gameObject.transform.localScale.x / 10;
+        points.text = "0";
+        level.text = "0";
         StartCoroutine(StartFadeOut());
     }
     void Update()
@@ -66,8 +66,8 @@ public class UIController : MonoBehaviour
         emptyManaTex.SetFloat("_segments", maxMana);
         emptyHeathSegments = heathSegments;
         emptyManaSegments = manaSegments;
-        healthBar.transform.localScale = new Vector3 ( heathSliderSize * (float)maxHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
-        manaBar.transform.localScale = new Vector3 (manaSliderSize * (float)maxMana, manaBar.transform.localScale.y, manaBar.transform.localScale.z);
+        healthBar.gameObject.transform.localScale = new Vector3 ( heathSliderSize * (float)maxHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+        manaBar.gameObject.transform.localScale = new Vector3 (manaSliderSize * (float)maxMana, manaBar.transform.localScale.y, manaBar.transform.localScale.z);
 
         maxHealth = player.GetComponent<PlayerController>().playerStats.maxHealth;
         maxMana = player.GetComponent<PlayerController>().playerStats.maxMana;
