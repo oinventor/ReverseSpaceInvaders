@@ -29,6 +29,8 @@ public class PointsAndLevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levels = 0;
+        points = 0;
         xp = 0;
         poitsNLevelsStats = poitsNLevelsScrb;
         pointsToLeveling = poitsNLevelsStats.pointsToLevel;
