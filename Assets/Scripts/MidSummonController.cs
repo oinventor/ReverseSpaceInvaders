@@ -175,7 +175,7 @@ public class MidSummonController : MonoBehaviour
         }
         death = true;
         animator.SetBool("Morte", death);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(summonStats.explosionType.GetComponent<ExplosionCOntroller>().animationCip.length);
         death = false;
         animator.SetBool("Morte", death);
         Destroy(this.gameObject);

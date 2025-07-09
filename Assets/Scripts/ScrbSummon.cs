@@ -38,6 +38,9 @@ public class ScrbSummon : ScriptableObject
     public GameObject projectile;
     public float shootingCooldown;
     [Header("States Related Stats")]
+
+    [Header("///Sempre 1 em X chances///")]
+    public float chanceForEnemyState;
     public GameObject explosionType;
 
     [NonSerialized]
@@ -68,6 +71,8 @@ public class ScrbSummon : ScriptableObject
     public bool state22;
     [NonSerialized]
     public bool state33;
+    [NonSerialized]
+    public float enemyStateChance;
 
     public void LoadStats()
     {
@@ -81,6 +86,7 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita = rightMovementMaxDistance;
         distanciaMaxEsquerda = leftMovementMaxDistance;
         shootingTime = shootingCooldown;
+        enemyStateChance = chanceForEnemyState;
         state11 = false;
         state22 = false;
         state33 = false;
@@ -89,7 +95,7 @@ public class ScrbSummon : ScriptableObject
     }
     public void UpdateStats(float healthMax, float damegeDeltOnCollision, int damegeDeltOnPlanet, float followSpeed,
     float movementCooldown, float horizontalMovement, float verticalMovement, float rightMovementMaxDistance,
-    float leftMovementMaxDistance, float shootingCooldown, bool state1, bool state2, bool state3)
+    float leftMovementMaxDistance, float shootingCooldown, bool state1, bool state2, bool state3, float chanceForEnemyState)
     {
         maxHealth += healthMax;
         damegeDelt += damegeDeltOnCollision;
@@ -101,6 +107,7 @@ public class ScrbSummon : ScriptableObject
         distanciaMaxDireita += rightMovementMaxDistance;
         distanciaMaxEsquerda += leftMovementMaxDistance;
         shootingTime += shootingCooldown;
+        enemyStateChance += chanceForEnemyState;
         if (state1 == true || state2 == true || state3 == true)
         {
             if (state1 == true)

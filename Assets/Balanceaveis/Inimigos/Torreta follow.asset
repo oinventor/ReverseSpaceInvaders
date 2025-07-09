@@ -17,6 +17,7 @@ MonoBehaviour:
   takingDamege: {fileID: 0}
   dying: {fileID: 0}
   moving: {fileID: 0}
+  explosion: {fileID: 0}
   projectileBool: 0
   turret: 1
   tank: 0
@@ -31,4 +32,5 @@ MonoBehaviour:
   leftMovementMaxDistance: 0
   projectile: {fileID: 5018502367730268849, guid: 749a4a732cacb8c41ae73d62e932df5e, type: 3}
   shootingCooldown: 5
-  explosionType: {fileID: 0}
+  chanceForEnemyState: 5
+  explosionType: {fileID: 6268053223639872589, guid: 726e97d32dcce9c4499778d735b2cc22, type: 3}

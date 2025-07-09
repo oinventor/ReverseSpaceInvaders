@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class TankController : MonoBehaviour
@@ -10,6 +12,7 @@ public class TankController : MonoBehaviour
     private float countdownToShoot;
     private bool tankFire;
     private bool death;
+    private char stateChar;
     public Animator animator;
 
     // Start is called before the first frame update
@@ -30,6 +33,49 @@ public class TankController : MonoBehaviour
         else if (tankStats.turret == true)
         {
             enemyType = "turret";
+        }
+        int randomCounter = UnityEngine.Random.Range(1, (int)tankStats.enemyStateChance + 1);
+        if (randomCounter < 1)
+        {
+            randomCounter = 1;
+        }
+        switch (randomCounter)
+        {
+            case 1:
+                randomCounter = 0;
+                randomCounter = UnityEngine.Random.Range(1, 3 + 1);
+                switch (randomCounter)
+                {
+                    case 1:
+                        stateChar = 'R';
+                        this.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+                        if (this.transform.parent != null)
+                        {
+                            this.transform.parent.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+                        }
+                        break;
+                    case 2:
+                        stateChar = 'G';
+                        this.GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
+                        if (this.transform.parent != null)
+                        {
+                            this.transform.parent.gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
+                        }
+                        break;
+                    case 3:
+                        stateChar = 'B';
+                        this.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
+                        if (this.transform.parent != null)
+                        {
+                            this.transform.parent.gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -108,10 +154,26 @@ public class TankController : MonoBehaviour
     //Take damage in Cleber
     IEnumerator animationDeath()
     {
-        if (tankStats.dying != null && death == false)
+        if (death == false)
         {
+            this.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+            switch (stateChar)
+            {
+                case 'R':
+                    Instantiate(tankStats.explosionType, this.transform.position, Quaternion.identity);
+                    break;
+                case 'G':
+                    break;
+                case 'B':
+                    break;
+                default:
+                    break;
+            }
+            if (tankStats.dying != null)
+            {
+                AudioController.audioController.PlayAudioClip(tankStats.dying, transform, 1f);
+            }
             death = true;
-            AudioController.audioController.PlayAudioClip(tankStats.dying, transform, 1f);
         }
         death = true;
         animator.SetBool("Morte", death);
@@ -119,7 +181,7 @@ public class TankController : MonoBehaviour
         {
             this.transform.parent.GetComponent<SpriteRenderer>().enabled = false;
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(tankStats.explosionType.GetComponent<ExplosionCOntroller>().animationCip.length);
         death = false;
         animator.SetBool("Morte", death);
         PointsAndLevelController.AddPoints(enemyType);

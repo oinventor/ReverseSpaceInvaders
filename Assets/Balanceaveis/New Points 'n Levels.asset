@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34da830f5a9174f997394c90e2f22c, type: 3}
   m_Name: New Points 'n Levels
   m_EditorClassIdentifier: 
-  pointsToLevel: 600
-  levelsToUpgrade: 1
-  levelsToIncreaseDificulty: 2
+  pointsToLevel: 1
+  levelsToUpgrade: 2147483647
+  levelsToIncreaseDificulty: 1
   levelsToLane1: 1
   levelsToLane2: 1
   levelsToLane3: 1
   levelsToLane4: 1
-  dificultyIncrease: 0
+  dificultyIncrease: 0.1
   turretKillPoints: 100
   tankKillPoints: 200
   earthHitPoints: 300

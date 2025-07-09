@@ -123,7 +123,7 @@ MonoBehaviour:
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
   explosions:
-  - {fileID: 947192500584861801}
+  - {fileID: 5923668778195704938}
 --- !u!1 &3045440338813254228
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
   explosions:
-  - {fileID: 3045440338813254228}
+  - {fileID: 947192500584861801}
 --- !u!1 &3888831326886899151
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
   explosions:
-  - {fileID: 5923668778195704938}
+  - {fileID: 6158108919779038187}
 --- !u!1 &6158108919779038187
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
   explosions:
-  - {fileID: 6158108919779038187}
+  - {fileID: 0}
 --- !u!50 &5379750181046748380
 Rigidbody2D:
   serializedVersion: 4
@@ -810,9 +810,6 @@ MonoBehaviour:
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
   explosions:
   - {fileID: 3045440338813254228}
-  - {fileID: 947192500584861801}
-  - {fileID: 5923668778195704938}
-  - {fileID: 6158108919779038187}
 --- !u!1 &7296940327406283390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,8 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summonStats: {fileID: 11400000, guid: 0e70112c7e4167a4b8d49926f82dd19f, type: 2}
   animationCip: {fileID: 7400000, guid: 3df644d7f213807429ab013cefbeb325, type: 2}
-  explosions:
-  - {fileID: 9099937881984490911}
+  explosions: []
 --- !u!50 &6812638285431037575
 Rigidbody2D:
   serializedVersion: 4

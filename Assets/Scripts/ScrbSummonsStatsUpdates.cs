@@ -31,6 +31,7 @@ public class ScrbSummonsStatsUpdates : Upgrade
     [Header("Shoting Related Stats Update")]
     public float shootingCooldownUpdate;
     [Header("States Related Stats")]
+    private float chanceForEnemyStateUpdate;
     public bool state1;
     public bool state2;
     public bool state3;
@@ -41,15 +42,16 @@ public class ScrbSummonsStatsUpdates : Upgrade
         {
             healthMaxUpdate = 0;
             damegeDeltOnCollisionUpdate = 0;
+            chanceForEnemyStateUpdate = 0;
             if (summonStats.turret == true || summonStats.tank == true || summonStats.projectileBool == true)
             {
                 healthMaxUpdate = summonStats.healthMax * PointsAndLevelController.dificulty;
                 damegeDeltOnCollisionUpdate = summonStats.damegeDeltOnCollision * PointsAndLevelController.dificulty;
-                //shootingCooldownUpdate *= summonStats.shootingCooldown * PointsAndLevelController.dificulty;
+                chanceForEnemyStateUpdate = summonStats.chanceForEnemyState * -PointsAndLevelController.dificulty;
             }
         }
         summonStats.UpdateStats(healthMaxUpdate, damegeDeltOnCollisionUpdate, damegeDeltOnPlanetUpdate, followSpeedUpdate,
         movementCooldownUpdate, horizontalMovementUpdate, verticalMovementUpdate, rightMovementMaxDistanceUpdate,
-        leftMovementMaxDistanceUpdate, shootingCooldownUpdate, state1, state2, state3);
+        leftMovementMaxDistanceUpdate, shootingCooldownUpdate, state1, state2, state3, chanceForEnemyStateUpdate);
     }
 }

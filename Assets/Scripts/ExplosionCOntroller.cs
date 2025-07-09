@@ -17,18 +17,23 @@ public class ExplosionCOntroller : MonoBehaviour
             AudioController.audioController.PlayAudioClip(summonStats.explosion, transform, 1f);
         }
         StartCoroutine(Expand());
-        Destroy(this.gameObject, animationCip.length * 5);
     }
 
     private IEnumerator Expand()
     {
         foreach (GameObject explosion in explosions)
         {
-            yield return new WaitForSeconds(animationCip.length);
-            if (explosion != null)
+            yield return new WaitForSeconds(animationCip.length - 0.317f);
+            switch (explosion != null)
             {
-                explosion.SetActive(true);
-                this.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+                case false:
+                    Destroy(this.transform.parent.gameObject);
+                break;
+                default:
+                    explosion.SetActive(true);
+                    yield return new WaitForSeconds(animationCip.length - 0.117f);
+                    this.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+                break;
             }
         }
 
